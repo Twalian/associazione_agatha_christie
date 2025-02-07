@@ -1,0 +1,153 @@
+@charset "utf_8";
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1d3b32;
+    /* Verde scuro */
+    color: #f4c25b;
+    /* Giallo oro */
+    margin-top: 90px;
+    /* Aggiungi margine superiore per evitare che la navbar copra il contenuto */
+}
+
+/* Navbar fissa, da completare e aggiungere */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#foto {
+    width: 100%;
+    height: auto;
+    border-radius: 5%;
+}
+
+
+.header {
+    color: #f4c25b;
+    align-items: center;
+    padding-bottom: 80px;
+    width: 100%;
+    height: auto;
+
+}
+
+.header-text {
+    height: auto;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    background-color: #3b4d47;
+    border-radius: 5%;
+    text-align: center;
+}
+
+.titolo {
+    font-family: "Ballet", serif;
+    font-size: 200px;
+    font-weight: 400;
+    color: antiquewhite;
+    padding-top: 50px;
+    padding-bottom: 25px;
+}
+
+.header-bio {
+    background-color: #3b4d47;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 10px;
+    width: 100%;
+    border-radius: 5%;
+    text-align: center;
+}
+
+
+.libri,
+.eventi {
+    background: #f4c25b;
+    color: #1d3b32;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 3%;
+    margin-top: 30px;
+}
+
+.libri img {
+    width: 50%;
+    height: 60px;
+    border-radius: 10px;
+}
+
+.evento {
+    background: #1d3b32;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    color: #f4c25b;
+}
+
+p,
+h4 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+}
+
+h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+    padding-bottom: 20px;
+}
+
+.titoli {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.libriCarousel {
+    overflow: hidden;
+    /* Nasconde il continuo che esce fuori */
+}
+
+.carousel-item img {
+    width: 60%;
+    height: auto;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+.carousel-item.active img {
+    transform: scale(1.1);
+}
+
+
+.carousel-control-prev-icon {
+    margin-left: -180px;
+    background-color: #1d3b32;
+    border-radius: 30%;
+}
+
+.carousel-control-next-icon {
+    margin-right: -180px;
+    background-color: #1d3b32;
+    border-radius: 30%;
+}
+
+/* Altre sezioni e stili restano invariati */
+/* Navbar per schermi più piccoli */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        background-color: #1d3b32;
+        /* Colore di sfondo per il menu a tendina */
+        border-radius: 5%;
+        /* Aggiungi arrotondamento per il menu a tendina */
+    }
+
+}
