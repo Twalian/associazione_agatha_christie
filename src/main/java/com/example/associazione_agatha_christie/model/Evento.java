@@ -31,7 +31,7 @@ public class Evento {
     @JoinColumn(name = "idLibro", referencedColumnName = "id")
     private Libro libro;
 
-    @ManyToMany
+    @ManyToOne
             (cascade = CascadeType.ALL)
     @JoinColumn(name = "idBiblioteca", referencedColumnName = "id")
     private Biblioteca biblioteca;

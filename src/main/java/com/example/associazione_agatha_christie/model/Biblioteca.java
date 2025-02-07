@@ -3,6 +3,9 @@ package com.example.associazione_agatha_christie.model;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "biblioteche")
 public class Biblioteca {
@@ -46,6 +49,14 @@ public class Biblioteca {
     referencedColumnName = "id")
     @Valid
     private Credenziale credenziale;
+
+    @OneToMany(
+            mappedBy = "biblioteca",
+            cascade = CascadeType.REMOVE,
+            fetch = FetchType.EAGER,
+            orphanRemoval = true
+    )
+    private List<Evento> eventi = new ArrayList<>();
 
     public int getId() {
         return id;
