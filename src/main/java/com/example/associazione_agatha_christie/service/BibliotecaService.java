@@ -12,4 +12,6 @@ public interface BibliotecaService {
     Biblioteca datiBiblioteca(int id);
 
     void registraBiblioteca(Biblioteca biblioteca, String nome, String comune, String indirizzo, String orarioApertura, String sito, String email, String telefono, String maps, MultipartFile logo, MultipartFile foto, int idCredenziale);
+
+    void eliminaBiblioteca(int id);
 }
