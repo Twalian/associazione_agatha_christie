@@ -32,7 +32,7 @@ public class Evento {
     private Libro libro;
 
     @ManyToMany
-            (cascade = CascadeType.REFRESH)
+            (cascade = CascadeType.ALL)
     @JoinColumn(name = "idBiblioteca", referencedColumnName = "id")
     private Biblioteca biblioteca;
 
