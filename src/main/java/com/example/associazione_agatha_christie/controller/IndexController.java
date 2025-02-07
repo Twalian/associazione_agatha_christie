@@ -10,6 +10,6 @@ public class IndexController {
 
     @GetMapping
     public String getPage() {
-        return "index.html";
+        return "index";
     }
 }

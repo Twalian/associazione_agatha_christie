@@ -10,6 +10,6 @@ public class GestioneBibliotecaController {
 
     @GetMapping
     public String getPage() {
-        return "gestionebiblioteca.html";
+        return "gestionebiblioteca";
     }
 }

@@ -10,6 +10,6 @@ public class GestioneAdminController {
 
     @GetMapping
     public String getPage() {
-        return "gestioneadmin.html";
+        return "gestioneadmin";
     }
 }
