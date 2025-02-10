@@ -21,13 +21,7 @@ public class Evento {
     @Column
     private String linkDiretta;
 
-    @OneToMany
-            (
-                    mappedBy = "evento",
-                    cascade = CascadeType.MERGE,
-                    fetch = FetchType.EAGER,
-                    orphanRemoval = false
-            )
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "idLibro", referencedColumnName = "id")
     private Libro libro;
 
