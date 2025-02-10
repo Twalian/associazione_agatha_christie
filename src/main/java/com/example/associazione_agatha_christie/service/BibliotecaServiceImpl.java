@@ -2,6 +2,7 @@ package com.example.associazione_agatha_christie.service;
 
 import com.example.associazione_agatha_christie.dao.BibliotecaDao;
 import com.example.associazione_agatha_christie.model.Biblioteca;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -35,7 +36,7 @@ public class BibliotecaServiceImpl implements BibliotecaService {
     }
 
     @Override
-    public void registraBiblioteca(Biblioteca biblioteca, String nome, String comune, String indirizzo, String orarioApertura, String sito, String email, String telefono, String maps, MultipartFile logo, MultipartFile foto, int idCredenziale) {
+    public void registraBiblioteca(Biblioteca biblioteca, String nome, String comune, String indirizzo, String orarioApertura, String sito, String email, String telefono, String maps, MultipartFile logo, MultipartFile foto, int idCredenziale, HttpSession session) {
 
         biblioteca.setNome(nome);
         biblioteca.setComune(comune);
@@ -70,6 +71,7 @@ public class BibliotecaServiceImpl implements BibliotecaService {
 
         bibliotecaDao.save(biblioteca);
 
+        session.setAttribute("utenteBiblioteca", biblioteca);
     }
 
     @Override
@@ -78,6 +80,5 @@ public class BibliotecaServiceImpl implements BibliotecaService {
         Biblioteca biblioteca = datiBiblioteca(id);
 
         bibliotecaDao.delete(biblioteca);
-
     }
 }

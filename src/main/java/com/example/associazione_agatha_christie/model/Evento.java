@@ -21,12 +21,12 @@ public class Evento {
     @Column
     private String linkDiretta;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
+    @ManyToOne(cascade = CascadeType.REFRESH)
     @JoinColumn(name = "idLibro", referencedColumnName = "id")
     private Libro libro;
 
     @ManyToOne
-            (cascade = CascadeType.ALL)
+            (cascade = CascadeType.REFRESH)
     @JoinColumn(name = "idBiblioteca", referencedColumnName = "id")
     private Biblioteca biblioteca;
 

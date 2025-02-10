@@ -3,6 +3,7 @@ package com.example.associazione_agatha_christie.controller;
 import com.example.associazione_agatha_christie.model.Biblioteca;
 import com.example.associazione_agatha_christie.service.BibliotecaService;
 import jakarta.servlet.http.HttpSession;
+import jakarta.websocket.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,8 +40,10 @@ public class ProfiloController {
                                @RequestParam (required = false) String maps,
                                @RequestParam (required = false) MultipartFile logo,
                                @RequestParam (required = false) MultipartFile foto,
-                               @RequestParam int idCredenziale) {
-        bibliotecaService.registraBiblioteca(biblioteca, nome, comune, indirizzo, orarioApertura, sito, email, telefono, maps, logo, foto, idCredenziale);
+                               @RequestParam int idCredenziale,
+                                HttpSession session) {
+        bibliotecaService.registraBiblioteca(biblioteca, nome, comune, indirizzo, orarioApertura, sito, email, telefono, maps, logo, foto, idCredenziale, session);
+
         return "redirect:/profilo";
     }
 

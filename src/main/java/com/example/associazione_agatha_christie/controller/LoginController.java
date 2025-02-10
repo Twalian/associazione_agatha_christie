@@ -36,9 +36,8 @@ public class LoginController {
             return "redirect:/login?errore";
         else if (session.getAttribute("utenteAdmin")!=null) {
             return "redirect:/gestioneadmin";
-        } else if (session.getAttribute("utenteBiblioteca")!=null) {
+        } else {
             return "redirect:/gestionebiblioteca";
         }
-        return "redirect:/login";
     }
 }
