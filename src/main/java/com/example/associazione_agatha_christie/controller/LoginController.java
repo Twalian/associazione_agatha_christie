@@ -4,6 +4,7 @@ import com.example.associazione_agatha_christie.service.CredenzialeService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +18,14 @@ public class LoginController {
     private CredenzialeService credenzialeService;
 
     @GetMapping
-    public String getPage() {
+    public String getPage(@RequestParam(required = false) String errore,
+                          Model model,
+                          HttpSession session) {
+        if(session.getAttribute("utenteAdmin") != null)
+            return "redirect:/gestioneadmin";
+        if(session.getAttribute("utenteBiblioteca") != null)
+            return "redirect:/gestionebiblioteca";
+        model.addAttribute("errore", errore);
         return "login";
     }
     
@@ -26,9 +34,11 @@ public class LoginController {
         
         if (!credenzialeService.loginUtente(username, password, ruolo, session))
             return "redirect:/login?errore";
-        else if (session.getAttribute("utenteAdmin")) {
-            
+        else if (session.getAttribute("utenteAdmin")!=null) {
+            return "redirect:/gestioneadmin";
+        } else if (session.getAttribute("utenteBiblioteca")!=null) {
+            return "redirect:/gestionebiblioteca";
         }
-
+        return "redirect:/login";
     }
 }
