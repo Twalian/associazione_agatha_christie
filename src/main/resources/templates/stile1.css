@@ -6,16 +6,29 @@ body {
     /* Verde scuro */
     color: #f4c25b;
     /* Giallo oro */
-    margin-top: 90px;
+    padding-top: 90px;
     /* Aggiungi margine superiore per evitare che la navbar copra il contenuto */
+    overflow-x: hidden;
 }
 
-/* Navbar fissa, da completare e aggiungere */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+/* Navbar fissa */
+.navbar-nav {
+    margin-left: auto;
+    padding-right: 20px;
+}
+
+.navbar-brand {
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+.nav-link {
+    color: black;
+    padding-left: 30%;
+}
+
+.nav-link:hover {
+    color: #f4c25b;
 }
 
 #foto {
@@ -73,7 +86,7 @@ body {
 .eventi {
     background: #f4c25b;
     color: #1d3b32;
-    padding: 40px 20px;
+    padding: 20px 20px;
     text-align: center;
     border-radius: 3%;
     margin-top: 30px;
@@ -148,6 +161,7 @@ h2 {
         /* Colore di sfondo per il menu a tendina */
         border-radius: 5%;
         /* Aggiungi arrotondamento per il menu a tendina */
+
     }
 
 }
