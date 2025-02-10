@@ -206,15 +206,30 @@ h2 {
     text-align: center;
 }
 
-#tabellaelenco {
+#tabellaelenco,
+th,
+td {
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     background-color: #759483;
     font-size: 25px;
+    border: 2px solid #000000;
+    color: #000000;
+}
+th {
+    background-color: #e6cb95;
+    color: #000000;
+}
+
+td {
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .btn {
-    background-color: red;
-    color: #1d3b32;
+    background-color: rgba(225, 42, 25, 0.82);
+    color: #000000;
 }
 
 
@@ -273,4 +288,29 @@ h2 {
 .bibl-dettagli {
     margin-left: auto;
     margin-right: auto;
+}
+
+/* form nvisibile*/
+#aggiungiBibliotecaForm {
+   /* display: none; */
+    border: 1px solid #cdc6c6;
+    border-radius: 8px;
+    background-color: #3d514b;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 20px;
+}
+
+textarea {
+    resize: none;
+}
+
+#aggiungi {
+    background-color: #e6cb95;
+    width: 200px;
+    height: 50px;
+    margin-top: 20px;
 }
