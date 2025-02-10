@@ -54,4 +54,8 @@ public class EventoServiceImpl implements EventoService {
 
         eventoDao.save(evento);
     }
+
+    public List<Evento> eventiBiblioteca(int id) {
+        return (List<Evento>) eventoDao.findByBibliotecaId(id);
+    }
 }
