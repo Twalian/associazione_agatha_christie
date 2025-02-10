@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -33,28 +33,25 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-                <a class="nav-link" href="index1.html">Home</a>
+                <a class="nav-link" th:href="@{/}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="login.html">Login</a>
+                <a class="nav-link" th:href="@{/login}">Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Chi siamo</a>
+                <a class="nav-link" th:href="@{/chisiamo}">Chi siamo</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Prossimo Eventi</a>
+                <a class="nav-link" th:href="@{/eventi}">Prossimo Eventi</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Biblioteche aderenti</a>
+                <a class="nav-link" th:href="@{/biblioteche}">Biblioteche aderenti</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Libri più amati</a>
+                <a class="nav-link" th:href="@{/libri}">Libri più amati</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Collabora con noi</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Newsletter</a>
+                <a class="nav-link" th:href="@{/lavoraconnoi}">Collabora con noi</a>
             </li>
         </ul>
     </div>
@@ -68,11 +65,11 @@
             <form action="/login" method="post">
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="username" placeholder="Inserisci username" required>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Inserisci username" required>
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Inserisci password"
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Inserisci password"
                            required>
                 </div>
                 <div class="mb-3">
@@ -83,8 +80,8 @@
                         <option value="curatore">Curatore</option>
                     </select>
                 </div>
-
-                <button type="submit" class="btn btn-primary w-100" id="accedi">Accedi</button>
+                <input type="submit" class="btn btn-primary w-100" id="accedi" value="Accedi">
+                <p th:if="${errore != null}">Accesso negato, credenziali errate!</p>
             </form>
         </div>
     </div>
