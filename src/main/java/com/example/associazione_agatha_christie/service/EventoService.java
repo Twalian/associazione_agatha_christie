@@ -14,4 +14,6 @@ public interface EventoService {
     void eliminaEvento(int id);
 
     void registraEvento(Evento evento, LocalDateTime dataOra, String durata, String linkDiretta, int idLibro, int idBiblioteca);
+
+    List<Evento> eventiBiblioteca(int id);
 }
