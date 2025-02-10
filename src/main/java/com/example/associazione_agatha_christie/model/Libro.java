@@ -2,7 +2,6 @@ package com.example.associazione_agatha_christie.model;
 
 import jakarta.persistence.*;
 
-
 @Entity
 @Table (name = "libri")
 public class Libro {
