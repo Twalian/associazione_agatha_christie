@@ -36,7 +36,7 @@ public class BibliotecaServiceImpl implements BibliotecaService {
     }
 
     @Override
-    public void registraBiblioteca(Biblioteca biblioteca, String nome, String comune, String indirizzo, String orarioApertura, String sito, String email, String telefono, String maps, MultipartFile logo, MultipartFile foto, int idCredenziale, HttpSession session) {
+    public void registraBiblioteca(Biblioteca biblioteca, String nome, String comune, String indirizzo, String orarioApertura, String sito, String email, String telefono, String maps, MultipartFile logo, MultipartFile foto, int idCredenziale, String descrizione, HttpSession session) {
 
         biblioteca.setNome(nome);
         biblioteca.setComune(comune);
@@ -68,6 +68,8 @@ public class BibliotecaServiceImpl implements BibliotecaService {
         }
 
         biblioteca.setCredenziale(credenzialeService.datiCredenziale(idCredenziale));
+
+        biblioteca.setDescrizione(descrizione);
 
         bibliotecaDao.save(biblioteca);
 

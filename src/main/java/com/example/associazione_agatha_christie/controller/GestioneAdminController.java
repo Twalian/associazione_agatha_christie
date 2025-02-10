@@ -15,7 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 
 @Controller
-@RequestMapping("/gestioneadmin")
+@RequestMapping("/gestione-admin")
 public class GestioneAdminController {
 
     @Autowired
@@ -30,13 +30,13 @@ public class GestioneAdminController {
         biblioteca = id ==null? new Biblioteca() : bibliotecaService.datiBiblioteca(id);
         model.addAttribute("biblioteca", biblioteca);
         model.addAttribute("biblioteche", biblioteche);
-        return "gestioneadmin";
+        return "gestione-admin";
     }
 
     @GetMapping("/elimina")
     public String eliminaBiblioteca(@RequestParam int id) {
         bibliotecaService.eliminaBiblioteca(id);
-        return "redirect:/gestioneadmin";
+        return "redirect:/gestione-admin";
     }
 
     @PostMapping
@@ -51,8 +51,9 @@ public class GestioneAdminController {
                                @RequestParam (required = false) MultipartFile logo,
                                @RequestParam (required = false) MultipartFile foto,
                                @RequestParam int idCredenziale,
+                               @RequestParam (required = false) String descrizione,
                                HttpSession session) {
-        bibliotecaService.registraBiblioteca(biblioteca, nome, comune, indirizzo, orarioApertura, sito, email, telefono, maps, logo, foto, idCredenziale, session);
-        return "redirect:/gestioneadmin";
+        bibliotecaService.registraBiblioteca(biblioteca, nome, comune, indirizzo, orarioApertura, sito, email, telefono, maps, logo, foto, idCredenziale, descrizione, session);
+        return "redirect:/gestione-admin";
     }
 }

@@ -50,6 +50,9 @@ public class Biblioteca {
     @Valid
     private Credenziale credenziale;
 
+    @Column
+    private String descrizione;
+
     @OneToMany(
             mappedBy = "biblioteca",
             cascade = CascadeType.REMOVE,
@@ -152,5 +155,21 @@ public class Biblioteca {
 
     public void setCredenziale(Credenziale credenziale) {
         this.credenziale = credenziale;
+    }
+
+    public String getDescrizione() {
+        return descrizione;
+    }
+
+    public void setDescrizione(String descrizione) {
+        this.descrizione = descrizione;
+    }
+
+    public List<Evento> getEventi() {
+        return eventi;
+    }
+
+    public void setEventi(List<Evento> eventi) {
+        this.eventi = eventi;
     }
 }
