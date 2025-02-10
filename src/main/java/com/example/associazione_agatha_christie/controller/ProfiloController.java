@@ -2,6 +2,7 @@ package com.example.associazione_agatha_christie.controller;
 
 import com.example.associazione_agatha_christie.model.Biblioteca;
 import com.example.associazione_agatha_christie.service.BibliotecaService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,11 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.util.List;
-
 @Controller
-@RequestMapping("/gestioneadmin")
-public class GestioneAdminController {
+@RequestMapping("/profilo")
+public class ProfiloController {
 
     @Autowired
     private BibliotecaService bibliotecaService;
@@ -23,19 +22,10 @@ public class GestioneAdminController {
     Biblioteca biblioteca;
 
     @GetMapping
-    public String getPage(Model model,
-                          @RequestParam(required = false) Integer id) {
-        List<Biblioteca> biblioteche = bibliotecaService.elencoBiblioteche();
-        biblioteca = id ==null? new Biblioteca() : bibliotecaService.datiBiblioteca(id);
-        model.addAttribute("biblioteca", biblioteca);
-        model.addAttribute("biblioteche", biblioteche);
-        return "gestioneadmin";
-    }
-
-    @GetMapping("/elimina")
-    public String eliminaBiblioteca(@RequestParam int id) {
-        bibliotecaService.eliminaBiblioteca(id);
-        return "redirect:/gestioneadmin";
+    private String getPage(HttpSession session, Model model) {
+        biblioteca = (Biblioteca) session.getAttribute("utenteBiblioteca");
+        model.addAttribute("utenteBiblioteca", biblioteca);
+        return "profilo";
     }
 
     @PostMapping
@@ -49,9 +39,10 @@ public class GestioneAdminController {
                                @RequestParam (required = false) String maps,
                                @RequestParam (required = false) MultipartFile logo,
                                @RequestParam (required = false) MultipartFile foto,
-                               @RequestParam int idCredenziale
-                               ) {
+                               @RequestParam int idCredenziale) {
         bibliotecaService.registraBiblioteca(biblioteca, nome, comune, indirizzo, orarioApertura, sito, email, telefono, maps, logo, foto, idCredenziale);
-        return "redirect:/gestioneadmin";
+        return "redirect:/profilo";
     }
+
+
 }
