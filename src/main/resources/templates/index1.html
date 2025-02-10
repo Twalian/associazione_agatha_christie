@@ -84,7 +84,11 @@
     <div class="biografia">
         <img src="img2.jpg" alt="Agatha Christie" class="img-fluid" id="foto2">
         <div class="bio">
-            <p id="bio">Agatha Christie (1890-1976) è stata una scrittrice britannica, conosciuta come la "Regina del crimine". Nata a Torquay, in Inghilterra, Christie iniziò a scrivere durante la Prima Guerra Mondiale, quando lavorava come infermiera. I suoi romanzi si caratterizzano per la trama ingegnosa, i colpi di scena e l'abilità nel costruire misteri complessi. Agatha Christie è stata una delle autrici più influenti nel genere del giallo e del mistero, e la sua eredità perdura ancora oggi.</p>
+            <p id="bio">Agatha Christie (1890-1976) è stata una scrittrice britannica, conosciuta come la "Regina
+                del crimine". Nata a Torquay, in Inghilterra, Christie iniziò a scrivere durante la Prima Guerra
+                Mondiale, quando lavorava come infermiera. I suoi romanzi si caratterizzano per la trama ingegnosa,
+                i colpi di scena e l'abilità nel costruire misteri complessi. Agatha Christie è stata una delle
+                autrici più influenti nel genere del giallo e del mistero, e la sua eredità perdura ancora oggi.</p>
             <a href="#" id="autrice">Per saperne di più...</a>
         </div>
     </div>
@@ -102,63 +106,21 @@
         </p>
     </div>
 
-    <!-- Sezione Libri con Carousel -->
     <section class="libri mt-5">
         <h2>I LIBRI DI CUI PARLEREMO</h2>
 
         <!-- Carousel dei libri -->
         <div id="libriCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
+                <!-- Itera sulla lista di libri con Thymeleaf -->
+                <div class="carousel-item" th:classappend="${loop.index == 0 ? ' active' : ''}"
+                     th:each="libro : ${libri}">
                     <div class="row">
+                        <!-- Colonna per ogni libro -->
                         <div class="col-12 col-md-3">
-                            <img src="addio-removebg-preview.png" alt="Addio, Miss Marple" class="img-fluid">
-                            <p class="titoli">Addio, Miss Marple</p>
-                            <p>1976</p>
-                        </div>
-                        <div class="col-12 col-md-3">
-                            <img src="biblioteca-removebg-preview.png" alt="C'è un cadavere in biblioteca"
-                                 class="img-fluid">
-                            <p class="titoli">C'è un cadavere in biblioteca</p>
-                            <p>1948</p>
-                        </div>
-                        <div class="col-12 col-md-3">
-                            <img src="avversario-removebg-preview.png" alt="Assassinio sull'Orient Express"
-                                 class="img-fluid">
-                            <p class="titoli">Assassinio sull'Orient Express</p>
-                            <p>1933</p>
-                        </div>
-                        <div class="col-12 col-md-3">
-                            <img src="carte-removebg-preview.png" alt="Carte in tavola" class="img-fluid">
-                            <p class="titoli">Carte in tavola</p>
-                            <p>1938</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <div class="row">
-                        <div class="col-12 col-md-3">
-                            <img src="avversario-removebg-preview.png" alt="Assassinio sull'Orient Express"
-                                 class="img-fluid">
-                            <p class="titoli">Assassinio sull'Orient Express</p>
-                            <p>1933</p>
-                        </div>
-                        <div class="col-12 col-md-3">
-                            <img src="carte-removebg-preview.png" alt="Carte in tavola" class="img-fluid">
-                            <p class="titoli">Carte in tavola</p>
-                            <p>1938</p>
-                        </div>
-                        <div class="col-12 col-md-3">
-                            <img src="addio-removebg-preview.png" alt="Addio, Miss Marple" class="img-fluid">
-                            <p class="titoli">Addio, Miss Marple</p>
-                            <p>1976</p>
-                        </div>
-                        <div class="col-12 col-md-3">
-                            <img src="biblioteca-removebg-preview.png" alt="C'è un cadavere in biblioteca"
-                                 class="img-fluid">
-                            <p class="titoli">C'è un cadavere in biblioteca</p>
-                            <p>1948</p>
+                            <img th:src="@{${libro.img}}" alt="Libri immagine" class="img-fluid">
+                            <p class="titoli" th:text="${libro.titolo}">Titolo del libro</p>
+                            <p th:text="${libro.anno}">Anno</p>
                         </div>
                     </div>
                 </div>
@@ -177,6 +139,7 @@
             </button>
         </div>
     </section>
+
 
     <!-- Sezione Eventi -->
     <section class="eventi mt-5">
