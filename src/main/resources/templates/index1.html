@@ -36,28 +36,25 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-                <a class="nav-link" href="index1.html">Home</a>
+                <a class="nav-link" th:href="@{/}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="login.html">Login</a>
+                <a class="nav-link" th:href="@{/login}">Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Chi siamo</a>
+                <a class="nav-link" th:href="@{/chisiamo}">Chi siamo</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Prossimo Eventi</a>
+                <a class="nav-link" th:href="@{/eventi}">Prossimo Eventi</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="biblioteche.html">Biblioteche aderenti</a>
+                <a class="nav-link" th:href="@{/biblioteche}">Biblioteche aderenti</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Libri più amati</a>
+                <a class="nav-link" th:href="@{/libri}">Libri più amati</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Collabora con noi</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Newsletter</a>
+                <a class="nav-link" th:href="@{/lavoraconnoi}">Collabora con noi</a>
             </li>
         </ul>
     </div>
@@ -121,8 +118,8 @@
                         <!-- Colonna per ogni libro -->
                         <div class="col-12 col-md-4">
                             <img th:src="@{${libro.copertina}}" alt="Libri immagine" class="img-fluid">
-                            <p class="titoli" th:text="${libro.titolo}">Titolo del libro</p>
-                            <p th:text="${libro.anno}">Anno</p>
+                            <p class="titoli" th:text="${libro.titolo}"></p>
+                            <p th:text="${libro.anno}"></p>
                         </div>
                     </div>
                 </div>
@@ -146,13 +143,9 @@
     <!-- Sezione Eventi -->
     <section class="eventi mt-5">
         <h2>PROSSIMI EVENTI</h2>
-        <div class="evento">
-            <h4>Lettura di "Assassinio sull'Orient Express"</h4>
-            <p>📅 15 Febbraio 2025 | 📍 Libreria XYZ</p>
-        </div>
-        <div class="evento">
-            <h4>Discussione su "Dieci piccoli indiani"</h4>
-            <p>📅 28 Febbraio 2025 | 📍 Caffè Letterario ABC</p>
+        <div class="evento" th:each="evento : ${eventi}">
+            <h4 th:text="|Lettura di ${evento.libro.titolo}|"></h4>
+            <p th:text="'📅 ' + ${#temporals.format(evento.dataOra, 'dd/MM/yyyy HH:mm')} + ' | 📍 ' + ${evento.biblioteca.nome}"></p>
         </div>
     </section>
 </div>

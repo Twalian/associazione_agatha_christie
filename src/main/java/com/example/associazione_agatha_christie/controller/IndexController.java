@@ -1,6 +1,8 @@
 package com.example.associazione_agatha_christie.controller;
 
+import com.example.associazione_agatha_christie.model.Evento;
 import com.example.associazione_agatha_christie.model.Libro;
+import com.example.associazione_agatha_christie.service.EventoService;
 import com.example.associazione_agatha_christie.service.LibroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,11 +19,16 @@ public class IndexController {
     @Autowired
     private LibroService libroService;
 
+    @Autowired
+    private EventoService eventoService;
+
     @GetMapping
     public String getPage(Model model) {
 
         List<Libro> libri = libroService.elencoLibri();
+        List<Evento> eventi = eventoService.elencoEventi();
         model.addAttribute("libri", libri);
+        model.addAttribute("eventi", eventi);
 
         return "index1";
     }
