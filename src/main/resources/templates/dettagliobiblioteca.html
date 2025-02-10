@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Biblioteche</title>
+    <title>Dettaglio Biblioteca</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="../static/css/stile1.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 
-        <a class="navbar-brand" href="index1.html">Agatha Christie Club</a>
+        <a class="navbar-brand" href="#">Agatha Christie Club</a>
         <!-- quando lo schermo è piccolo, appaiono le 3 linee -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
@@ -19,7 +19,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index1.html">Home</a>
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Login</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Chi siamo</a>
@@ -28,7 +31,7 @@
                     <a class="nav-link" href="#">Prossimo Eventi</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Biblioteche aderenti</a>
+                    <a class="nav-link" href="biblioteche.html">Biblioteche aderenti</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Libri più amati</a>
@@ -44,28 +47,43 @@
     </nav>
 
     <header class="header">
-        <div class="bibl-immagine">
-            <h1 class="bibl-titolo">BIBLIOTECHE ADERENTI</h1>
-            <img src="images/bibl-banner.png" alt="biblioteca" id="bibl-foto">
+        <div>
+            <img src="images/bibliotecaFirenze.jpg" class="img-fluid bibl-fronte" alt="Biblioteca Nazionale Centrale di Firenze">
+            <h1 id="biblioteca">BIBLIOTECA NAZIONALE CENTRALE DI FIRENZE</h1>
         </div>
     </header>
-    <!-- sto mettendo le informazioni sulle varie librerie -->
-    <!-- consiste in un div per controllare le immagini,
-    un div per i nomi delle biblioteche,
-    un div per delle piccole informazioni sulle biblioteche e
-    un link "Leggi di più..." per portare alla pagina dedicata alla biblioteca-->
+
     <div class="container-fluid">
-        <div class="bibl-base1 row align-items-center">
-            <div class="img-biblioteca col-md-6">
-                <img src="img/bibliotecaFirenze.jpg" class="img-fluid" alt="Biblioteca Nazionale Centrale di Firenze">
+        <div class="bibl-sito row align-items-center">
+            <div class="bibl col-md-12 col-lg-6">
+                <img src="images/bncf-logo.png" class="img-biblioteca img-fluid" alt="Biblioteca Nazionale Centrale di Firenze">
             </div>
-            <div class="bibl-dettagli col-lg-6 col-md-6">
-                <h4>Biblioteca Nazionale Centrale di Firenze</h4>
-                <p>La Biblioteca Nazionale Centrale di Firenze è una biblioteca pubblica, afferente al MIC, che raccoglie, conserva e documenta la memoria storica della Nazione.</p>
-                <a href="#">Leggi di più...</a>
+            <div class="bibl-informazioni col-lg-6 col-md-12">
+                <h4>Info:</h4>
+                <p>La Biblioteca Nazionale Centrale di Firenze (BNCF) è una delle più importanti biblioteche italiane ed europee. Insieme alla Biblioteca nazionale di Roma, svolge le funzioni di biblioteca nazionale centrale.</p>
+                <div id="bibl-orario">
+                    <h4>Apertura della biblioteca</h4>
+                    <ul>
+                        <li>Dal lunedì al venerdì 8.15 – 19.00 </li>
+                        <li>Sabato 8.15 – 13.30 </li>
+                    </ul>
+                </div>
+                <div id="bibl-contatti">
+                    <h4>Telefono:</h4>
+                    <p>05524919201</p>
+                    <h4>Indirizzo email:</h4>
+                    <p>bnc-fi@pec.cultura.gov.it</p>
+                </div>
+                <div id="bibl-map-sito">
+                    <h4>Sito ufficiale:</h4>
+                    <a href="#">bncf.cultura.gov.it</a>
+                    <h4>Ci trovi in: </h4>
+                    <p>Piazza dei Cavalleggeri, 1 - 50122 Firenze </p>
+                </div>
             </div>
         </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
