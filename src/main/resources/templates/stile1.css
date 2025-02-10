@@ -37,14 +37,12 @@ body {
     border-radius: 5%;
 }
 
-
 .header {
     color: #f4c25b;
     align-items: center;
     padding-bottom: 80px;
     width: 100%;
     height: auto;
-
 }
 
 .header-text {
@@ -164,7 +162,7 @@ h2 {
     }
 }
 
-/* biblioteca */
+/* BIBLIOTECA */
 .bibl-titolo {
     color: #3b4d47;
     padding-top: 20px;
