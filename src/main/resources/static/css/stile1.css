@@ -4,7 +4,7 @@ body {
     /* Verde scuro */
     color: #f4c25b;
     /* Giallo oro */
-    padding-top: 60px;
+    padding-top: 70px;
     /* Aggiungi margine superiore per evitare che la navbar copra il contenuto */
     overflow-x: hidden;
 }
@@ -125,6 +125,10 @@ body {
     margin: 20px 0;
     border-radius: 10px;
     color: #f4c25b;
+}
+
+.text-center {
+    margin-top: 20px;
 }
 
 p,
@@ -248,7 +252,6 @@ th {
     .navbar-collapse {
         border-radius: 5%;
         /* Aggiungi arrotondamento per il menu a tendina */
-
     }
 }
 
@@ -425,7 +428,6 @@ textarea {
 
 .card-body {
     background-color: #ffda62f3;
-
 }
 
 .card-text {
@@ -434,14 +436,11 @@ textarea {
 
 .container h2 {
     color: #ffda62f3;
-    margin-bottom: 20px;
+    margin-top: 20px;
     font-style: italic;
 }
 
-
-
 .jumbotron{
-
     background-color: #ffda62f3;
 }
 
