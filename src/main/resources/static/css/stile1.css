@@ -186,6 +186,29 @@ h2, h1 {
     font-size: 20px;
 }
 
+.input-group {
+    position: relative;
+}
+
+#pwdButton {
+    position: absolute;
+    right: 10px;  /* Sposta l'icona a destra */
+    top: 50%;
+    transform: translateY(-50%);  /* Centra l'icona verticalmente */
+    border: none;  /* Rimuove il bordo del bottone */
+    background: transparent;  /* Rende il bottone trasparente */
+    cursor: pointer;
+    z-index: 10;
+}
+
+#occhio {
+    width: 20px;  /* Imposta la larghezza dell'icona */
+    height: auto;
+
+}
+
+
+ 
 #badge {
     height: 38px;
     border: 1px solid #1d3b32;

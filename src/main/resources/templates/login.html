@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 
 <head>
     <meta charset="UTF-8">
@@ -71,11 +71,16 @@
                     <label for="username" class="form-label">Username</label>
                     <input type="text" class="form-control" id="username" name="username" placeholder="Inserisci username" required>
                 </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Inserisci password"
-                           required>
+
+                <label for="pwd" class="form-label">Password</label>
+                <div class="mb-3 input-group">
+
+                    <input type="password" class="form-control" id="pwd" name="password" placeholder="Inserisci password" required>
+                    <button type="button" id="pwdButton" class="btn btn-outline-secondary">
+                        <img id="occhio" src="img/occhio.png" alt="Mostra/Nascondi" width="20px">
+                    </button>
                 </div>
+
                 <div class="mb-3">
                     <label for="ruolo" class="form-label">Ruolo</label>
                     <select class="form-control" id="ruolo" name="ruolo" required>
@@ -90,6 +95,18 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.getElementById("pwdButton").addEventListener("click", function() {
+    var pwd = document.getElementById("pwd");
+    if (pwd.type === "password") {
+        pwd.type = "text";
+    } else {
+        pwd.type = "password";
+    }
+});
+
+</script>
 
 </body>
 
