@@ -64,9 +64,9 @@
         <button id="home" class="btn btn-primary" onclick="window.location.href='index1.html'">
             🏠 Torna alla Home
         </button>
-        <button id="aggiungibibl" class="btn btn-primary" onclick="'form'">
-        <a id="home" class="btn btn-primary" th:href="@{/gestione-admin/logout}">
-            Logout
+       <!-- <button id="logout" class="btn btn-primary" onclick="'form'"> -->
+        <a type="button" id="logout" class="btn btn-primary" th:href="@{/gestione-admin/logout}">
+            🚪 Logout
         </a>
         <button id="aggiungibibl" class="btn btn-primary" >
             <!--form per info che creano account curatore-->
@@ -96,7 +96,7 @@
             <td th:text="${biblioteca.credenziale.username}"></td>
             <td th:text="${biblioteca.credenziale.password}"></td>
             <td>
-                <a class="btn btn-primary" th:href="@{/gestione-admin/elimina(id=${biblioteca.id})}">Elimina</a>
+                <a id="elimina" class="btn btn-primary" th:href="@{/gestione-admin/elimina(id=${biblioteca.id})}">Elimina</a>
             </td>
         </tr>
         </tbody>
