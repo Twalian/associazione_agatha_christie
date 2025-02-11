@@ -3,13 +3,13 @@ package com.example.associazione_agatha_christie.controller;
 import com.example.associazione_agatha_christie.model.Biblioteca;
 import com.example.associazione_agatha_christie.service.BibliotecaService;
 import jakarta.servlet.http.HttpSession;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
@@ -25,11 +25,22 @@ public class GestioneAdminController {
 
     @GetMapping
     public String getPage(Model model,
-                          @RequestParam(required = false) Integer id) {
+                          @RequestParam(required = false) Integer id
+//                          @RequestParam(required = false) String error,
+//                          HttpSession session
+                              ) {
+
         List<Biblioteca> biblioteche = bibliotecaService.elencoBiblioteche();
-        biblioteca = id ==null? new Biblioteca() : bibliotecaService.datiBiblioteca(id);
+        //biblioteca = id ==null? new Biblioteca() : bibliotecaService.datiBiblioteca(id);
+        biblioteca = new Biblioteca();
         model.addAttribute("biblioteca", biblioteca);
         model.addAttribute("biblioteche", biblioteche);
+
+//        if (error != null) {
+//            session.getAttribute("formError");
+//            BindingResult result = (BindingResult) session.getAttribute("result");
+//            result.hasErrors();
+//        }
         return "gestione-admin";
     }
 
@@ -45,21 +56,22 @@ public class GestioneAdminController {
         return "redirect:/";
     }
 
+
     @PostMapping
-    public String formManager (@RequestParam String nome,
-                               @RequestParam String comune,
-                               @RequestParam (required = false) String indirizzo,
-                               @RequestParam (required = false) String orarioApertura,
-                               @RequestParam (required = false) String sito,
-                               @RequestParam (required = false) String email,
-                               @RequestParam (required = false) String telefono,
-                               @RequestParam (required = false) String maps,
-                               @RequestParam (required = false) MultipartFile logo,
-                               @RequestParam (required = false) MultipartFile foto,
-                               @RequestParam int idCredenziale,
-                               @RequestParam (required = false) String descrizione,
-                               HttpSession session) {
-        bibliotecaService.registraBiblioteca(biblioteca, nome, comune, indirizzo, orarioApertura, sito, email, telefono, maps, logo, foto, idCredenziale, descrizione, session);
+    public String formManager(@Valid @ModelAttribute Biblioteca biblioteca, BindingResult result, HttpSession session, Model model) {
+        if (result.hasErrors()) {
+            session.setAttribute("formError", true);
+            model.addAttribute("biblioteca", biblioteca);
+            model.addAttribute("biblioteche", bibliotecaService.elencoBiblioteche());
+            return "gestione-admin";
+        }
+
+        session.removeAttribute("formError");
+        bibliotecaService.nuovaBiblioteca(biblioteca);
+        session.setAttribute("biblioteca", biblioteca);
+
         return "redirect:/gestione-admin";
     }
+
+
 }

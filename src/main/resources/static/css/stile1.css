@@ -288,7 +288,7 @@ th {
 
 /* form non visibile*/
 #aggiungiBibliotecaForm {
-   /* display: none; decommentare---------- */
+    display: none;
     border: 1px solid #cdc6c6;
     border-radius: 8px;
     background-color: #3d514b;
@@ -300,6 +300,9 @@ th {
     font-size: 20px;
     padding: 20px;
 }
+
+.nascondi {
+    display: none;}
 
 textarea {
     resize: none;

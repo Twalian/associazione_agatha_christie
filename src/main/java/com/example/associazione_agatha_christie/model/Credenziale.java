@@ -16,7 +16,7 @@ public class Credenziale {
     private String username;
 
     @Column
-    @Pattern(regexp = "(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{6,50}", message = "Password Troppo Debole")
+    @Pattern(regexp = "(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{6,50}", message = "La password deve essere lunga almeno 6 caratteri e deve utilizzare una combinazione di lettere, numeri e caratteri speciali (@ $ ! % * ? &) ")
     private String password;
 
     @Column

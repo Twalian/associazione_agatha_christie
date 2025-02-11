@@ -5,6 +5,7 @@ import com.example.associazione_agatha_christie.model.Evento;
 import com.example.associazione_agatha_christie.service.BibliotecaService;
 import com.example.associazione_agatha_christie.service.EventoService;
 import com.example.associazione_agatha_christie.service.EventoServiceImpl;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -44,6 +45,12 @@ public class GestioneBibliotecaController {
     public String eliminaEvento(@RequestParam int id) {
         eventoService.eliminaEvento(id);
         return "redirect:/gestioneBiblioteca";
+    }
+
+    @GetMapping("/logout")
+    public String logoutAdmin(HttpSession session) {
+        session.removeAttribute("utenteBiblioteca");
+        return "redirect:/";
     }
 
     @PostMapping

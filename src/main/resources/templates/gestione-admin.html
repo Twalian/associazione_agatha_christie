@@ -61,10 +61,10 @@
 <!-- Barra menu in alto -->
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
-        <button id="home" class="btn btn-primary" onclick="window.location.href='index1.html'">
-            Torna alla Home
-        </button>
-        <button id="aggiungibibl" class="btn btn-primary" onclick="'form'">
+        <a id="home" class="btn btn-primary" th:href="@{/gestione-admin/logout}">
+            Logout
+        </a>
+        <button id="aggiungibibl" class="btn btn-primary" >
             <!--form per info che creano account curatore-->
             Aggiungi Biblioteca
         </button>
@@ -76,60 +76,73 @@
     <table class=".bg-success" id="tabellaelenco">
         <thead>
         <tr>
-            <th>ID</th>
             <th>Nome della Biblioteca</th>
             <th>Comune</th>
-            <th>Indirizzo</th>
-            <th>Orario Apertura</th>
-            <th>Pagina Web</th>
-            <th>Email</th>
-            <th>Telefono</th>
-            <th>ID Credenziali</th>
+            <th>Username</th>
+            <th>Password</th>
             <th></th>
 
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>1</td>
-            <td>Biblioteca Centrale</td>
-            <td>Milano</td>
-            <td>Via Roma 123</td>
-            <td>Dal lunedì al venerdì 8.15 - 19.00</td>
-            <td><a href="https://www.biblioteca.it"></a>www.it</td>
-            <td>bibliotecacentrale@gmail.com</td>
-            <td>02 987 987</td>
-            <td>345</td>
+        <tr th:each="biblioteca : ${biblioteche}">
+            <td th:text="${biblioteca.nome}"></td>
+            <td th:text="${biblioteca.comune}"></td>
+            <td th:text="${biblioteca.credenziale.username}"></td>
+            <td th:text="${biblioteca.credenziale.password}"></td>
             <td>
-                <button class="btn btn-primary" click="elimina">Elimina</button>
+                <a class="btn btn-primary" th:href="@{/gestione-admin/elimina(id=${biblioteca.id})}">Elimina</a>
             </td>
         </tr>
         </tbody>
     </table>
 </div>
 <!-- Form new Biblioteca -->
-<div id="aggiungiBibliotecaForm">
+<div id="aggiungiBibliotecaForm" th:classappend="${session.formError} ? '' : 'nascondi'">
     <h3>Aggiungi una Nuova Biblioteca</h3>
-    <form action="submit_biblioteche.associazione_ac" method="post">
+    <form th:object="${biblioteca}" method="post">
         <div class="mb-3">
             <label for="nome" class="form-label">Nome della Biblioteca</label>
-            <input type="text" class="form-control" id="nome" name="nome" required>
+            <input type="text" class="form-control" id="nome" th:field="*{nome}" required>
         </div>
         <div class="mb-3">
             <label for="comune" class="form-label">Comune</label>
-            <input type="text" class="form-control" id="comune" name="comune" required>
+            <input type="text" class="form-control" id="comune" th:field="*{comune}" required>
         </div>
         <div class="mb-3">
             <label for="username" class="form-label">Username</label>
-            <input type="text" class="form-control" id="username" name="username" required>
+            <input type="text" class="form-control" id="username" th:field="*{credenziale.username}" required>
+            <p th:if="${#fields.hasErrors('credenziale.username')}" th:errors="*{credenziale.username}"></p>
         </div>
         <div class="mb-3">
             <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" name="password" required>
+            <input type="password" class="form-control" id="password" th:field="*{credenziale.password}" required>
+            <p th:if="${#fields.hasErrors('credenziale.password')}" th:errors="*{credenziale.password}"></p>
         </div>
         <button type="submit" class="btn btn-primary" id="aggiungi">Aggiungi Biblioteca</button>
     </form>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("aggiungiBibliotecaForm");
+        // Thymeleaf sostituirà la variabile con true o false
+        const hasError = [[${session.formError} ?: false]];
+
+        // Imposta la visibilità in base alla presenza di errori
+        form.style.display = hasError ? "block" : "none";
+
+        // Aggiungi il listener solo se non ci sono errori,
+        // così da non permettere la chiusura accidentale del form quando ci sono errori
+        document.getElementById("aggiungibibl").addEventListener("click", function () {
+            if (!hasError) {
+                form.style.display = (form.style.display === "none" || form.style.display === "") ? "block" : "none";
+            }
+        });
+    });
+</script>
+
+
 </body>
 
 </html>
