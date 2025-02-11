@@ -108,6 +108,39 @@
     </form>
   </div>
 
+  <!--form per aggiungere un nuovo evento in programma-->
+  <div id="aggiungieventi">
+    <h3>Aggiungi un nuovo Evento in Programma</h3>
+    <hr>
+    <form action="submit_biblioteche.associazione_ac" method="post">
+      <div class="mb-3">
+        <label for="nome" class="form-label">Nome dell'Evento</label>
+        <input type="text" class="form-control" id="evento" name="nome_evento" required>
+      </div>
+      <div class="mb-3">
+        <label for="libro" class="form-label">Libro trattato</label>
+        <input type="number" class="form-control" id="libro" name="libro" required>
+      </div>
+      <div class="mb-3">
+        <label for="data_ora" class="form-label">Data e Ora</label>
+        <input type="datetime" class="form-control" id="data_ora" name="data_ora" required>
+      </div>
+      <div class="mb-3">
+        <label for="durata" class="form-label">Durata</label>
+        <input type="text" class="form-control" id="durata" name="durata" required>
+      </div>
+      <div class="mb-3">
+        <label for="descrizione" class="form-label">Descrizione</label>
+        <textarea class="form-control" id="descrizione" name="descrizione" rows="4"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="link_diretta" class="form-label">Link Diretta Online</label>
+        <input type="url" class="form-control" id="link_diretta" name="link_diretta">
+      </div>
+      <button type="submit" class="btn btn-primary" id="aggiungievento">Aggiungi Evento</button>
+    </form>
+  </div>
+
 </div>
 </body>
 
