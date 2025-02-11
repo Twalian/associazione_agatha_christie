@@ -58,19 +58,23 @@
 
 <body id="barrascorr">
 <h2 id="areaamm">*** Area Amministrativa ***</h2>
-<hr>
 <!-- Barra menu in alto -->
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
+        <button id="home" class="btn btn-primary" onclick="window.location.href='index1.html'">
+            🏠 Torna alla Home
+        </button>
+        <button id="aggiungibibl" class="btn btn-primary" onclick="'form'">
         <a id="home" class="btn btn-primary" th:href="@{/gestione-admin/logout}">
             Logout
         </a>
         <button id="aggiungibibl" class="btn btn-primary" >
             <!--form per info che creano account curatore-->
-            Aggiungi Biblioteca
+            🏫 Aggiungi Biblioteca
         </button>
     </div>
 </nav>
+<hr>
 
 <div class="container-fluid">
     <h2>Elenco Biblioteche</h2>
@@ -98,9 +102,12 @@
         </tbody>
     </table>
 </div>
+<hr>
 <!-- Form new Biblioteca -->
 <div id="aggiungiBibliotecaForm" th:classappend="${session.formError} ? '' : 'nascondi'">
     <h3>Aggiungi una Nuova Biblioteca</h3>
+    <hr>
+    <form action="submit_biblioteche.associazione_ac" method="post">
     <form th:object="${biblioteca}" method="post">
         <div class="mb-3">
             <label for="nome" class="form-label">Nome della Biblioteca</label>
@@ -120,6 +127,7 @@
             <input type="password" class="form-control" id="password" th:field="*{credenziale.password}" required>
             <p th:if="${#fields.hasErrors('credenziale.password')}" th:errors="*{credenziale.password}"></p>
         </div>
+        <hr>
         <button type="submit" class="btn btn-primary" id="aggiungi">Aggiungi Biblioteca</button>
     </form>
 </div>
