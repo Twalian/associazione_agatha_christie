@@ -20,13 +20,13 @@
   <nav class="navbar navbar-expand-lg navbar-dark">
 
     <button id="home" class="btn btn-primary" onclick="window.location.href='index1.html'">
-      Torna alla Home
+      🏠 Torna alla Home
     </button>
     <button id="aggiungievento" class="btn btn-primary" onclick="'form'">
-      Aggiungi Evento
+      🗓️ Aggiungi Evento
     </button>
     <button id="profilo" class="btn btn-primary" onclick="'form'">
-      Profilo Personale
+      👤 Profilo Personale
     </button>
   </nav>
   <hr>
@@ -35,7 +35,7 @@
     <ul class="list-group">
       <li class="list-group-item d-flex justify-content-between align-items-center">
         Presentazione libro "Il Viaggio"
-        <span class="badge bg-dark">12 Febbraio 2025</span>
+        <span class="badge" id="badge">12 Febbraio 2025 <br> 17:30</span>
         <button type="button" class="btn btn-primary" id="modificaevento">Modifica</button>
         <button type="button" class="btn btn-primary" id="eliminaevento">Elimina</button>
       </li>
@@ -43,71 +43,6 @@
 
   </div>
   <hr>
-  <!--form per modifiche info-->
-  <div id="modificaprofilo">
-    <h3>Modifica campi Profilo Personale</h3>
-    <hr>
-    <form action="submit_biblioteche.associazione_ac" method="post">
-      <div class="mb-3">
-        <label for="nome" class="form-label">Nome della Biblioteca</label>
-        <input type="text" class="form-control" id="nome" name="nome" required>
-      </div>
-      <div class="mb-3">
-        <label for="comune" class="form-label">Comune</label>
-        <input type="text" class="form-control" id="comune" name="comune" required>
-      </div>
-      <div class="mb-3">
-        <label for="indirizzo" class="form-label">Indirizzo</label>
-        <input type="text" class="form-control" id="indirizzo" name="indirizzo" required>
-      </div>
-      <div class="mb-3">
-        <label for="orario_apertura" class="form-label">Orario Apertura</label>
-        <input type="text" class="form-control" id="orario_apertura" name="orario_apertura">
-      </div>
-      <div class="mb-3">
-        <label for="sito" class="form-label">Sito Web</label>
-        <input type="url" class="form-control" id="sito" name="sito">
-      </div>
-      <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" name="email">
-      </div>
-      <div class="mb-3">
-        <label for="telefono" class="form-label">Telefono</label>
-        <input type="text" class="form-control" id="telefono" name="telefono">
-      </div>
-      <div class="mb-3">
-        <label for="maps" class="form-label">Link Google Maps</label>
-        <input type="url" class="form-control" id="maps" name="maps">
-      </div>
-      <div class="mb-3">
-        <label for="logo" class="form-label">Logo</label>
-        <input type="file" class="form-control" id="logo" name="logo">
-      </div>
-      <div class="mb-3">
-        <label for="foto" class="form-label">Foto</label>
-        <input type="file" class="form-control" id="foto" name="foto">
-      </div>
-      <div class="mb-3">
-        <label for="id_credenziale" class="form-label">ID Credenziali</label>
-        <input type="number" class="form-control" id="id_credenziale" name="id_credenziale" readonly>
-      </div>
-      <div class="mb-3">
-        <label for="descrizione" class="form-label">Descrizione</label>
-        <textarea class="form-control" id="descrizione" name="descrizione" rows="4"></textarea>
-      </div>
-      <div class="mb-3">
-        <label for="username" class="form-label">Username</label>
-        <input type="text" class="form-control" id="username" name="username" readonly>
-      </div>
-      <div class="mb-3">
-        <label for="password" class="form-label">Password</label>
-        <input type="password" class="form-control" id="password" name="password" readonly>
-      </div>
-      <button type="submit" class="btn btn-primary" id="modifica">Modica</button>
-    </form>
-  </div>
-
   <!--form per aggiungere un nuovo evento in programma-->
   <div id="aggiungieventi">
     <h3>Aggiungi un nuovo Evento in Programma</h3>
@@ -137,7 +72,8 @@
         <label for="link_diretta" class="form-label">Link Diretta Online</label>
         <input type="url" class="form-control" id="link_diretta" name="link_diretta">
       </div>
-      <button type="submit" class="btn btn-primary" id="aggiungievento">Aggiungi Evento</button>
+      <hr>
+      <button type="submit" class="btn btn-primary" id="memorizzaevento">Aggiungi Evento</button>
     </form>
   </div>
 

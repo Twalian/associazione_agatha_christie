@@ -58,19 +58,19 @@
 
 <body id="barrascorr">
 <h2 id="areaamm">*** Area Amministrativa ***</h2>
-<hr>
 <!-- Barra menu in alto -->
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
         <button id="home" class="btn btn-primary" onclick="window.location.href='index1.html'">
-            Torna alla Home
+            🏠 Torna alla Home
         </button>
         <button id="aggiungibibl" class="btn btn-primary" onclick="'form'">
             <!--form per info che creano account curatore-->
-            Aggiungi Biblioteca
+            🏫 Aggiungi Biblioteca
         </button>
     </div>
 </nav>
+<hr>
 
 <div class="container-fluid">
     <h2>Elenco Biblioteche</h2>
@@ -108,9 +108,11 @@
         </tbody>
     </table>
 </div>
+<hr>
 <!-- Form new Biblioteca -->
 <div id="aggiungiBibliotecaForm">
     <h3>Aggiungi una Nuova Biblioteca</h3>
+    <hr>
     <form action="submit_biblioteche.associazione_ac" method="post">
         <div class="mb-3">
             <label for="nome" class="form-label">Nome della Biblioteca</label>
@@ -128,6 +130,7 @@
             <label for="password" class="form-label">Password</label>
             <input type="password" class="form-control" id="password" name="password" required>
         </div>
+        <hr>
         <button type="submit" class="btn btn-primary" id="aggiungi">Aggiungi Biblioteca</button>
     </form>
 </div>
