@@ -9,6 +9,7 @@ body {
     overflow-x: hidden;
 }
 
+
 /* Navbar fissa */
 .navbar-nav {
     margin-left: auto;
@@ -35,14 +36,6 @@ body {
     border-radius: 5%;
 }
 
-.header {
-    color: #f4c25b;
-    align-items: center;
-    padding-bottom: 80px;
-    width: 100%;
-    height: auto;
-}
-
 .header-text {
     height: auto;
     width: 100%;
@@ -50,6 +43,7 @@ body {
     padding-right: 10px;
     padding-top: 40px;
     padding-bottom: 20px;
+    margin-bottom: 30px;
     background-color: #3b4d47;
     border-radius: 5%;
     text-align: center;
@@ -57,10 +51,10 @@ body {
 
 .titolo {
     font-family: "Ballet", serif;
-    font-size: 200px;
-    font-weight: 400;
+    font-size: 130px;
+    font-weight: 300;
     color: antiquewhite;
-    padding-top: 50px;
+    padding-top: 40px;
     padding-bottom: 25px;
 }
 
@@ -252,8 +246,6 @@ th {
 /* Navbar per schermi più piccoli */
 @media (max-width: 768px) {
     .navbar-collapse {
-        background-color: #1d3b32;
-        /* Colore di sfondo per il menu a tendina */
         border-radius: 5%;
         /* Aggiungi arrotondamento per il menu a tendina */
 
