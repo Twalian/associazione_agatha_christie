@@ -15,4 +15,6 @@ public interface BibliotecaService {
     void registraBiblioteca(Biblioteca biblioteca, String nome, String comune, String indirizzo, String orarioApertura, String sito, String email, String telefono, String maps, MultipartFile logo, MultipartFile foto, int idCredenziale, String descrizione, HttpSession session);
 
     void eliminaBiblioteca(int id);
+
+    void nuovaBiblioteca(Biblioteca biblioteca);
 }

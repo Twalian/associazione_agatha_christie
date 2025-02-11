@@ -2,6 +2,7 @@ package com.example.associazione_agatha_christie.service;
 
 import com.example.associazione_agatha_christie.dao.BibliotecaDao;
 import com.example.associazione_agatha_christie.model.Biblioteca;
+import com.example.associazione_agatha_christie.model.Credenziale;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -82,5 +83,15 @@ public class BibliotecaServiceImpl implements BibliotecaService {
         Biblioteca biblioteca = datiBiblioteca(id);
 
         bibliotecaDao.delete(biblioteca);
+    }
+
+    @Override
+    public void nuovaBiblioteca(Biblioteca biblioteca) {
+       Credenziale credenziale = new Credenziale();
+       credenziale.setRuolo("curatore");
+       credenziale.setPassword(biblioteca.getCredenziale().getPassword());
+       credenziale.setUsername(biblioteca.getCredenziale().getUsername());
+       biblioteca.setCredenziale(credenziale);
+       bibliotecaDao.save(biblioteca);
     }
 }
