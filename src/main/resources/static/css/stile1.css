@@ -217,9 +217,9 @@ h2, h1 {
     align-content: center;
 }
 
-
 #home,
 #aggiungibibl,
+#logout,
 #aggiungi,
 #profilo,
 #aggiungievento,
@@ -237,7 +237,8 @@ h2, h1 {
 #aggiungibibl:hover,
 #aggiungi:hover,
 #profilo:hover,
-#aggiungievento:hover {
+#aggiungievento:hover,
+#logout:hover {
     background-color: #486345;
     color: #f4c25b;
 }
@@ -259,7 +260,7 @@ td {
     margin-right: auto;
     text-align: center;
     background-color: #759483;
-    font-size: 25px;
+    font-size: 15px;
     border: 2px solid #000000;
     color: #000000;
 }
@@ -275,9 +276,18 @@ th {
     padding-right: 50px;
 }
 
-.btn {
+#elimina {
     background-color: #ffffffd1;
     color: #000000;
+    border: 1px solid #1d3b32;
+    font-size: 14px;
+    padding: 0px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+#elimina:hover {
+    background-color: #f1d924;
 }
 
 /* Altre sezioni e stili restano invariati */
@@ -485,4 +495,8 @@ textarea {
 
 .text{
     color: #112c0a ;
+}
+
+#elimina:hover {
+    background-color: #f1d924;
 }

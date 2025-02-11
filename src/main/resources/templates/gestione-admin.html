@@ -61,7 +61,7 @@
 <!-- Barra menu in alto -->
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
-        <a id="home" class="btn btn-primary" th:href="@{/gestione-admin/logout}">
+        <a id="logout" class="btn btn-primary" th:href="@{/gestione-admin/logout}">
             Logout
         </a>
         <button id="aggiungibibl" class="btn btn-primary" >
@@ -92,7 +92,7 @@
             <td th:text="${biblioteca.credenziale.username}"></td>
             <td th:text="${biblioteca.credenziale.password}"></td>
             <td>
-                <a class="btn btn-primary" th:href="@{/gestione-admin/elimina(id=${biblioteca.id})}">Elimina</a>
+                <a id="elimina" class="btn btn-primary" th:href="@{/gestione-admin/elimina(id=${biblioteca.id})}">Elimina</a>
             </td>
         </tr>
         </tbody>
