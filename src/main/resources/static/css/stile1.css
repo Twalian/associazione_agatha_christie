@@ -229,10 +229,9 @@ th {
 }
 
 .btn {
-    background-color: rgba(255, 255, 255, 0.82);
+    background-color: #ffffffd1;
     color: #000000;
 }
-
 
 /* Altre sezioni e stili restano invariati */
 /* Navbar per schermi più piccoli */
