@@ -1,5 +1,6 @@
 package com.example.associazione_agatha_christie.controller;
 
+import com.example.associazione_agatha_christie.model.Biblioteca;
 import com.example.associazione_agatha_christie.service.CredenzialeService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,9 +23,9 @@ public class LoginController {
                           Model model,
                           HttpSession session) {
         if(session.getAttribute("utenteAdmin") != null)
-            return "redirect:/gestioneadmin";
+            return "redirect:/gestione-admin";
         if(session.getAttribute("utenteBiblioteca") != null)
-            return "redirect:/gestionebiblioteca";
+            return "redirect:/gestione-biblioteca";
         model.addAttribute("errore", errore);
         return "login";
     }
@@ -37,7 +38,9 @@ public class LoginController {
         else if (session.getAttribute("utenteAdmin")!=null) {
             return "redirect:/gestione-admin";
         } else {
-            return "redirect:/gestionebiblioteca";
+            Biblioteca biblioteca = (Biblioteca) session.getAttribute("utenteBiblioteca");
+            Integer id = biblioteca.getId();
+            return "redirect:/gestione-biblioteca?id=" + id;
         }
     }
 }
