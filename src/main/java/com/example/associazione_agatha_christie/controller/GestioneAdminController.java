@@ -39,6 +39,12 @@ public class GestioneAdminController {
         return "redirect:/gestione-admin";
     }
 
+    @GetMapping("/logout")
+    public String logoutAdmin(HttpSession session) {
+        session.removeAttribute("utenteAdmin");
+        return "redirect:/";
+    }
+
     @PostMapping
     public String formManager (@RequestParam String nome,
                                @RequestParam String comune,
