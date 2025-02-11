@@ -1,0 +1,90 @@
+body {
+    font-family: 'Gill Sans' ;
+    background-color: #155c07c5;
+    color: #084406;
+    text-align: center;
+}
+
+.nav-item {
+    background-color: #ececaf;
+
+}
+.navbar-brand{
+    background-color: #ececaf;;
+    ;
+
+}
+    .navbar {
+    position: relative;
+    }
+
+.navbar-brand, .nav-link {
+    color: #2e4406 !important;
+}
+
+.nav-link:hover {
+    color: #21df21 !important;
+}
+
+.jumbotron {
+    background-color: \#053809;
+    border: 2px solid #8ce464;
+    padding: 2rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(172, 230, 15, 0.822);
+}
+
+.jumbotron h1 {
+    color: #044e07;
+    font-weight: bold;
+}
+
+.jumbotron p.lead {
+    color: #c2c500;
+    background-color: #1f3d06ea}
+
+.jumbotron hr {
+    border-top: 1px solid #90d800;
+}
+
+.card {
+    border: 1px solid #eeea0b;
+    border-radius: 10px;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #275209fd;
+    box-shadow: 0 0 10px rgba(172, 230, 15, 0.822);
+}
+
+.card-body {
+    background-color: #ffda62f3;
+
+}
+
+.card-text {
+    color: #112c0a;
+}
+
+.container h2 {
+    color: #e9ec07;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.footer {
+    background-color: #0af50a;
+    text-align: center;
+}
+
+
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.jumbotron{
+    background-color: #ffec7e;
+}

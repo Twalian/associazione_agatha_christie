@@ -1,0 +1,98 @@
+<html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"> <!-- Imposta il set di caratteri a UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Rende il layout reattivo sui dispositivi mobili -->
+    <title>Biblioteca Chisiamo</title> <!-- Titolo della pagina -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> <!-- Collegamento al CSS di Bootstrap -->
+    <link type="text/css" th:href="@{/css/stile1.css}" href="../static/css/stile1.css"
+          rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+
+        <a class="navbar-brand" th:href="@{/}">Agatha Christie Club</a>
+        <!-- quando lo schermo è piccolo, appaiono le 3 linee -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- il menu intero -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/login}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/chisiamo}">Chi siamo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/autrice}">Autrice</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/eventi}">Prossimo Eventi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/biblioteche}">Biblioteche aderenti</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/libri}">Libri più amati</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/lavoraconnoi}">Collabora con noi</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+<div class="container m5t-"> <!-- Contenitore principale per il contenuto -->
+    <div class="jumbotron"> <!-- Sezione jumbotron per un'introduzione d'impatto -->
+        <h1 class="display-4">Chi siamo?</h1> <!-- Titolo principale -->
+        <p class="lead"> <!-- Testo introduttivo della sezione Chi siamo -->
+            Benvenuti alla Biblioteca Agatha Christie, un luogo dedicato all'amore per la lettura e alla celebrazione dell'opera della più grande scrittrice di gialli di tutti i tempi. La nostra biblioteca è un rifugio per gli amanti della letteratura e degli enigmi, un luogo dove ogni visitatore può immergersi nelle trame intricate e nei misteri avvincenti che Agatha Christie ha magistralmente creato.
+            La Biblioteca Agatha Christie non è solo una raccolta di libri, ma anche un centro culturale che ospita eventi letterari, incontri con autori, e workshop dedicati alla scrittura e all'investigazione. La nostra missione è promuovere la lettura, l'educazione e l'ispirazione attraverso un'ampia selezione di libri, risorse digitali e attività coinvolgenti.
+            Siamo orgogliosi di offrire ai nostri visitatori un ambiente accogliente e stimolante, dove ognuno può esplorare la vasta eredità di Agatha Christie e scoprire nuovi mondi letterari. Unitevi a noi in questo viaggio affascinante attraverso il tempo e lo spazio, dove ogni libro è una porta verso un nuovo mistero da risolvere.
+        </p>
+        <hr class="my-4"> <!-- Linea di separazione -->
+        <p>Scopri di più sul nostro catalogo e sui nostri servizi esplorando il nostro sito web.</p> <!-- Testo aggiuntivo con invito a esplorare -->
+    </div>
+</div>
+
+<div class="container"> <!-- Contenitore principale per la galleria fotografica -->
+    <h2>Galleria Fotografica</h2> <!-- Titolo della sezione galleria fotografica -->
+    <div class="row"> <!-- Riga per le immagini -->
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4"> <!-- Colonna per l'immagine 1 -->
+            <div class="card"> <!-- Card per l'immagine 1 -->
+                <img src="img/ragazzi.jpg" class="card-img-top" alt="Immagine 1"> <!-- Immagine 1 -->
+                <div class="card-body"> <!-- Corpo della card -->
+                    <p class="card-text">Istruzione : Le scuole e l'arte della Lettura</p> <!-- Descrizione dell'immagine 1 -->
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4"> <!-- Colonna per l'immagine 2 -->
+            <div class="card"> <!-- Card per l'immagine 2 -->
+                <img src="img/Agata.jpg" class="card-img-top" alt="Immagine 2"> <!-- Immagine 2 -->
+                <div class="card-body"> <!-- Corpo della card -->
+                    <p class="card-text">Una vita tra Libri, Gialli e Realtà</p> <!-- Descrizione dell'immagine 2 -->
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4"> <!-- Colonna per l'immagine 3 -->
+            <div class="card"> <!-- Card per l'immagine 3 -->
+                <img src="img/cit2.jpg" class="card-img-top" alt="Immagine 3"> <!-- Immagine 3 -->
+                <div class="card-body"> <!-- Corpo della card -->
+                    <p class="card-text">Citazione del Mese</p> <!-- Descrizione dell'immagine 3 -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- Collegamento alla libreria jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> <!-- Collegamento alla libreria Popper.js -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> <!-- Collegamento al JavaScript di Bootstrap -->
+</body>
+</html>

@@ -4,7 +4,7 @@ body {
     /* Verde scuro */
     color: #f4c25b;
     /* Giallo oro */
-    padding-top: 90px;
+    padding-top: 60px;
     /* Aggiungi margine superiore per evitare che la navbar copra il contenuto */
     overflow-x: hidden;
 }
@@ -367,4 +367,62 @@ textarea {
     color: #f4c25b;
     font-weight: bold;
 }
+/*CHI SIAMO*/
+.jumbotron {
+    background-color: #053809;
+    border: 2px solid #1e3a11;
+    padding: 2rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(107, 141, 22, 0.822);
+}
 
+.jumbotron h1 {
+    color: #112c0a;
+    font-weight: bold;
+}
+
+.jumbotron p.lead {
+    color:#195323;
+}
+
+.jumbotron hr {
+    border-top: 1px solid #195323;
+}
+
+.card {
+    border: 1px solid #020101;
+    border-radius: 10px;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #275209fd;
+    box-shadow: 0 0 10px  rgba(107, 141, 22, 0.822);
+}
+
+.card-body {
+    background-color: #ffda62f3;
+
+}
+
+.card-text {
+    color: #112c0a;
+}
+
+.container h2 {
+    color: #ffda62f3;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+
+
+.jumbotron{
+
+    background-color: #ffda62f3;
+}
+
+.text{
+    color: #112c0a ;
+}
