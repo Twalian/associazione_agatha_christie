@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Dettaglio Biblioteca</title>
@@ -7,44 +7,41 @@
     <link href="../static/css/stile1.css" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 
-        <a class="navbar-brand" href="#">Agatha Christie Club</a>
-        <!-- quando lo schermo è piccolo, appaiono le 3 linee -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <a class="navbar-brand" th:href="@{/}">Agatha Christie Club</a>
+    <!-- quando lo schermo è piccolo, appaiono le 3 linee -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <!-- il menu intero -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Chi siamo</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Prossimo Eventi</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="biblioteche.html">Biblioteche aderenti</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Libri più amati</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Collabora con noi</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Newsletter</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <!-- il menu intero -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/login}">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/chisiamo}">Chi siamo</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/eventi}">Prossimo Eventi</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/biblioteche}">Biblioteche aderenti</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/libri}">Libri più amati</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/lavoraconnoi}">Collabora con noi</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
     <header class="header">
         <div>
