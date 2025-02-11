@@ -4,10 +4,11 @@ body {
     /* Verde scuro */
     color: #f4c25b;
     /* Giallo oro */
-    padding-top: 90px;
+    padding-top: 70px;
     /* Aggiungi margine superiore per evitare che la navbar copra il contenuto */
     overflow-x: hidden;
 }
+
 
 /* Navbar fissa */
 .navbar-nav {
@@ -16,13 +17,14 @@ body {
 }
 
 .navbar-brand {
-    font-size: 20px;
+    font-size: 25px;
     margin-left: 10px;
 }
 
 .nav-link {
     color: black;
     padding-left: 30%;
+    font-size: 15px;
 }
 
 .nav-link:hover {
@@ -35,14 +37,6 @@ body {
     border-radius: 5%;
 }
 
-.header {
-    color: #f4c25b;
-    align-items: center;
-    padding-bottom: 80px;
-    width: 100%;
-    height: auto;
-}
-
 .header-text {
     height: auto;
     width: 100%;
@@ -50,6 +44,7 @@ body {
     padding-right: 10px;
     padding-top: 40px;
     padding-bottom: 20px;
+    margin-bottom: 30px;
     background-color: #3b4d47;
     border-radius: 5%;
     text-align: center;
@@ -57,10 +52,10 @@ body {
 
 .titolo {
     font-family: "Ballet", serif;
-    font-size: 200px;
-    font-weight: 400;
+    font-size: 130px;
+    font-weight: 300;
     color: antiquewhite;
-    padding-top: 50px;
+    padding-top: 40px;
     padding-bottom: 25px;
 }
 
@@ -133,6 +128,10 @@ body {
     color: #f4c25b;
 }
 
+.text-center {
+    margin-top: 20px;
+}
+
 p,
 h4 {
     font-family: 'Times New Roman', Times, serif;
@@ -180,6 +179,7 @@ h2, h1 {
     border-radius: 30%;
 }
 
+
 #accedi {
     color: #1d3b32;
     background-color: #f4c25b;
@@ -189,16 +189,30 @@ h2, h1 {
 
 #home,
 #aggiungibibl,
-#modifica,
-#profilo {
+#aggiungi,
+#profilo,
+#aggiungievento,
+#modifica {
     color: #1d3b32;
-    background-color: #e6cb95;
+    background-color: #d8cfb9;
     border: #1d3b32;
-    border-radius: 3%;
-    font-size: 20px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
+}
+
+#home:hover,
+#aggiungibibl:hover,
+#aggiungi:hover,
+#profilo:hover,
+#aggiungievento:hover {
+    background-color: #486345;
+    color: #f4c25b;
+}
+
+#modificaevento,
+#eliminaevento {
+    background-color: #879f97;
 }
 
 #areaamm {
@@ -237,11 +251,8 @@ th {
 /* Navbar per schermi più piccoli */
 @media (max-width: 768px) {
     .navbar-collapse {
-        background-color: #1d3b32;
-        /* Colore di sfondo per il menu a tendina */
         border-radius: 5%;
         /* Aggiungi arrotondamento per il menu a tendina */
-
     }
 }
 
@@ -292,7 +303,7 @@ th {
     border: 1px solid #cdc6c6;
     border-radius: 8px;
     background-color: #3d514b;
-    width: 800px;
+    width: 600px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
@@ -303,6 +314,36 @@ th {
 
 .nascondi {
     display: none;}
+    
+/* form non visibile*/
+#modificaprofilo {
+    /*  display: none; */
+    border: 1px solid #cdc6c6;
+    border-radius: 8px;
+    background-color: #3d514b;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 20px;
+    padding: 20px;
+}
+
+/* form non visibile*/
+#aggiungieventi {
+    /*  display: none; */
+    border: 1px solid #cdc6c6;
+    border-radius: 8px;
+    background-color: #3d514b;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 15px;
+    padding: 20px;
+}
 
 textarea {
     resize: none;
@@ -355,4 +396,58 @@ textarea {
     color: #f4c25b;
     font-weight: bold;
 }
+/*CHI SIAMO*/
+.jumbotron {
+    background-color: #053809;
+    border: 2px solid #1e3a11;
+    padding: 2rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(107, 141, 22, 0.822);
+}
 
+.jumbotron h1 {
+    color: #112c0a;
+    font-weight: bold;
+}
+
+.jumbotron p.lead {
+    color:#195323;
+}
+
+.jumbotron hr {
+    border-top: 1px solid #195323;
+}
+
+.card {
+    border: 1px solid #020101;
+    border-radius: 10px;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #275209fd;
+    box-shadow: 0 0 10px  rgba(107, 141, 22, 0.822);
+}
+
+.card-body {
+    background-color: #ffda62f3;
+}
+
+.card-text {
+    color: #112c0a;
+}
+
+.container h2 {
+    color: #ffda62f3;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+.jumbotron{
+    background-color: #ffda62f3;
+}
+
+.text{
+    color: #112c0a ;
+}
