@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 
 <head>
     <meta charset="UTF-8">
@@ -75,9 +75,10 @@
                     <input type="text" class="form-control" id="username" name="username" placeholder="Inserisci username" required>
                 </div>
                 <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Inserisci password"
+                    <label for="pwd" class="form-label">Password</label>
+                    <input type="text" class="form-control" id="pwd" name="password" placeholder="Inserisci password"
                            required>
+                    <button type="button" id="pwdButton"> <img id="occhio" src="img/occhio.png" > </button>
                 </div>
                 <div class="mb-3">
                     <label for="ruolo" class="form-label">Ruolo</label>
@@ -93,6 +94,20 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var pwd = document.getElementById("pwd");
+        pwd.type = "password";
+    });
+
+   document.getElementById("pwdButton").addEventListener("click", function() {
+        if(pwd.type == "password")
+            pwd.type = "text";
+        else
+            pwd.type = "password";
+    });
+</script>
 
 </body>
 
