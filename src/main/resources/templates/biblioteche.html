@@ -8,48 +8,48 @@
           rel="stylesheet" />
 </head>
 <body>
-<!-- Menu Fisso in alto -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <!-- Menu Fisso in alto -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 
-    <a class="navbar-brand" th:href="@{/}">Agatha Christie Club</a>
-    <!-- quando lo schermo è piccolo, appaiono le 3 linee -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+        <a class="navbar-brand" th:href="@{/}">Agatha Christie Club</a>
+        <!-- quando lo schermo è piccolo, appaiono le 3 linee -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <!-- il menu intero -->
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/}">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/login}">Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/chisiamo}">Chi siamo</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/eventi}">Prossimo Eventi</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/biblioteche}">Biblioteche aderenti</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/libri}">Libri più amati</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/lavoraconnoi}">Collabora con noi</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+        <!-- il menu intero -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/login}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/chisiamo}">Chi siamo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/eventi}">Prossimo Eventi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/biblioteche}">Biblioteche aderenti</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/libri}">Libri più amati</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/lavoraconnoi}">Collabora con noi</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
 
-<header class="header">
+    <header class="header">
         <div class="bibl-immagine">
             <h1 class="bibl-titolo">BIBLIOTECHE ADERENTI</h1>
-            <img src="images/bibl-banner.png" alt="biblioteca" id="bibl-foto">
+            <img src="img/bibl-banner.png" alt="biblioteca" id="bibl-foto">
         </div>
     </header>
     <!-- sto mettendo le informazioni sulle varie librerie -->
@@ -58,14 +58,14 @@
     un div per delle piccole informazioni sulle biblioteche e
     un link "Leggi di più..." per portare alla pagina dedicata alla biblioteca-->
     <div class="container-fluid">
-        <div class="bibl-base1 row align-items-center">
+        <div class="bibl-base1 row align-items-center" th:each="biblioteca : ${biblioteche}">
             <div class="img-biblioteca col-md-6">
-                <img src="img/bibliotecaFirenze.jpg" class="img-fluid" alt="Biblioteca Nazionale Centrale di Firenze">
+                <img th:src="${biblioteca.foto}" class="img-fluid" th:alt="${biblioteca.nome}">
             </div>
             <div class="bibl-dettagli col-lg-6 col-md-6">
-                <h4>Biblioteca Nazionale Centrale di Firenze</h4>
-                <p>La Biblioteca Nazionale Centrale di Firenze è una biblioteca pubblica, afferente al MIC, che raccoglie, conserva e documenta la memoria storica della Nazione.</p>
-                <a th:href="@{/dettagliobiblioteca}">Leggi di più...</a>
+                <h4 th:text="${biblioteca.nome}"></h4>
+                <p th:text="${biblioteca.descrizione}"></p>
+                <a th:href="@{/dettagliobiblioteca(id=${biblioteca.id})}">Leggi di più...</a>
             </div>
         </div>
     </div>
