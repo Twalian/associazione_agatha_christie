@@ -41,8 +41,9 @@ public class ProfiloController {
                                @RequestParam (required = false) MultipartFile logo,
                                @RequestParam (required = false) MultipartFile foto,
                                @RequestParam int idCredenziale,
+                               @RequestParam (required = false) String descrizione,
                                 HttpSession session) {
-        bibliotecaService.registraBiblioteca(biblioteca, nome, comune, indirizzo, orarioApertura, sito, email, telefono, maps, logo, foto, idCredenziale, session);
+        bibliotecaService.registraBiblioteca(biblioteca, nome, comune, indirizzo, orarioApertura, sito, email, telefono, maps, logo, foto, idCredenziale, descrizione, session);
 
         return "redirect:/profilo";
     }

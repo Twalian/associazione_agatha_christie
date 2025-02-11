@@ -35,7 +35,7 @@ public class LoginController {
         if (!credenzialeService.loginUtente(username, password, ruolo, session))
             return "redirect:/login?errore";
         else if (session.getAttribute("utenteAdmin")!=null) {
-            return "redirect:/gestioneadmin";
+            return "redirect:/gestione-admin";
         } else {
             return "redirect:/gestionebiblioteca";
         }
