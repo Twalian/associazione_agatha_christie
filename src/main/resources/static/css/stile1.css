@@ -17,13 +17,14 @@ body {
 }
 
 .navbar-brand {
-    font-size: 20px;
+    font-size: 25px;
     margin-left: 10px;
 }
 
 .nav-link {
     color: black;
     padding-left: 30%;
+    font-size: 15px;
 }
 
 .nav-link:hover {
