@@ -33,7 +33,7 @@ public class GestioneAdminController {
             return "redirect:/login";
 
         List<Biblioteca> biblioteche = bibliotecaService.elencoBiblioteche();
-        //biblioteca = id ==null? new Biblioteca() : bibliotecaService.datiBiblioteca(id);
+
         biblioteca = new Biblioteca();
         model.addAttribute("biblioteca", biblioteca);
         model.addAttribute("biblioteche", biblioteche);

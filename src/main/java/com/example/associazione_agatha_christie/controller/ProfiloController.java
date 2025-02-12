@@ -1,6 +1,7 @@
 package com.example.associazione_agatha_christie.controller;
 
 import com.example.associazione_agatha_christie.model.Biblioteca;
+import com.example.associazione_agatha_christie.model.Credenziale;
 import com.example.associazione_agatha_christie.service.BibliotecaService;
 import jakarta.servlet.http.HttpSession;
 import jakarta.websocket.Session;
@@ -24,8 +25,9 @@ public class ProfiloController {
 
     @GetMapping
     private String getPage(HttpSession session, Model model) {
-        biblioteca = (Biblioteca) session.getAttribute("utenteBiblioteca");
-        model.addAttribute("utenteBiblioteca", biblioteca);
+        biblioteca = bibliotecaService.datiBiblioteca((Integer) session.getAttribute("idBiblioteca"));
+        model.addAttribute("utente", biblioteca);
+        session.setAttribute("utente", biblioteca);
         return "profilo";
     }
 
@@ -40,12 +42,17 @@ public class ProfiloController {
                                @RequestParam (required = false) String maps,
                                @RequestParam (required = false) MultipartFile logo,
                                @RequestParam (required = false) MultipartFile foto,
-                               @RequestParam int idCredenziale,
                                @RequestParam (required = false) String descrizione,
                                 HttpSession session) {
+
+        biblioteca = (Biblioteca) session.getAttribute("utente");
+
+        int idCredenziale = biblioteca.getCredenziale().getId();
+
         bibliotecaService.registraBiblioteca(biblioteca, nome, comune, indirizzo, orarioApertura, sito, email, telefono, maps, logo, foto, idCredenziale, descrizione, session);
 
-        return "redirect:/profilo";
+        int idBiblioteca = (int) session.getAttribute("idBiblioteca");
+        return "redirect:/profilo?id=" + idBiblioteca;
     }
 
 
