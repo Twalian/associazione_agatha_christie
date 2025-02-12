@@ -134,6 +134,7 @@ body {
 
 p,
 h4 {
+    text-align: center;
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
 }
@@ -500,4 +501,49 @@ textarea {
 
 #elimina:hover {
     background-color: #f1d924;
+}
+
+/* EVENTI */
+
+.container-eventi {
+    width: 100%;
+    height: auto;
+}
+
+#ev-page {
+    text-align: center;
+    margin-top: 100px;
+    font-weight: 40px;
+    color: #f4c25b;
+}
+
+.toast-container {
+    padding: 30px;
+    margin: auto;
+    width: 95%;
+    height: auto;
+    background-color: #3b4d47;
+
+}
+
+.t-evento {
+    width: 700px;
+    height: auto;
+    margin: auto;
+}
+
+.ev-titolo {
+    font-size: 20px;
+    color: #fcd33c;
+}
+
+.messaggio {
+    font-size: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+.mini-evento {
+    width: 50px;
+    height: auto;
 }

@@ -1,54 +1,58 @@
-<html>
+<!DOCTYPE html>
 <html lang="it" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8"> <!-- Imposta il set di caratteri a UTF-8 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Rende il layout reattivo sui dispositivi mobili -->
-    <title>Biblioteca Chisiamo</title> <!-- Titolo della pagina -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chi siamo</title>
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> <!-- Collegamento al CSS di Bootstrap -->
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!--    <link th:href="stile1.css" rel="stylesheet">-->
     <link type="text/css" th:href="@{/css/stile1.css}" href="../static/css/stile1.css"
           rel="stylesheet" />
 </head>
+
 <body>
-    <!-- Menu Fisso in alto -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+<!-- Menu Fisso in alto -->
+<nav class="navbar bg-light navbar-expand-lg fixed-top">
 
-        <a class="navbar-brand" th:href="@{/}">Agatha Christie Club</a>
-        <!-- quando lo schermo è piccolo, appaiono le 3 linee -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <a class="navbar-brand" th:href="@{/}">Agatha Christie Club</a>
+    <!-- quando lo schermo è piccolo, appaiono le 3 linee -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <!-- il menu intero -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/}">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/login}">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/chisiamo}">Chi siamo</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/autrice}">Autrice</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/eventi}">Prossimo Eventi</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/biblioteche}">Biblioteche aderenti</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/libri}">Libri più amati</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/lavoraconnoi}">Collabora con noi</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <!-- il menu intero -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/login}">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/chisiamo}">Chi siamo</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/autrice}">Autrice</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/eventi}">Prossimo Eventi</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/biblioteche}">Biblioteche aderenti</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/libri}">Libri più amati</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/lavoraconnoi}">Collabora con noi</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
     <div class="container m5t-"> <!-- Contenitore principale per il contenuto -->
         <div class="jumbotron"> <!-- Sezione jumbotron per un'introduzione d'impatto -->
@@ -59,7 +63,7 @@
                 Siamo orgogliosi di offrire ai nostri visitatori un ambiente accogliente e stimolante, dove ognuno può esplorare la vasta eredità di Agatha Christie e scoprire nuovi mondi letterari. Unitevi a noi in questo viaggio affascinante attraverso il tempo e lo spazio, dove ogni libro è una porta verso un nuovo mistero da risolvere.
             </p>
             <hr class="my-4"> <!-- Linea di separazione -->
-            <p>Scopri di più sul nostro catalogo e sui nostri servizi esplorando il nostro sito web.</p> <!-- Testo aggiuntivo con invito a esplorare -->
+            <p class="text">Scopri di più sul nostro catalogo e sui nostri servizi esplorando il nostro sito web.</p> <!-- Testo aggiuntivo con invito a esplorare -->
         </div>
     </div>
 
@@ -70,7 +74,7 @@
                 <div class="card"> <!-- Card per l'immagine 1 -->
                     <img src="img/ragazzi.jpg" class="card-img-top" alt="Immagine 1"> <!-- Immagine 1 -->
                     <div class="card-body"> <!-- Corpo della card -->
-                        <p class="card-text">Istruzione : Le scuole e l'arte della Lettura</p> <!-- Descrizione dell'immagine 1 -->
+                        <p class="card-text">Tra Enigmi ed Istruzione</p> <!-- Descrizione dell'immagine 1 -->
                     </div>
                 </div>
             </div>
@@ -91,10 +95,22 @@
                 </div>
             </div>
         </div>
+        <div class="row justify-content-center"> <!-- Riga per la quarta immagine centrata -->
+            <div class="col-lg-6 col-md-8 col-sm-10 mb-4"> <!-- Colonna per l'immagine 4 che occupa meno spazio -->
+                <div class="card"> <!-- Card per l'immagine 4 -->
+                    <img src="img/Teamprov.jpg" class="card-img-top" alt="Il nostro team" style="width: 100%; height: auto;"> <!-- Immagine 4 -->
+                    <div class="card-body"> <!-- Corpo della card -->
+                        <p class="card-text">Il nostro team</p> <!-- Descrizione dell'immagine 4 -->
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- Collegamento alla libreria jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> <!-- Collegamento alla libreria Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> <!-- Collegamento al JavaScript di Bootstrap -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- Collegamento alla libreria jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> <!-- Collegamento alla libreria Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script> <!-- Collegamento al JavaScript di Bootstrap -->
 </body>
 </html>
