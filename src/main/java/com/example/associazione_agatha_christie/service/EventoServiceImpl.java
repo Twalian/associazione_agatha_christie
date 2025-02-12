@@ -1,7 +1,9 @@
 package com.example.associazione_agatha_christie.service;
 
 import com.example.associazione_agatha_christie.dao.EventoDao;
+import com.example.associazione_agatha_christie.model.Biblioteca;
 import com.example.associazione_agatha_christie.model.Evento;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -44,13 +46,22 @@ public class EventoServiceImpl implements EventoService {
     }
 
     @Override
-    public void registraEvento(Evento evento, LocalDateTime dataOra, String durata, String linkDiretta, int idLibro, int idBiblioteca) {
+    public void registraEvento(Evento evento, String nome, LocalDateTime dataOra, String durata, String descrizione, String linkDiretta, int idLibro, HttpSession session) {
 
+        evento.setNome(nome);
         evento.setDataOra(dataOra);
         evento.setDurata(durata);
+        evento.setDescrizione(descrizione);
         evento.setLinkDiretta(linkDiretta);
         evento.setLibro(libroService.datiLibro(idLibro));
-        evento.setBiblioteca(bibliotecaService.datiBiblioteca(idBiblioteca));
+        Biblioteca biblioteca = (Biblioteca) session.getAttribute("biblioteca");
+
+        if (biblioteca == null) {
+            throw new IllegalStateException("Biblioteca non trovata nella sessione.");
+        }
+
+        int id = biblioteca.getId();
+        evento.setBiblioteca(bibliotecaService.datiBiblioteca(id));
 
         eventoDao.save(evento);
     }

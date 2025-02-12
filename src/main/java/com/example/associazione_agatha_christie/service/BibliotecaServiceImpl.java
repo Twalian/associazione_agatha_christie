@@ -94,4 +94,9 @@ public class BibliotecaServiceImpl implements BibliotecaService {
        biblioteca.setCredenziale(credenziale);
        bibliotecaDao.save(biblioteca);
     }
+
+    @Override
+    public Biblioteca trovaBibliotecaDaCredenziale(int id) {
+        return bibliotecaDao.findByCredenzialeId(id);
+    }
 }

@@ -17,4 +17,6 @@ public interface BibliotecaService {
     void eliminaBiblioteca(int id);
 
     void nuovaBiblioteca(Biblioteca biblioteca);
+
+    Biblioteca trovaBibliotecaDaCredenziale(int id);
 }
