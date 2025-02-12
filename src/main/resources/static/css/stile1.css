@@ -210,7 +210,7 @@ h2, h1 {
 }
 
 
- 
+
 #badge {
     height: 38px;
     border: 1px solid #1d3b32;
@@ -361,7 +361,7 @@ th {
 
 .nascondi {
     display: none;}
-    
+
 /* form non visibile*/
 #modificaprofilo {
     /*  display: none; */
@@ -545,5 +545,82 @@ textarea {
 
 .mini-evento {
     width: 50px;
-    height: auto;
-}
+    height: auto;}
+
+    /*lavora con noi*/
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #1d3b32;
+        color: #ffc44d;
+        padding-top: 70px;
+        overflow-x: hidden;
+    }
+
+    .navbar-nav {
+        margin-left: auto;
+        padding-right: 20px;
+    }
+
+    .navbar-brand {
+        font-size: 25px;
+        margin-left: 10px;
+    }
+
+    .nav-link {
+        color: black;
+        padding-left: 30%;
+        font-size: 15px;
+    }
+
+    .nav-link:hover {
+        color: #f4c25b;
+    }
+
+    #foto {
+        width: 100%;
+        height: auto;
+        border-radius: 5%;
+    }
+
+    .header-text {
+        height: auto;
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 10px;
+        padding-top: 40px;
+        }
+        .navbar-brand1{
+            color: #000000;
+            font-size: 25px;
+            margin-left: 10px;
+        }
+
+        .card-title{
+            color: #1d3b32 ;
+            background-color: #ecd135;
+        }
+        .navbar-brand1:hover{
+                color: black; /* Mantiene il colore originale */
+                text-decoration: none; /* Rimuove la sottolineatura se presente */
+                                     }
+        .btn{
+            color: #e5cd13;
+        }
+        .btn:hover{
+            color: rgba(107, 141, 22, 0.822);
+        }
+
+        .btn-4:hover{
+            color: #195323;
+
+        }
+
+        /* CSS */
+.titolo {
+    background-image: url('lavoraconnoi2.jpg');
+    background-size: cover; /* Assicura che l'immagine copra tutto lo sfondo */
+    background-position: center; /* Centra l'immagine nello sfondo */
+    padding: 60px; /* Aggiunge spazio attorno al contenuto */
+    color:  rgba(221, 183, 15, 0.952);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }

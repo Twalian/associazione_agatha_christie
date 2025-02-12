@@ -1,6 +1,8 @@
 package com.example.associazione_agatha_christie.controller;
 
 import com.example.associazione_agatha_christie.model.Biblioteca;
+import com.example.associazione_agatha_christie.model.Credenziale;
+import com.example.associazione_agatha_christie.service.BibliotecaService;
 import com.example.associazione_agatha_christie.service.CredenzialeService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,9 @@ public class LoginController {
     
     @Autowired
     private CredenzialeService credenzialeService;
+
+    @Autowired
+    private BibliotecaService bibliotecaService;
 
     @GetMapping
     public String getPage(@RequestParam(required = false) String errore,
@@ -38,9 +43,12 @@ public class LoginController {
         else if (session.getAttribute("utenteAdmin")!=null) {
             return "redirect:/gestione-admin";
         } else {
-            Biblioteca biblioteca = (Biblioteca) session.getAttribute("utenteBiblioteca");
-            Integer id = biblioteca.getId();
-            return "redirect:/gestione-biblioteca?id=" + id;
+            Credenziale credenziale = (Credenziale) session.getAttribute("utenteBiblioteca");
+
+            Biblioteca biblioteca = bibliotecaService.trovaBibliotecaDaCredenziale(credenziale.getId());
+
+            session.setAttribute("idBiblioteca", biblioteca.getId());
+            return "redirect:/gestione-biblioteca?id=" + biblioteca.getId();
         }
     }
 }

@@ -57,65 +57,97 @@
 
 
 <body>
-<h1 th:text="|*** Area Amministrativa ${biblioteca.nome} ***"></h1>
+<h1 th:text="|*** Area Amministrativa ${biblioteca.nome} ***|"></h1>
+<!--<h1>*** Area Amministrativa ***</h1>-->
 <div class="container-fluid">
   <nav class="navbar navbar-expand-lg navbar-dark">
-
-    <button id="aggiungievento" class="btn btn-primary">
-      🗓️ Aggiungi Evento
-    </button>
-    <button id="profilo" class="btn btn-primary" th:href="@{/profilocuratore}">
+    <a id="logout" class="btn btn-primary" th:href="@{/gestione-biblioteca/logout}">
+      🚪 Logout
+    </a>
+    <a id="profilo" class="btn btn-primary" th:href="@{/profilo}">
       👤 Profilo Personale
+    </a>
+    <button id="aggiungievento" class="btn btn-primary">
+    🗓️ Aggiungi Evento
     </button>
   </nav>
   <hr>
   <h2>Eventi in programma</h2>
   <div class="container mt-4" id="eventibibl">
-    <ul class="list-group">
-      <li th:each="evento : ${eventi}" th:text="|Lettura di ${evento.libro.titolo}|" class="list-group-item d-flex justify-content-between align-items-center">
-        <span class="badge" id="badge" th:text="${#temporals.format(evento.dataOra, 'dd/MM/yyyy HH:mm')}"></span>
-        <a class="btn btn-primary" id="modificaevento" th:href="@{/gestione-biblioteca/modifica(id=${evento.id})}">Modifica</a>
-        <a class="btn btn-primary" id="eliminaevento" th:href="@{/gestione-biblioteca/elimina(id=${evento.id})}">Elimina</a>
-      </li>
-    </ul>
+    <table class="list-group">
+      <tr th:each="evento : ${eventiBiblioteca}">
+          <td th:text="${evento.nome}"></td>
+          <td th:text="${evento.libro.titolo}"></td>
+          <td class="badge" id="badge" th:text="${#temporals.format(evento.dataOra, 'dd/MM/yyyy HH:mm')}"></td>
+          <td th:text="${evento.durata}"></td>
+          <td th:text="${evento.descrizione}"></td>
+          <td th:text="${evento.linkDiretta}"></td>
+          <td><a class="btn btn-primary modificaevento" th:href="@{/gestione-biblioteca(id=${biblioteca.id}, idEvento=${evento.id})}" th:data-idEvento="${evento.id}">Modifica</a></td>
+          <td><a class="btn btn-primary" id="eliminaevento" th:href="@{/gestione-biblioteca/elimina(id=${evento.id})}">Elimina</a></td>
+      </tr>
+    </table>
 
   </div>
   <hr>
+
   <!--form per aggiungere un nuovo evento in programma-->
-  <div id="aggiungieventi">
+  <div id="aggiungieventi" th:style="${mostraForm} ? 'display:block;' : 'display:none;'">
     <h3>Aggiungi un nuovo Evento in Programma</h3>
     <hr>
-    <form action="submit_biblioteche.associazione_ac" method="post">
+    <form th:object="${evento}" method="post">
+      <input type="hidden" th:field="*{id}">
       <div class="mb-3">
         <label for="evento" class="form-label">Nome dell'Evento</label>
-        <input type="text" class="form-control" id="evento" name="nome_evento" required>
+        <input type="text" class="form-control" id="evento" th:field="*{nome}" required>
       </div>
       <div class="mb-3">
         <label for="libro" class="form-label">Libro trattato</label>
-        <input type="number" class="form-control" id="libro" name="libro" required>
+        <select class="form-control" id="libro" name="idLibro" required>
+          <option value="" selected disabled>Seleziona il libro</option>
+          <option th:each="libro : ${libri}"  th:text="${libro.titolo}" th:value="${libro.id}" th:selected="${evento.libro != null and libro.id == evento.libro.id}"></option>
+        </select>
       </div>
       <div class="mb-3">
         <label for="data_ora" class="form-label">Data e Ora</label>
-        <input type="datetime" class="form-control" id="data_ora" name="data_ora" required>
+        <input type="datetime-local" class="form-control" id="data_ora" th:field="*{dataOra}" required>
       </div>
       <div class="mb-3">
         <label for="durata" class="form-label">Durata</label>
-        <input type="text" class="form-control" id="durata" name="durata" required>
+        <input type="text" class="form-control" id="durata" th:field="*{durata}" required>
       </div>
       <div class="mb-3">
         <label for="descrizione" class="form-label">Descrizione</label>
-        <textarea class="form-control" id="descrizione" name="descrizione" rows="4"></textarea>
+        <textarea class="form-control" id="descrizione" th:field="*{descrizione}" rows="4"></textarea>
       </div>
       <div class="mb-3">
         <label for="link_diretta" class="form-label">Link Diretta Online</label>
-        <input type="url" class="form-control" id="link_diretta" name="link_diretta">
+        <input type="url" class="form-control" id="link_diretta" th:field="*{linkDiretta}">
       </div>
       <hr>
-      <button type="submit" class="btn btn-primary" id="memorizzaevento">Aggiungi Evento</button>
+      <button type="submit" class="btn btn-primary" id="memorizzaevento">Conferma</button>
     </form>
   </div>
 
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("aggiungieventi");
+
+      // Mostra/Nasconde il form quando si clicca su "Aggiungi Evento"
+      document.getElementById("aggiungievento").addEventListener("click", function () {
+          form.style.display = "block";
+      });
+
+      // Event delegation per gestire i click sui pulsanti "Modifica"
+      document.getElementById("eventibibl").addEventListener("click", function (event) {
+          if (event.target.classList.contains("modificaevento")) {
+              form.style.display = "block"; // Mostra il form
+          }
+      });
+  });
+</script>
+
 </body>
 
 </html>

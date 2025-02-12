@@ -13,10 +13,16 @@ public class Evento {
     private int id;
 
     @Column
+    private String nome;
+
+    @Column
     private LocalDateTime dataOra;
 
     @Column
     private String durata;
+
+    @Column
+    private String descrizione;
 
     @Column
     private String linkDiretta;
@@ -38,6 +44,14 @@ public class Evento {
         this.id = id;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
     public LocalDateTime getDataOra() {
         return dataOra;
     }
@@ -52,6 +66,14 @@ public class Evento {
 
     public void setDurata(String durata) {
         this.durata = durata;
+    }
+
+    public String getDescrizione() {
+        return descrizione;
+    }
+
+    public void setDescrizione(String descrizione) {
+        this.descrizione = descrizione;
     }
 
     public String getLinkDiretta() {
