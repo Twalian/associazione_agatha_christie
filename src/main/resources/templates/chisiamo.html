@@ -1,90 +1,106 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
-    <title>Dettaglio Biblioteca</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chi siamo</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!--    <link th:href="stile1.css" rel="stylesheet">-->
     <link type="text/css" th:href="@{/css/stile1.css}" href="../static/css/stile1.css"
           rel="stylesheet" />
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-
-        <a class="navbar-brand" th:href="@{/}">Agatha Christie Club</a>
-        <!-- quando lo schermo è piccolo, appaiono le 3 linee -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
+    <!-- ciao-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"> <!-- Navbar (barra di navigazione) con Bootstrap -->
+        <a class="navbar-brand" href="#">Agatha Christie Club</a> <!-- Nome del brand della navbar -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span> <!-- Icona per la modalità mobile -->
         </button>
-
-        <!-- il menu intero -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
+        <div class="collapse navbar-collapse" id="navbarNav"> <!-- Contenitore per gli elementi della navbar -->
+            <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/}">Home</a>
+                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a> <!-- Link alla homepage -->
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/login}">Login</a>
+                    <a class="nav-link" href="#">Prossimi eventi</a> <!-- Link alla pagina dei prossimi eventi -->
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/chisiamo}">Chi siamo</a>
+                    <a class="nav-link" href="#">Biblioteche Aderenti</a> <!-- Link alla pagina delle biblioteche aderenti -->
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/autrice}">Autrice</a>
-                </li>
+                    <a class="nav-link" href="#">I Libri più amati</a> <!-- Link alla pagina dei libri più amati -->
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/eventi}">Prossimo Eventi</a>
-                </li>
+                    <a class="nav-link" href="#">Collabora con Noi</a>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/biblioteche}">Biblioteche aderenti</a>
-                </li>
+                    <a class="nav-link" href="#">Newsletter</a>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/libri}">Libri più amati</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/lavoraconnoi}">Collabora con noi</a>
+                    <a class="nav-link" href="#">Login</a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <header class="header">
-        <div>
-            <img src="img/bibliotecaFirenze.jpg" class="img-fluid bibl-fronte" alt="Biblioteca Nazionale Centrale di Firenze">
-            <h1 id="biblioteca">BIBLIOTECA NAZIONALE CENTRALE DI FIRENZE</h1>
+    <div class="container m5t-"> <!-- Contenitore principale per il contenuto -->
+        <div class="jumbotron"> <!-- Sezione jumbotron per un'introduzione d'impatto -->
+            <h1 class="display-4">Chi siamo?</h1> <!-- Titolo principale -->
+            <p class="lead"> <!-- Testo introduttivo della sezione Chi siamo -->
+                Benvenuti alla Biblioteca Agatha Christie, un luogo dedicato all'amore per la lettura e alla celebrazione dell'opera della più grande scrittrice di gialli di tutti i tempi. La nostra biblioteca è un rifugio per gli amanti della letteratura e degli enigmi, un luogo dove ogni visitatore può immergersi nelle trame intricate e nei misteri avvincenti che Agatha Christie ha magistralmente creato.
+                La Biblioteca Agatha Christie non è solo una raccolta di libri, ma anche un centro culturale che ospita eventi letterari, incontri con autori, e workshop dedicati alla scrittura e all'investigazione. La nostra missione è promuovere la lettura, l'educazione e l'ispirazione attraverso un'ampia selezione di libri, risorse digitali e attività coinvolgenti.
+                Siamo orgogliosi di offrire ai nostri visitatori un ambiente accogliente e stimolante, dove ognuno può esplorare la vasta eredità di Agatha Christie e scoprire nuovi mondi letterari. Unitevi a noi in questo viaggio affascinante attraverso il tempo e lo spazio, dove ogni libro è una porta verso un nuovo mistero da risolvere.
+            </p>
+            <hr class="my-4"> <!-- Linea di separazione -->
+            <p class="text">Scopri di più sul nostro catalogo e sui nostri servizi esplorando il nostro sito web.</p> <!-- Testo aggiuntivo con invito a esplorare -->
         </div>
-    </header>
+    </div>
 
-    <div class="container-fluid">
-        <div class="bibl-sito row align-items-center">
-            <div class="bibl col-md-12 col-lg-6">
-                <img src="img/bncf-logo.png" class="img-biblioteca img-fluid" alt="Biblioteca Nazionale Centrale di Firenze">
+    <div class="container"> <!-- Contenitore principale per la galleria fotografica -->
+        <h2>Galleria Fotografica</h2> <!-- Titolo della sezione galleria fotografica -->
+        <div class="row"> <!-- Riga per le immagini -->
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4"> <!-- Colonna per l'immagine 1 -->
+                <div class="card"> <!-- Card per l'immagine 1 -->
+                    <img src="ragazzi.jpg" class="card-img-top" alt="Immagine 1"> <!-- Immagine 1 -->
+                    <div class="card-body"> <!-- Corpo della card -->
+                        <p class="card-text">Tra Enigmi ed Istruzione</p> <!-- Descrizione dell'immagine 1 -->
+                    </div>
+                </div>
             </div>
-            <div class="bibl-informazioni col-lg-6 col-md-12">
-                <h4>Info:</h4>
-                <p>La Biblioteca Nazionale Centrale di Firenze è una biblioteca pubblica, afferente al MIC, che raccoglie, conserva e documenta la memoria storica della Nazione.</p>
-                <div id="bibl-orario">
-                    <h4>Apertura della biblioteca</h4>
-                    <ul>
-                        <li>Dal lunedì al venerdì 8.15 – 19.00 </li>
-                        <li>Sabato 8.15 – 13.30 </li>
-                    </ul>
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4"> <!-- Colonna per l'immagine 2 -->
+                <div class="card"> <!-- Card per l'immagine 2 -->
+                    <img src="Agata.jpg" class="card-img-top" alt="Immagine 2"> <!-- Immagine 2 -->
+                    <div class="card-body"> <!-- Corpo della card -->
+                        <p class="card-text">Una vita tra Libri, Gialli e Realtà</p> <!-- Descrizione dell'immagine 2 -->
+                    </div>
                 </div>
-                <div id="bibl-contatti">
-                    <h4>Telefono:</h4>
-                    <p>05524919201</p>
-                    <h4>Indirizzo email:</h4>
-                    <p>bnc-fi@pec.cultura.gov.it</p>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4"> <!-- Colonna per l'immagine 3 -->
+                <div class="card"> <!-- Card per l'immagine 3 -->
+                    <img src="cit2.jpg" class="card-img-top" alt="Immagine 3"> <!-- Immagine 3 -->
+                    <div class="card-body"> <!-- Corpo della card -->
+                        <p class="card-text">Citazione del Mese</p> <!-- Descrizione dell'immagine 3 -->
+                    </div>
                 </div>
-                <div id="bibl-map-sito">
-                    <h4>Sito ufficiale:</h4>
-                    <a href="#">bncf.cultura.gov.it</a>
-                    <h4>Ci trovi in: </h4>
-                    <p>Piazza dei Cavalleggeri, 1 - 50122 Firenze </p>
+            </div>
+        </div>
+        <div class="row justify-content-center"> <!-- Riga per la quarta immagine centrata -->
+            <div class="col-lg-6 col-md-8 col-sm-10 mb-4"> <!-- Colonna per l'immagine 4 che occupa meno spazio -->
+                <div class="card"> <!-- Card per l'immagine 4 -->
+                    <img src="Teamprov.jpg" class="card-img-top" alt="Il nostro team" style="width: 100%; height: auto;"> <!-- Immagine 4 -->
+                    <div class="card-body"> <!-- Corpo della card -->
+                        <p class="card-text">Il nostro team</p> <!-- Descrizione dell'immagine 4 -->
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- Collegamento alla libreria jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> <!-- Collegamento alla libreria Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script> <!-- Collegamento al JavaScript di Bootstrap -->
 </body>
 </html>
