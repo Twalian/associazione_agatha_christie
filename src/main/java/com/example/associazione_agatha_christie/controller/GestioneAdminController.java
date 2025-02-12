@@ -25,10 +25,12 @@ public class GestioneAdminController {
 
     @GetMapping
     public String getPage(Model model,
-                          @RequestParam(required = false) Integer id
-//                          @RequestParam(required = false) String error,
-//                          HttpSession session
+                          @RequestParam(required = false) Integer id,
+                          HttpSession session
                               ) {
+
+        if (session.getAttribute("utenteAdmin") == null)
+            return "redirect:/login";
 
         List<Biblioteca> biblioteche = bibliotecaService.elencoBiblioteche();
         //biblioteca = id ==null? new Biblioteca() : bibliotecaService.datiBiblioteca(id);
@@ -36,11 +38,6 @@ public class GestioneAdminController {
         model.addAttribute("biblioteca", biblioteca);
         model.addAttribute("biblioteche", biblioteche);
 
-//        if (error != null) {
-//            session.getAttribute("formError");
-//            BindingResult result = (BindingResult) session.getAttribute("result");
-//            result.hasErrors();
-//        }
         return "gestione-admin";
     }
 

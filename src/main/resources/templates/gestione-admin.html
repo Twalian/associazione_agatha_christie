@@ -90,7 +90,7 @@
             <td th:text="${biblioteca.nome}"></td>
             <td th:text="${biblioteca.comune}"></td>
             <td th:text="${biblioteca.credenziale.username}"></td>
-            <td th:text="${biblioteca.credenziale.password}"></td>
+            <td th:text="${#strings.length(biblioteca.credenziale.password) != 0 ? #strings.repeat('*', #strings.length(biblioteca.credenziale.password)) : ''}"></td>
             <td>
                 <a id="elimina" class="btn btn-primary" th:href="@{/gestione-admin/elimina(id=${biblioteca.id})}">Elimina</a>
             </td>

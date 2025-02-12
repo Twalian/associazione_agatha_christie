@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Dettaglio Biblioteca</title>
+    <title>Prossimo Eventi</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link type="text/css" th:href="@{/css/stile1.css}" href="../static/css/stile1.css"
           rel="stylesheet" />
 </head>
 <body>
+    <!-- Menu Fisso in alto -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 
         <a class="navbar-brand" th:href="@{/}">Agatha Christie Club</a>
@@ -46,45 +47,40 @@
             </ul>
         </div>
     </nav>
+    <div class="container-eventi">
 
-    <header class="header">
-        <div>
-            <img src="img/bibliotecaFirenze.jpg" class="img-fluid bibl-fronte" alt="Biblioteca Nazionale Centrale di Firenze">
-            <h1 id="biblioteca">BIBLIOTECA NAZIONALE CENTRALE DI FIRENZE</h1>
-        </div>
-    </header>
-
-    <div class="container-fluid">
-        <div class="bibl-sito row align-items-center">
-            <div class="bibl col-md-12 col-lg-6">
-                <img src="img/bncf-logo.png" class="img-biblioteca img-fluid" alt="Biblioteca Nazionale Centrale di Firenze">
+        <h2 id="ev-page">Prossimi Eventi:</h2>
+        <div class="toast-container position-static">
+            <div class="toast t-evento" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+                <div class="toast-header">
+                    <img src="images/bncf-logo.png" class="rounded me-2 mini-evento" alt="logo">
+                    <strong class="me-auto ev-titolo">San Valentino in Giallo</strong>
+                </div>
+                <div class="toast-body messaggio">
+                    14 Feb 2025 dalle 15:00 alle 16:30 | durata: 1 ora e 30 min | in Biblioteca Nazionale Centrale di Firenze | lettura del libro: | link per la diretta:
+                </div>
             </div>
-            <div class="bibl-informazioni col-lg-6 col-md-12">
-                <h4>Info:</h4>
-                <p>La Biblioteca Nazionale Centrale di Firenze è una biblioteca pubblica, afferente al MIC, che raccoglie, conserva e documenta la memoria storica della Nazione.</p>
-                <div id="bibl-orario">
-                    <h4>Apertura della biblioteca</h4>
-                    <ul>
-                        <li>Dal lunedì al venerdì 8.15 – 19.00 </li>
-                        <li>Sabato 8.15 – 13.30 </li>
-                    </ul>
+
+            <div class="toast t-evento" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+                <div class="toast-header">
+                    <img src="images/bncf-logo.png" class="rounded me-2 mini-evento" alt="logo">
+                    <strong class="me-auto ev-titolo">San Valentino in Giallo</strong>
                 </div>
-                <div id="bibl-contatti">
-                    <h4>Telefono:</h4>
-                    <p>05524919201</p>
-                    <h4>Indirizzo email:</h4>
-                    <p>bnc-fi@pec.cultura.gov.it</p>
-                </div>
-                <div id="bibl-map-sito">
-                    <h4>Sito ufficiale:</h4>
-                    <a href="#">bncf.cultura.gov.it</a>
-                    <h4>Ci trovi in: </h4>
-                    <p>Piazza dei Cavalleggeri, 1 - 50122 Firenze </p>
+                <div class="toast-body messaggio">
+                    14 Feb 2025 dalle 15:00 alle 16:30 | durata: 1 ora e 30 min | in Biblioteca Nazionale Centrale di Firenze | lettura del libro: | link per la diretta:
                 </div>
             </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let toasts = document.querySelectorAll(".toast");
+            toasts.forEach(toast => {
+                new bootstrap.Toast(toast).show();
+            });
+        })
+    </script>
 </body>
 </html>

@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Controller
-@RequestMapping("/gestionebiblioteca")
+@RequestMapping("/gestione-biblioteca")
 public class GestioneBibliotecaController {
 
     @Autowired
@@ -37,14 +37,14 @@ public class GestioneBibliotecaController {
         evento = id == null ? new Evento() : eventoService.datiEvento(id);
         model.addAttribute("eventiBiblioteca", eventiBiblioteca);
         model.addAttribute("evento", evento);
-        return "gestionebiblioteca";
+        return "gestione-biblioteca";
     }
 
 
     @GetMapping("/elimina")
     public String eliminaEvento(@RequestParam int id) {
         eventoService.eliminaEvento(id);
-        return "redirect:/gestioneBiblioteca";
+        return "redirect:/gestione-biblioteca";
     }
 
     @GetMapping("/logout")
@@ -60,7 +60,7 @@ public class GestioneBibliotecaController {
                               @RequestParam int idLibro,
                               @RequestParam int idBiblioteca) {
         eventoService.registraEvento(evento, dataOra, durata, linkDiretta, idLibro, idBiblioteca);
-        return "redirect:/gestioneBiblioteca";
+        return "redirect:/gestione-biblioteca";
     }
 }
 
