@@ -116,10 +116,10 @@
         <div id="libriCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <!-- Itera sulla lista di libri con Thymeleaf -->
-               <div class="carousel-item" th:each="libro, loop : ${libri}" th:classappend="${loop.first} ? ' active'">
-                    <div class="row">
+               <div>
+                    <div class="row carousel-item" th:each="libro, loop : ${libri}" th:classappend="${loop.first} ? ' active'">
                         <!-- Colonna per ogni libro -->
-                        <div class="col-12 col-md-4">
+                        <div class="col-xl-4 col-md-4">
                             <img th:src="@{${libro.copertina}}" alt="Libri immagine" class="img-fluid">
                             <p class="titoli" th:text="${libro.titolo}"></p>
                             <p th:text="${libro.anno}"></p>
