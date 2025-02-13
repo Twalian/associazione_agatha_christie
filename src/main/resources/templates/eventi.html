@@ -50,27 +50,18 @@
     <div class="container-eventi">
 
         <h2 id="ev-page">Prossimi Eventi:</h2>
-        <div class="toast-container position-static">
+        <div class="toast-container position-static" th:each="evento : ${eventi}">
             <div class="toast t-evento" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
                 <div class="toast-header">
-                    <img src="img/bncfFirenze-logo.png" class="rounded me-2 mini-evento" alt="logo">
-                    <strong class="me-auto ev-titolo">San Valentino in Giallo</strong>
+                    <img th:src="${evento.biblioteca.logo}" class="rounded me-2 mini-evento" alt="logo">
+                    <strong class="me-auto ev-titolo" th:text="${evento.nome}">San Valentino in Giallo</strong>
                 </div>
                 <div class="toast-body">
-                    <p class="messaggio"> 14 Feb 2025 dalle 15:00 alle 16:30 | durata: 1 ora e 30 min | in Biblioteca Nazionale Centrale di Firenze | lettura del libro: | link per la diretta: </p>
+                    <p class="messaggio" th:text="${#temporals.format(evento.dataOra, 'dd/MM/yyyy HH:mm')} + ' | ' + ${evento.durata} + ' | ' + ${evento.biblioteca.nome} + ' | ' + ${evento.libro.titolo}"> </p>
+                    <p class="messaggio" th:text="${evento.descrizione}"> </p>
+                    <p class="messaggio" th:text="${evento.linkDiretta}"> </p>
                 </div>
             </div>
-
-            <div class="toast t-evento" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
-                <div class="toast-header">
-                    <img src="img/bncfFirenze-logo.png" class="rounded me-2 mini-evento" alt="logo">
-                    <strong class="me-auto ev-titolo">San Valentino in Giallo</strong>
-                </div>
-                <div class="toast-body">
-                    <p class="messaggio"> 14 Feb 2025 dalle 15:00 alle 16:30 | durata: 1 ora e 30 min | in Biblioteca Nazionale Centrale di Firenze | lettura del libro: | link per la diretta: </p>
-                </div>
-            </div>
-        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
