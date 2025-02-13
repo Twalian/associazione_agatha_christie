@@ -517,9 +517,11 @@ textarea {
 }
 
 #ev-page {
+    text-shadow: 2px 2px #a86001;
     text-align: center;
     margin-top: 100px;
-    font-weight: 40px;
+    font-weight: bolder;
+    font-size: 40px;
     color: #f4c25b;
 }
 
@@ -546,6 +548,8 @@ textarea {
     font-size: 15px;
     width: 100%;
     text-align: center;
+    color: #2d5c33;
+    font-weight: bold;
 }
 
 .mini-evento {
