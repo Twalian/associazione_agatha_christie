@@ -65,7 +65,7 @@
                 <img th:src="${biblioteca.foto}" class="img-fluid" th:alt="${biblioteca.nome}">
             </div>
             <div class="bibl-dettagli col-lg-6 col-md-6">
-                <h4 th:text="${biblioteca.nome}"></h4>
+                <h4  th:text="${biblioteca.nome}"></h4>
                 <p th:text="${biblioteca.descrizione}"></p>
                 <a th:href="@{/dettagliobiblioteca(id=${biblioteca.id})}">Leggi di più...</a>
             </div>

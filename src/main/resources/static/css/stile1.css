@@ -134,11 +134,6 @@ body {
     margin-top: 20px;
 }
 
-h4 {
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
-}
 
 h2, h1 {
     font-family: 'Times New Roman', Times, serif;
@@ -433,9 +428,9 @@ textarea {
     width: 60%;
 }
 
-.bibl-informazioni p, li, a {
+.bibl-informazione {
     font-size: 20px;
-    color: #d8c5a1;
+    color: red;
 }
 
 .bibl-informazioni h4 {
@@ -743,6 +738,5 @@ textarea {
 }
 
 #unisciti {
-    font-size: 100px;
-    color: red;
+    font-size: 60px;
 }
