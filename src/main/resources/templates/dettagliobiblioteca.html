@@ -60,24 +60,24 @@
                 <img th:src="${biblioteca.logo}" class="img-biblioteca img-fluid" th:alt="${biblioteca.nome}">
             </div>
             <div class="bibl-informazioni col-lg-6 col-md-12">
-                <h4>Info:</h4>
-                <p th:text="${biblioteca.descrizione}"></p>
+                <h4 class="bibl-info">Info:</h4>
+                <p th:text="${biblioteca.descrizione}" class="bibl-dati"></p>
                 <div id="bibl-orario">
-                    <h4>Apertura della biblioteca</h4>
-                    <p th:text="${biblioteca.orarioApertura}">
+                    <h4 class="bibl-info">Apertura della biblioteca</h4>
+                    <p th:text="${biblioteca.orarioApertura}" class="bibl-dati">
                     </p>
                 </div>
                 <div id="bibl-contatti">
-                    <h4>Telefono:</h4>
-                    <p th:text="${biblioteca.telefono}"></p>
-                    <h4>Indirizzo email:</h4>
-                    <p th:text="${biblioteca.email}"></p>
+                    <h4 class="bibl-info">Telefono:</h4>
+                    <p th:text="${biblioteca.telefono}" class="bibl-dati"></p>
+                    <h4 class="bibl-info">Indirizzo email:</h4>
+                    <p th:text="${biblioteca.email}" class="bibl-dati"></p>
                 </div>
                 <div id="bibl-map-sito">
-                    <h4>Sito ufficiale:</h4>
-                    <p th:text="${biblioteca.sito}"></p>
-                    <h4>Ci trovi in: </h4>
-                    <p th:text="|${biblioteca.indirizzo} ${biblioteca.comune}|"></p>
+                    <h4 class="bibl-info">Sito ufficiale:</h4>
+                    <p th:text="${biblioteca.sito}" class="bibl-dati"></p>
+                    <h4 class="bibl-info">Ci trovi in: </h4>
+                    <p th:text="|${biblioteca.indirizzo} ${biblioteca.comune}|" class="bibl-dati"></p>
                     <!-- Inserisci la mappa dinamicamente con iframe -->
                     <div class="row justify-content-center">
                         <div class="col-md-5">
@@ -86,26 +86,6 @@
                                     allowfullscreen=""  referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
-                <h4 class="bibl-info">Info:</h4>
-                <p class="bibl-dati">La Biblioteca Nazionale Centrale di Firenze è una biblioteca pubblica, afferente al MIC, che raccoglie, conserva e documenta la memoria storica della Nazione.</p>
-                <div id="bibl-orario">
-                    <h4 class="bibl-info">Apertura della biblioteca</h4>
-                    <ul>
-                        <li class="bibl-dati">Dal lunedì al venerdì 8.15 – 19.00 </li>
-                        <li class="bibl-dati">Sabato 8.15 – 13.30 </li>
-                    </ul>
-                </div>
-                <div id="bibl-contatti">
-                    <h4 class="bibl-info">Telefono:</h4>
-                    <p class="bibl-dati">05524919201</p>
-                    <h4 class="bibl-info">Indirizzo email:</h4>
-                    <p class="bibl-dati">bnc-fi@pec.cultura.gov.it</p>
-                </div>
-                <div id="bibl-map-sito">
-                    <h4 class="bibl-info">Sito ufficiale:</h4>
-                    <a href="#" class="bibl-dati">bncf.cultura.gov.it</a>
-                    <h4 class="bibl-info">Ci trovi in: </h4>
-                    <p class="bibl-dati">Piazza dei Cavalleggeri, 1 - 50122 Firenze </p>
                 </div>
             </div>
         </div>
