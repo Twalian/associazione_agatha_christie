@@ -76,6 +76,7 @@ body {
     margin-bottom: 40px;
     display: flex;
     text-align: center;
+    font-size: 20px;
 }
 
 .bio {
@@ -83,6 +84,7 @@ body {
     color: #1d3b32;
     padding-left: 10px;
     padding-right: 10px;
+    font-size: 20px;
 }
 
 #autrice {
@@ -102,7 +104,6 @@ body {
     border-radius: 5%;
     text-align: center;
 }
-
 
 .libri,
 .eventi {
@@ -130,13 +131,6 @@ body {
 
 .text-center {
     margin-top: 20px;
-}
-
-p,
-h4 {
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
 }
 
 h2, h1 {
@@ -167,7 +161,6 @@ h2, h1 {
 .carousel-item.active img {
     transform: scale(1.1);
 }
-
 
 .carousel-control-prev-icon {
     margin-left: -100px;
@@ -206,10 +199,7 @@ h2, h1 {
 #occhio {
     width: 20px;  /* Imposta la larghezza dell'icona */
     height: auto;
-
 }
-
-
 
 #badge {
     height: 38px;
@@ -302,6 +292,7 @@ th {
 }
 
 /* BIBLIOTECA */
+
 .bibl-titolo {
     position: absolute;
     color: #f4c25b;
@@ -338,9 +329,20 @@ th {
     margin-left: 2px;
 }
 
+.bibl-nome {
+    text-shadow: 2px 2px #a86001;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.bibl-descr {
+    font-size: 15px;
+}
+
 .container-fluid a {
     color: antiquewhite;
 }
+
 
 /* form non visibile*/
 #aggiungiBibliotecaForm {
@@ -357,7 +359,6 @@ th {
     font-size: 20px;
     padding: 20px;
 }
-
 
 .nascondi {
     display: none;}
@@ -404,6 +405,7 @@ textarea {
 }
 
 /* BIBLIOTECA DETTAGLIO */
+
 #biblioteca {
     margin-top: 25px;
     align-items: center;
@@ -432,18 +434,22 @@ textarea {
     width: 60%;
 }
 
-.bibl-informazioni p, li, a {
-    font-size: 20px;
+.bibl-dati {
+    font-size: 15px;
     color: #d8c5a1;
 }
 
-.bibl-informazioni h4 {
+.bibl-info {
+    text-shadow: 2px 2px #a86001;
+    font-size: 20px
     margin-top: 5px;
     margin-bottom: 5px;
     color: #f4c25b;
     font-weight: bold;
 }
+
 /*CHI SIAMO*/
+
 .jumbotron {
     background-color: #053809;
     border: 2px solid #1e3a11;
@@ -511,9 +517,11 @@ textarea {
 }
 
 #ev-page {
+    text-shadow: 2px 2px #a86001;
     text-align: center;
     margin-top: 100px;
-    font-weight: 40px;
+    font-weight: bolder;
+    font-size: 40px;
     color: #f4c25b;
 }
 
@@ -523,7 +531,6 @@ textarea {
     width: 95%;
     height: auto;
     background-color: #3b4d47;
-
 }
 
 .t-evento {
@@ -541,19 +548,22 @@ textarea {
     font-size: 15px;
     width: 100%;
     text-align: center;
+    color: #2d5c33;
+    font-weight: bold;
 }
 
 .mini-evento {
     width: 50px;
     height: auto;}
 
+/* COLLABORA CON NOI */
 
 .header2 {
     height: auto;
     width: 100%;
     padding-left: 20px;
     padding-right: 10px;
-    padding-top: 40px;
+    padding-top: 20px;
 }
 
 .navbar-brand1 {
@@ -563,8 +573,8 @@ textarea {
 }
 
 .card-title {
-    color: #1d3b32;
-    background-color: #ecd135;
+    text-shadow: 2px 2px 4px #243f1e;
+    color: #5a944d;
 }
 
 .navbar-brand1:hover {
@@ -587,9 +597,8 @@ textarea {
 
 }
 
-/* CSS */
 .titolocollabora {
-    background-image: url('lavoraconnoi2.jpg');
+    background-image: url('../img/lavoraconnoi2.jpg'); /* ../ indica che devi risalire di una cartella (per passare dalla cartella css alla root del progetto). */
     background-size: cover;
     /* Assicura che l'immagine copra tutto lo sfondo */
     background-position: center;
@@ -599,4 +608,149 @@ textarea {
     color: rgba(221, 183, 15, 0.952);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
      font-size: 130px;
+}
+
+/* libri.html */
+#testa {
+    background-color: #394e48;
+    border-radius: 3%;
+    padding: 10px;
+}
+
+#podio {
+    background-color: #394e48;;
+    border-radius: 3%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.frasi {
+    height: 400px;
+    padding: 8px;
+    height: fit-content;
+}
+
+#frase1,
+#frase3 {
+    text-align: left;
+}
+
+#frase2,
+#frase4 {
+    text-align: right;
+}
+
+#macchinadascr {
+    color:  #f4c25b;
+    margin: 5px;
+}
+
+.card-titolo,
+.card-testo {
+    color: #f4c25b;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.card-container {
+    justify-content: space-around;
+    gap: 5px;
+}
+
+.libreria {
+    width: 330px;
+    height: 760px;
+    margin-top: 30px;
+    background-color: #316452;
+    margin-right: auto;
+    margin-left: auto;
+    gap: 10px;
+}
+
+.podio-card1 {
+    width: 200px;
+    height: 360px;
+    background-color: #f1c24d;
+    color: #745d2f;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+.podio-card2 {
+    width: 200px;
+    height: 320px;
+    background-color: #649284;
+    color: #263b24;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+.podio-card3 {
+    width: 200px;
+    height: 300px;
+    background-color: #ce4949;
+    color: #401414;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+.imglibri{
+    width: 200px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -30px;
+}
+
+
+#imgroger{
+    margin-top: 14px;
+    width: auto;
+    height: 180px;
+    margin-left: 55px;
+}
+
+
+#imgmiss{
+    margin-top: 14px;
+    width: auto;
+    height: 180px;
+    margin-left: 90px;
+}
+
+.foto-top {
+    width: 200px;
+    height: auto;
+    margin-left: 60px;
+}
+
+#img1 {
+    padding-top: 10px;
+}
+
+#img2 {
+    width: 130px;
+    height: auto;
+    margin-top: 0px;
+}
+
+#img3 {
+    width: 130px;
+    height: auto;
+    margin-top: -0px;
+}
+
+#unisciti {
+    font-size: 40px;
+    text-shadow: #000000  2px 2px 4px;
 }

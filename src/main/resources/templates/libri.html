@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>I Libri Più Amati di Agatha Christie</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!--    <link th:href="stile1.css" rel="stylesheet">-->
+    <link type="text/css" th:href="@{/css/stile1.css}" href="../static/css/stile1.css"
+          rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+
+<!-- Menu Fisso in alto -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+
+    <a class="navbar-brand" th:href="@{/}">Agatha Christie Club</a>
+    <!-- quando lo schermo è piccolo, appaiono le 3 linee -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- il menu intero -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/login}">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/chisiamo}">Chi siamo</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/autrice}">Autrice</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/eventi}">Prossimo Eventi</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/biblioteche}">Biblioteche aderenti</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/libri}">Libri più amati</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/lavoraconnoi}">Collabora con noi</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <h1>I Libri Più Amati di Agatha Christie</h1>
+    <p>Scopri i libri più celebri dell'autrice di gialli più amata al mondo.</p>
+    <hr>
+    <div class="row" id="testa">
+        <div class="fotolibri col-lg-6 col-md-12 col-sm-12">
+            <img src="macchinadascrivere.jpg" alt="Agatha Christie" class="img-fluid col-md-12" />
+            <p id="macchinadascr"> "Ogni volta che scrivo, mi piace pensare che sto creando una finestra su un altro
+                mondo. Un mondo che, speriamo, sia tanto affascinante quanto misterioso." – Agatha Christie</p>
+            <hr>
+        </div>
+
+
+
+        <div class="frasi col-lg-6 col-md-12 col-sm-12">
+            <p id="frase1">"La vita ha spesso una trama pessima. Preferisco di gran lunga i miei romanzi." </p>
+            <hr>
+            <p id="frase2">"Un indizio è un indizio, due indizi sono una coincidenza, ma tre indizi fanno una
+                prova." </p>
+            <hr>
+            <p id="frase3">"L'alibi è la faccenda più dubbia della terra. Tutti i delinquenti posseggono un alibi."
+            </p>
+            <hr>
+            <p id="frase4">"E' bene sospettare di tutti, finchè non si riesce a dimostrare che sono innocenti."<br>
+                -Hercule Poirot
+            </p>
+        </div>
+    </div>
+</div>
+<hr>
+<!-- Card podio -->
+<div class="row" id="podio">
+    <div class="col-md-4">
+        <div class="card podio-card2">
+            <h3 class="card-title1">2° Posto</h3>
+            <img src="treno.png" class="imglibri" id="img2">
+            <p>Un altro capolavoro di Agatha Christie.</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card podio-card1">
+            <h3 class="card-title1">1° Posto</h3>
+            <img src="assassinio.png" class="imglibri" id="img1">
+            <p>Il libro più amato di Agatha Christie.</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card podio-card3">
+            <h3 class="card-title1">3° Posto</h3>
+            <img src="indiani.png" class="imglibri" id="img3">
+            <p>Il terzo più popolare tra i suoi romanzi.</p>
+        </div>
+    </div>
+</div>
+<hr>
+
+<!-- Introduzione -->
+<div class="intro-text">
+    <p>Agatha Christie è conosciuta per i suoi gialli intricatissimi e i personaggi iconici come Hercule Poirot
+        e Miss Marple. I suoi libri sono tradotti in più di 100 lingue, e alcuni di essi hanno venduto oltre 100
+        milioni di copie. Qui esploreremo i suoi libri più amati, dai classici alle opere più moderne.</p>
+</div>
+
+<!-- Card libri -->
+<div class="row card-container">
+    <!-- Libro 1 -->
+    <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="card libreria">
+
+            <div class="card-body">
+                <h5 class="card-title card-titolo"><strong> L'assassinio di Roger Ackroyd</strong></h5>
+                <img src="roger.png" class="card-img-top foto-top" alt="Libro 4" class="imglibreria" id="imgroger">
+                <p class="card-text card-testo"><strong>Anno:</strong> 1927</p>
+                <p class="card-text card-testo"><strong>Editore Italiano:</strong> Mondadori</p>
+                <p class="card-text card-testo"><strong>Trama:</strong> Roger Ackroyd, un uomo ricco, viene trovato
+                    assassinato nella sua casa. Hercule Poirot, che si è ritirato nel villaggio, è chiamato a
+                    risolvere il caso. La vicenda è celebre per il suo sorprendente colpo di scena finale, che
+                    cambia le regole del giallo.</p>
+                <p class="card-text card-testo"><strong>Ciclo:</strong> Hercule Poirot </p>
+            </div>
+        </div>
+    </div>
+    <!-- Libro 2 -->
+    <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="card libreria">
+
+            <div class="card-body">
+
+                <h5 class="card-title card-titolo"><strong> Miss Marple e i 13 problemi</strong></h5>
+                <img src="13problemi.png" class="card-img-top foto-top" alt="Libro 2" class="imglibreria">
+                <p class="card-text card-testo"><strong>Anno:</strong> 1933</p>
+                <p class="card-text card-testo"><strong>Editore Italiano:</strong> Mondadori</p>
+                <p class="card-text card-testo"><strong>Trama:</strong> Miss Marple, famosa detective amatoriale,
+                    risolve una
+                    serie di misteri narrati da un gruppo di amici durante una serata. Ogni membro del gruppo
+                    presenta un caso che sembra irrisolvibile, ma Miss Marple, con la sua saggezza e acutezza, trova
+                    sempre la soluzione, sorprendendo tutti con la sua logica.</p>
+                <p class="card-text card-testo"><strong>Ciclo:</strong> Miss Marple</p>
+            </div>
+        </div>
+    </div>
+    <!-- Libro 3 -->
+    <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="card libreria">
+            <div class="card-body ">
+                <h5 class="card-title card-titolo"><strong> Quinta Colonna</strong></h5>
+                <img src="quintacolonna.png" class="card-img-top foto-top" alt="Libro 3" class="imglibreria">
+                <p class="card-text card-testo"><strong>Anno:</strong> 1941</p>
+                <p class="card-text card-testo"><strong>Editore Italiano:</strong> Mondadori</p>
+                <p class="card-text card-testo"><strong>Trama:</strong> La storia si svolge durante la Seconda
+                    Guerra Mondiale,
+                    in un'Inghilterra sotto minaccia di invasioni tedesche. Un gruppo di personaggi si trova
+                    coinvolto in un mistero legato a traditori che agiscono come "quinta colonna", ovvero spie al
+                    servizio del nemico. La trama si sviluppa attorno al sospetto e alla paranoia, mentre i
+                    protagonisti cercano di scoprire chi siano i traditori.</p>
+                <p class="card-text card-testo"><strong>Ciclo:</strong> Stand-alone </p>
+            </div>
+        </div>
+    </div>
+    <!-- Libro 4 -->
+    <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="card libreria">
+
+            <div class="card-body">
+                <h5 class="card-title card-titolo"><strong> Poirot Non Sbaglia</strong></h5>
+                <img src="poirotnonsbaglia.png" class="card-img-top foto-top" alt="Libro 4" class="imglibreria">
+                <p class="card-text card-testo"><strong>Anno:</strong> 1965</p>
+                <p class="card-text card-testo"><strong>Editore Italiano:</strong> Mondadori</p>
+                <p class="card-text card-testo"><strong>Trama:</strong> Hercule Poirot viene chiamato a investigare
+                    su una
+                    serie di omicidi che sembrano non avere alcun legame tra loro. Nonostante le apparenze, Poirot è
+                    convinto che ci sia un pattern nascosto. Con il suo acuto spirito di osservazione e il metodo
+                    infallibile, riesce a scoprire un dettaglio fondamentale che collega gli omicidi e a svelare
+                    l’identità del colpevole.</p>
+                <p class="card-text card-testo"><strong>Ciclo:</strong> Hercule Poirot </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
