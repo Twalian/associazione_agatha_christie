@@ -105,7 +105,6 @@ body {
     text-align: center;
 }
 
-
 .libri,
 .eventi {
     background: #f4c25b;
@@ -133,7 +132,6 @@ body {
 .text-center {
     margin-top: 20px;
 }
-
 
 h2, h1 {
     font-family: 'Times New Roman', Times, serif;
@@ -163,7 +161,6 @@ h2, h1 {
 .carousel-item.active img {
     transform: scale(1.1);
 }
-
 
 .carousel-control-prev-icon {
     margin-left: -100px;
@@ -202,10 +199,7 @@ h2, h1 {
 #occhio {
     width: 20px;  /* Imposta la larghezza dell'icona */
     height: auto;
-
 }
-
-
 
 #badge {
     height: 38px;
@@ -298,6 +292,7 @@ th {
 }
 
 /* BIBLIOTECA */
+
 .bibl-titolo {
     position: absolute;
     color: #f4c25b;
@@ -334,9 +329,20 @@ th {
     margin-left: 2px;
 }
 
+.bibl-nome {
+    text-shadow: 2px 2px #a86001;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.bibl-descr {
+    font-size: 15px;
+}
+
 .container-fluid a {
     color: antiquewhite;
 }
+
 
 /* form non visibile*/
 #aggiungiBibliotecaForm {
@@ -353,7 +359,6 @@ th {
     font-size: 20px;
     padding: 20px;
 }
-
 
 .nascondi {
     display: none;}
@@ -400,6 +405,7 @@ textarea {
 }
 
 /* BIBLIOTECA DETTAGLIO */
+
 #biblioteca {
     margin-top: 25px;
     align-items: center;
@@ -428,18 +434,22 @@ textarea {
     width: 60%;
 }
 
-.bibl-informazione {
-    font-size: 20px;
-    color: red;
+.bibl-dati {
+    font-size: 15px;
+    color: #d8c5a1;
 }
 
-.bibl-informazioni h4 {
+.bibl-info {
+    text-shadow: 2px 2px #a86001;
+    font-size: 20px
     margin-top: 5px;
     margin-bottom: 5px;
     color: #f4c25b;
     font-weight: bold;
 }
+
 /*CHI SIAMO*/
+
 .jumbotron {
     background-color: #053809;
     border: 2px solid #1e3a11;
@@ -519,7 +529,6 @@ textarea {
     width: 95%;
     height: auto;
     background-color: #3b4d47;
-
 }
 
 .t-evento {
@@ -543,6 +552,7 @@ textarea {
     width: 50px;
     height: auto;}
 
+/* COLLABORA CON NOI */
 
 .header2 {
     height: auto;
@@ -582,7 +592,6 @@ textarea {
     color: #195323;
 
 }
-
 
 .titolocollabora {
     background-image: url('lavoraconnoi2.jpg');
