@@ -126,75 +126,16 @@
 <!-- Card libri -->
 <div class="row card-container">
     <!-- Libro 1 -->
-    <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="card libreria">
+    <div class="col-lg-3 col-md-4 col-sm-6" th:each="libro : ${libri}">
+        <div class="card libreria" >
 
             <div class="card-body">
-                <h5 class="card-title card-titolo"><strong> L'assassinio di Roger Ackroyd</strong></h5>
-                <img src="roger.png" class="card-img-top foto-top imglibreria" alt="Libro 4" id="imgroger">
-                <p class="card-text card-testo"><strong>Anno:</strong> 1927</p>
-                <p class="card-text card-testo"><strong>Editore Italiano:</strong> Mondadori</p>
-                <p class="card-text card-testo"><strong>Trama:</strong> Roger Ackroyd, un uomo ricco, viene trovato
-                    assassinato nella sua casa. Hercule Poirot, che si è ritirato nel villaggio, è chiamato a
-                    risolvere il caso. La vicenda è celebre per il suo sorprendente colpo di scena finale, che
-                    cambia le regole del giallo.</p>
-                <p class="card-text card-testo"><strong>Ciclo:</strong> Hercule Poirot </p>
-            </div>
-        </div>
-    </div>
-    <!-- Libro 2 -->
-    <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="card libreria">
-
-            <div class="card-body">
-
-                <h5 class="card-title card-titolo"><strong> Miss Marple e i 13 problemi</strong></h5>
-                <img src="13problemi.png" class="card-img-top foto-top imglibreria" alt="Libro 2" >
-                <p class="card-text card-testo"><strong>Anno:</strong> 1933</p>
-                <p class="card-text card-testo"><strong>Editore Italiano:</strong> Mondadori</p>
-                <p class="card-text card-testo"><strong>Trama:</strong> Miss Marple, famosa detective amatoriale,
-                    risolve una
-                    serie di misteri narrati da un gruppo di amici durante una serata. Ogni membro del gruppo
-                    presenta un caso che sembra irrisolvibile, ma Miss Marple, con la sua saggezza e acutezza, trova
-                    sempre la soluzione, sorprendendo tutti con la sua logica.</p>
-                <p class="card-text card-testo"><strong>Ciclo:</strong> Miss Marple</p>
-            </div>
-        </div>
-    </div>
-    <!-- Libro 3 -->
-    <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="card libreria">
-            <div class="card-body ">
-                <h5 class="card-title card-titolo"><strong> Quinta Colonna</strong></h5>
-                <img src="quintacolonna.png" class="card-img-top foto-top imglibreria" alt="Libro 3">
-                <p class="card-text card-testo"><strong>Anno:</strong> 1941</p>
-                <p class="card-text card-testo"><strong>Editore Italiano:</strong> Mondadori</p>
-                <p class="card-text card-testo"><strong>Trama:</strong> La storia si svolge durante la Seconda
-                    Guerra Mondiale,
-                    in un'Inghilterra sotto minaccia di invasioni tedesche. Un gruppo di personaggi si trova
-                    coinvolto in un mistero legato a traditori che agiscono come "quinta colonna", ovvero spie al
-                    servizio del nemico. La trama si sviluppa attorno al sospetto e alla paranoia, mentre i
-                    protagonisti cercano di scoprire chi siano i traditori.</p>
-                <p class="card-text card-testo"><strong>Ciclo:</strong> Stand-alone </p>
-            </div>
-        </div>
-    </div>
-    <!-- Libro 4 -->
-    <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="card libreria">
-
-            <div class="card-body">
-                <h5 class="card-title card-titolo"><strong> Poirot Non Sbaglia</strong></h5>
-                <img src="poirotnonsbaglia.png" class="card-img-top foto-top imglibreria" alt="Libro 4">
-                <p class="card-text card-testo"><strong>Anno:</strong> 1965</p>
-                <p class="card-text card-testo"><strong>Editore Italiano:</strong> Mondadori</p>
-                <p class="card-text card-testo"><strong>Trama:</strong> Hercule Poirot viene chiamato a investigare
-                    su una
-                    serie di omicidi che sembrano non avere alcun legame tra loro. Nonostante le apparenze, Poirot è
-                    convinto che ci sia un pattern nascosto. Con il suo acuto spirito di osservazione e il metodo
-                    infallibile, riesce a scoprire un dettaglio fondamentale che collega gli omicidi e a svelare
-                    l’identità del colpevole.</p>
-                <p class="card-text card-testo"><strong>Ciclo:</strong> Hercule Poirot </p>
+                <h5 class="card-title card-titolo" th:text="${libro.titolo}"><strong></strong></h5>
+                <img  class="card-img-top foto-top imglibreria" th:src="${libro.copertina}" alt="Libro 4" id="imgroger">
+                <p class="card-text card-testo" th:text="${libro.anno}"></p>
+                <p class="card-text card-testo" th:text="${libro.editore}"></p>
+                <p class="card-text card-testo" th:text="${libro.trama}"></p>
+                <p class="card-text card-testo" th:text="|Ciclo narrativo: ${libro.ciclo.nome}|"></p>
             </div>
         </div>
     </div>
