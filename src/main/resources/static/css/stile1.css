@@ -201,21 +201,12 @@ h2, h1 {
     height: auto;
 }
 
-#badge {
-    height: 38px;
-    border: 1px solid #1d3b32;
-    background-color: #41675a;
-    color: #d8cfb9;
-    align-content: center;
-}
-
 #home,
 #aggiungibibl,
 #logout,
 #aggiungi,
 #profilo,
 #aggiungievento,
-#modifica,
 #memorizzaevento {
     color: #1d3b32;
     background-color: #d8cfb9;
@@ -235,19 +226,14 @@ h2, h1 {
     color: #f4c25b;
 }
 
-#modificaevento,
-#eliminaevento {
-    background-color: #879f97;
-    border: 1px solid #1d3b32;
-}
-
 #areaamm {
     text-align: center;
 }
 
 #tabellaelenco,
-th,
-td {
+#tabellaeventi,
+#tabellaelenco td,
+#tabellaeventi td {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -255,20 +241,26 @@ td {
     font-size: 15px;
     border: 2px solid #000000;
     color: #000000;
+      vertical-align: middle; /* Centra il testo verticalmente */
 }
 
-#barrascorr {
+.barrascorr {
     overflow-x: visible;
 }
 
-th {
+#tabellaeventi th,
+#tabellaelenco th {
     background-color: #e6cb95;
+    border: 2px solid #000000;
     color: #000000;
     padding-left: 50px;
     padding-right: 50px;
+     vertical-align: middle; /* Centra il testo verticalmente */
 }
 
-#elimina {
+#elimina,
+#eliminaevento,
+#modificaevento {
     background-color: #ffffffd1;
     color: #000000;
     border: 1px solid #1d3b32;
@@ -278,7 +270,9 @@ th {
     padding-right: 2px;
 }
 
-#elimina:hover {
+#elimina:hover,
+#eliminaevento:hover,
+#modificaevento:hover {
     background-color: #f1d924;
 }
 

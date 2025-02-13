@@ -56,7 +56,7 @@
 </nav>
 
 
-<body>
+<body class="barrascorr">
 <h1 th:text="|*** Area Amministrativa ${biblioteca.nome} ***|"></h1>
 <!--<h1>*** Area Amministrativa ***</h1>-->
 <div class="container-fluid">
@@ -73,18 +73,32 @@
   </nav>
   <hr>
   <h2>Eventi in programma</h2>
-  <div class="container mt-4" id="eventibibl">
-    <table class="list-group">
+  <div class="container-fluid">
+    <table class="table table-bordered"  id="tabellaeventi">
+      <thead>
+      <tr>
+        <th>Nome dell'Evento</th>
+        <th>Libro</th>
+        <th>Data e Ora</th>
+        <th>Durata</th>
+        <th>Descrizione</th>
+        <th>Link Diretta Online</th>
+        <th>✍️</th>
+        <th>❌</th>
+      </tr>
+      </thead>
+      <tbody>
       <tr th:each="evento : ${eventiBiblioteca}">
           <td th:text="${evento.nome}"></td>
           <td th:text="${evento.libro.titolo}"></td>
-          <td class="badge" id="badge" th:text="${#temporals.format(evento.dataOra, 'dd/MM/yyyy HH:mm')}"></td>
+          <td th:text="${#temporals.format(evento.dataOra, 'dd/MM/yyyy HH:mm')}"></td>
           <td th:text="${evento.durata}"></td>
           <td th:text="${evento.descrizione}"></td>
           <td th:text="${evento.linkDiretta}"></td>
-          <td><a class="btn btn-primary modificaevento" th:href="@{/gestione-biblioteca(id=${biblioteca.id}, idEvento=${evento.id})}" th:data-idEvento="${evento.id}">Modifica</a></td>
+          <td><a class="btn btn-primary" id="modificaevento" th:href="@{/gestione-biblioteca(id=${biblioteca.id}, idEvento=${evento.id})}" th:data-idEvento="${evento.id}">Modifica</a></td>
           <td><a class="btn btn-primary" id="eliminaevento" th:href="@{/gestione-biblioteca/elimina(id=${evento.id})}">Elimina</a></td>
       </tr>
+      </tbody>
     </table>
 
   </div>
