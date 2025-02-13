@@ -594,7 +594,7 @@ textarea {
 }
 
 .titolocollabora {
-    background-image: url('lavoraconnoi2.jpg');
+    background-image: url('../img/lavoraconnoi2.jpg'); /* ../ indica che devi risalire di una cartella (per passare dalla cartella css alla root del progetto). */
     background-size: cover;
     /* Assicura che l'immagine copra tutto lo sfondo */
     background-position: center;
