@@ -600,3 +600,143 @@ textarea {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
      font-size: 130px;
 }
+
+/* libri.html */
+#testa {
+    background-color: #394e48;
+    border-radius: 3%;
+    padding: 10px;
+}
+
+#podio {
+    background-color: #394e48;;
+    border-radius: 3%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.frasi {
+    height: 400px;
+    padding: 8px;
+    height: fit-content;
+}
+
+#frase1,
+#frase3 {
+    text-align: left;
+}
+
+#frase2,
+#frase4 {
+    text-align: right;
+}
+
+#macchinadascr {
+    color:  #f4c25b;
+    margin: 5px;
+}
+
+.card-titolo,
+.card-testo {
+    color: #f4c25b;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.card-container {
+    justify-content: space-around;
+    gap: 5px;
+}
+
+.libreria {
+    width: 330px;
+    height: 760px;
+    margin-top: 30px;
+    background-color: #316452;
+    margin-right: auto;
+    margin-left: auto;
+    gap: 10px;
+}
+
+.podio-card1 {
+    width: 200px;
+    height: 360px;
+    background-color: #f1c24d;
+    color: #745d2f;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+.podio-card2 {
+    width: 200px;
+    height: 320px;
+    background-color: #649284;
+    color: #263b24;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+.podio-card3 {
+    width: 200px;
+    height: 300px;
+    background-color: #ce4949;
+    color: #401414;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+.imglibri{
+    width: 200px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -30px;
+}
+
+
+#imgroger{
+    margin-top: 14px;
+    width: auto;
+    height: 180px;
+    margin-left: 55px;
+}
+
+
+#imgmiss{
+    margin-top: 14px;
+    width: auto;
+    height: 180px;
+    margin-left: 90px;
+}
+
+.foto-top {
+    width: 200px;
+    height: auto;
+    margin-left: 60px;
+}
+
+#img1 {
+    padding-top: 10px;
+}
+
+#img2 {
+    width: 130px;
+    height: auto;
+    margin-top: 0px;
+}
+
+#img3 {
+    width: 130px;
+    height: auto;
+    margin-top: -0px;
+}
