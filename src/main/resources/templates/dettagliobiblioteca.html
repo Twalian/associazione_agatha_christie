@@ -49,37 +49,43 @@
 
     <header class="header">
         <div>
-            <img src="img/bibliotecaFirenze.jpg" class="img-fluid bibl-fronte" alt="Biblioteca Nazionale Centrale di Firenze">
-            <h1 id="biblioteca">BIBLIOTECA NAZIONALE CENTRALE DI FIRENZE</h1>
+            <img th:src="${biblioteca.foto}" class="img-fluid bibl-fronte" th:alt="${biblioteca.nome}">
+            <h1 id="biblioteca" th:text="${biblioteca.nome}"></h1>
         </div>
     </header>
 
     <div class="container-fluid">
         <div class="bibl-sito row align-items-center">
             <div class="bibl col-md-12 col-lg-6">
-                <img src="img/bncfFirenze-logo.png" class="img-biblioteca img-fluid" alt="Biblioteca Nazionale Centrale di Firenze">
+                <img th:src="${biblioteca.logo}" class="img-biblioteca img-fluid" th:alt="${biblioteca.nome}">
             </div>
             <div class="bibl-informazioni col-lg-6 col-md-12">
                 <h4>Info:</h4>
-                <p>La Biblioteca Nazionale Centrale di Firenze è una biblioteca pubblica, afferente al MIC, che raccoglie, conserva e documenta la memoria storica della Nazione.</p>
+                <p th:text="${biblioteca.descrizione}"></p>
                 <div id="bibl-orario">
                     <h4>Apertura della biblioteca</h4>
-                    <ul>
-                        <li>Dal lunedì al venerdì 8.15 – 19.00 </li>
-                        <li>Sabato 8.15 – 13.30 </li>
-                    </ul>
+                    <p th:text="${biblioteca.orarioApertura}">
+                    </p>
                 </div>
                 <div id="bibl-contatti">
                     <h4>Telefono:</h4>
-                    <p>05524919201</p>
+                    <p th:text="${biblioteca.telefono}"></p>
                     <h4>Indirizzo email:</h4>
-                    <p>bnc-fi@pec.cultura.gov.it</p>
+                    <p th:text="${biblioteca.email}"></p>
                 </div>
                 <div id="bibl-map-sito">
                     <h4>Sito ufficiale:</h4>
-                    <a href="#">bncf.cultura.gov.it</a>
+                    <p th:text="${biblioteca.sito}"></p>
                     <h4>Ci trovi in: </h4>
-                    <p>Piazza dei Cavalleggeri, 1 - 50122 Firenze </p>
+                    <p th:text="|${biblioteca.indirizzo} ${biblioteca.comune}|"></p>
+                    <!-- Inserisci la mappa dinamicamente con iframe -->
+                    <div class="row justify-content-center">
+                        <div class="col-md-5">
+                            <iframe width="400" height="320" style="border:0;"
+                                    th:src="'https://www.google.com/maps/embed?pb=' + ${biblioteca.maps}"
+                                    allowfullscreen=""  referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

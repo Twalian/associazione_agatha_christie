@@ -97,7 +97,8 @@ public class GestioneBibliotecaController {
 
         evento = idEvento == null ? new Evento() : eventoService.datiEvento(idEvento);
 
-        eventoService.registraEvento(evento, nome,dataOra, durata, descrizione, linkDiretta, idLibro, session);
+
+        eventoService.registraEvento(evento, nome, dataOra, durata, descrizione, linkDiretta, idLibro, session);
         int idBiblioteca = (int) session.getAttribute("idBiblioteca");
         return "redirect:/gestione-biblioteca?id=" + idBiblioteca;
     }
