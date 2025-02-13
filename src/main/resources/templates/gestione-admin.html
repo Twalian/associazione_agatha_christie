@@ -40,7 +40,7 @@
                 <a class="nav-link" th:href="@{/autrice}">Autrice</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" th:href="@{/eventi}">Prossimo Eventi</a>
+                <a class="nav-link" th:href="@{/eventi}">Prossimi Eventi</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" th:href="@{/biblioteche}">Biblioteche aderenti</a>
@@ -118,17 +118,21 @@
             <input type="text" class="form-control" id="username" th:field="*{credenziale.username}" required>
             <p th:if="${#fields.hasErrors('credenziale.username')}" th:errors="*{credenziale.username}"></p>
         </div>
-        <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="text" class="form-control" id="password" th:field="*{credenziale.password}" required>
-            <p th:if="${#fields.hasErrors('credenziale.password')}" th:errors="*{credenziale.password}"></p>
+        <label for="pwd" class="form-label">Password</label>
+        <div class="mb-3 input-group">
+            <input type="password" class="form-control" id="pwd" th:field="*{credenziale.password}" required>
+            <button type="button" id="pwdButton" class="btn btn-outline-secondary">
+                <img id="occhio" src="img/occhio.png" alt="Mostra/Nascondi" width="20px">
+            </button>
         </div>
+        <p th:if="${#fields.hasErrors('credenziale.password')}" th:errors="*{credenziale.password}"></p>
         <hr>
         <button type="submit" class="btn btn-primary" id="aggiungi">Aggiungi Biblioteca</button>
     </form>
 </div>
 
 <script>
+
     document.addEventListener("DOMContentLoaded", function () {
         const form = document.getElementById("aggiungiBibliotecaForm");
         // Thymeleaf sostituirà la variabile con true o false
@@ -145,6 +149,16 @@
             }
         });
     });
+
+
+    document.getElementById("pwdButton").addEventListener("click", function() {
+    var pwd = document.getElementById("pwd");
+    if (pwd.type === "password") {
+        pwd.type = "text";
+    } else {
+        pwd.type = "password";
+    }
+});
 </script>
 
 
