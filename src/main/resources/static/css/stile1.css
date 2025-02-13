@@ -569,8 +569,8 @@ textarea {
 }
 
 .card-title {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    color: rgba(221, 183, 15, 0.952);
+    text-shadow: 2px 2px 4px #243f1e;
+    color: #5a944d;
 }
 
 .navbar-brand1:hover {
@@ -747,5 +747,6 @@ textarea {
 }
 
 #unisciti {
-    font-size: 60px;
+    font-size: 40px;
+    text-shadow: #000000  2px 2px 4px;
 }
