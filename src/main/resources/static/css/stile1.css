@@ -244,6 +244,11 @@ h2, h1 {
       vertical-align: middle; /* Centra il testo verticalmente */
 }
 
+.emoji {
+    width:20px;
+    height: 20px;
+}
+
 .barrascorr {
     overflow-x: visible;
 }
