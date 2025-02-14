@@ -222,6 +222,7 @@ h2, h1 {
 #aggiungi:hover,
 #profilo:hover,
 #aggiungievento:hover,
+#aggiungilibro:hover,
 #logout:hover {
     background-color: #486345;
     color: #f4c25b;
@@ -379,7 +380,8 @@ h2, h1 {
 }
 
 /* form non visibile*/
-#aggiungieventi {
+#aggiungieventi,
+ #aggiungilibri,{
     /*  display: none; */
     border: 1px solid #cdc6c6;
     border-radius: 8px;
@@ -682,7 +684,8 @@ background-color: #112c0a
     gap: 5px;
 }
 
-.card-libreria {
+.card-libreria,
+.libreria {
     width: 330px;
     height: 700px;
     margin-top: 30px;
@@ -785,17 +788,15 @@ background-color: #112c0a
     padding-top: 10px;
 }
 
-.libriamati {
-    background-image: url('../img/bannerlibri.jpg'); /* ../ indica che devi risalire di una cartella (per passare dalla cartella css alla root del progetto). */
+#libriamati {
+ background-image: url('../img/bannerlibri.jpg'); /* ../ indica che devi risalire di una cartella (per passare dalla cartella css alla root del progetto). */
     background-size: cover;
-    /* Assicura che l'immagine copra tutto lo sfondo */
+    filter: brightness(50%);
     background-position: center;
-    /* Centra l'immagine nello sfondo */
     padding: 60px;
-    /* Aggiunge spazio attorno al contenuto */
-    color: rgba(221, 183, 15, 0.952);
+    color: #ffda62f3;
+    font-size: 90px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    font-size: 130px;
 }
 
 /* FOOTER - NEWSPAPER*/
