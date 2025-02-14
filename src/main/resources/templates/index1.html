@@ -115,31 +115,31 @@
         <!-- Carousel dei libri -->
         <div id="libriCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <!-- Itera sulla lista di libri con Thymeleaf -->
-               <div>
-                    <div class="row carousel-item" th:each="libro, loop : ${libri}" th:classappend="${loop.first} ? ' active'">
-                        <!-- Colonna per ogni libro -->
-                        <div class="col-xl-4 col-md-4">
-                            <img th:src="@{${libro.copertina}}" alt="Libri immagine" class="img-fluid">
-                            <p class="titoli" th:text="${libro.titolo}"></p>
-                            <p th:text="${libro.anno}"></p>
+                <!-- Raggruppa i libri in gruppi di 4 -->
+                <div th:each="group, loop : ${#numbers.sequence(0, libri.size() - 1, 4)}"
+                     class="carousel-item"
+                     th:classappend="${loop.first} ? ' active'">
+                    <div class="row">
+                        <div th:each="i : ${#numbers.sequence(group, group + 3)}" th:if="${i < libri.size()}" class="col-xl-3 col-md-6">
+                            <img th:src="@{${libri[i].copertina}}" alt="Libri immagine" class="img-fluid">
+                            <p class="titoli" th:text="${libri[i].titolo}"></p>
+                            <p th:text="${libri[i].anno}"></p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Controlli per scorrere il carosello -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#libriCarousel"
-                    data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#libriCarousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Precedente</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#libriCarousel"
-                    data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#libriCarousel" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Successivo</span>
             </button>
         </div>
+
     </section>
 
 
