@@ -28,7 +28,15 @@ public class ProfiloController {
 
         if (session.getAttribute("utenteBiblioteca") == null)
             return "redirect:/login";
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
         
+=======
+
+>>>>>>> Stashed changes
+=======
+
+>>>>>>> Stashed changes
         biblioteca = bibliotecaService.datiBiblioteca((Integer) session.getAttribute("idBiblioteca"));
         model.addAttribute("utente", biblioteca);
         session.setAttribute("utente", biblioteca);
