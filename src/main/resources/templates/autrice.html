@@ -4,26 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Chi siamo</title>
-    <!-- Bootstrap -->
+    <title>Agatha Christie</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KyZXEJr+5pLk63bHf3rV0eJ6M9cRz4eH9k5Qg5q9tt9Q0wjj2STzj3U2Q+E8L9f3" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!--    <link th:href="stile1.css" rel="stylesheet">-->
     <link type="text/css" th:href="@{/css/stile1.css}" href="../static/css/stile1.css"
           rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
 </head>
-
 <body>
 <!-- Menu Fisso in alto -->
-<nav class="navbar bg-light navbar-expand-lg fixed-top">
-
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <a class="navbar-brand" th:href="@{/}">Agatha Christie Club</a>
-    <!-- quando lo schermo è piccolo, appaiono le 3 linee -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
     </button>
-
-    <!-- il menu intero -->
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
@@ -54,53 +52,64 @@
     </div>
 </nav>
 
-    <div class="container-fluid"> <!-- Contenitore principale per il contenuto -->
-
-            <header class="header">
-                <div class="header-text header2">
-                    <h1 class="titolochisiamo">Chi Siamo</h1>
-                    <p class="lead1">Scopri di più sul nostro catalogo e sui nostri servizi esplorando il nostro sito web.</p> <!-- Testo aggiuntivo con invito a esplorare -->
-                </div>
-            </header>
-            <p class="lead"> <!-- Testo introduttivo della sezione Chi siamo -->
-                Benvenuti alla Biblioteca Agatha Christie, un luogo dedicato all'amore per la lettura e alla celebrazione dell'opera della più grande scrittrice di gialli di tutti i tempi. La nostra biblioteca è un rifugio per gli amanti della letteratura e degli enigmi, un luogo dove ogni visitatore può immergersi nelle trame intricate e nei misteri avvincenti che Agatha Christie ha magistralmente creato.
-                La Biblioteca Agatha Christie non è solo una raccolta di libri, ma anche un centro culturale che ospita eventi letterari, incontri con autori, e workshop dedicati alla scrittura e all'investigazione. La nostra missione è promuovere la lettura, l'educazione e l'ispirazione attraverso un'ampia selezione di libri, risorse digitali e attività coinvolgenti.
-                Siamo orgogliosi di offrire ai nostri visitatori un ambiente accogliente e stimolante, dove ognuno può esplorare la vasta eredità di Agatha Christie e scoprire nuovi mondi letterari. Unitevi a noi in questo viaggio affascinante attraverso il tempo e lo spazio, dove ogni libro è una porta verso un nuovo mistero da risolvere.
-            </p>
-            <hr class="my-4"> <!-- Linea di separazione -->
-
-    </div>
-
-    <div class="container"> <!-- Contenitore principale per la galleria fotografica -->
-        <h2 id="galleria">Galleria Fotografica</h2> <!-- Titolo della sezione galleria fotografica -->
-        <div class="row"> <!-- Riga per le immagini -->
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4"> <!-- Colonna per l'immagine 1 -->
-                <div class="card"> <!-- Card per l'immagine 1 -->
-                    <img src="img/ragazzi.jpg" class="card-img-top" alt="Immagine 1"> <!-- Immagine 1 -->
-                    <div class="card-body"> <!-- Corpo della card -->
-                        <p class="card-text">Tra Enigmi ed Istruzione</p> <!-- Descrizione dell'immagine 1 -->
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4"> <!-- Colonna per l'immagine 2 -->
-                <div class="card"> <!-- Card per l'immagine 2 -->
-                    <img src="img/Agata.jpg" class="card-img-top" alt="Immagine 2"> <!-- Immagine 2 -->
-                    <div class="card-body"> <!-- Corpo della card -->
-                        <p class="card-text">Una vita tra Libri, Gialli e Realtà</p> <!-- Descrizione dell'immagine 2 -->
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4"> <!-- Colonna per l'immagine 3 -->
-                <div class="card"> <!-- Card per l'immagine 3 -->
-                    <img src="img/cit2.jpg" class="card-img-top" alt="Immagine 3"> <!-- Immagine 3 -->
-                    <div class="card-body"> <!-- Corpo della card -->
-                        <p class="card-text">Citazione del Mese</p> <!-- Descrizione dell'immagine 3 -->
-                    </div>
-                </div>
-            </div>
+<div class="container-fluid">
+    <header class="header">
+        <div class="header-text header2">
+            <h1 class="agathaautrice"> Agatha Christie</h1>
+            <p  class="lead1">La Regina del Giallo</p>
         </div>
-    </div>
 
+    </header>
+
+    <hr>
+<div class="container mt-5">
+    <h2 class="text-center">Biografia</h2>
+    <p class="lead">
+        Agatha Christie (1890-1976) è stata una scrittrice britannica, famosa per i suoi romanzi gialli e le sue opere teatrali. È conosciuta come la "Regina del Crimine" grazie alla sua straordinaria abilità nel creare trame intricate e personaggi memorabili. Tra le sue opere più note ci sono i romanzi con i celebri detective Hercule Poirot e Miss Marple.
+    </p>
+
+    <h2 class="text-center">Curiosità</h2>
+    <ul class="lead">
+        <li>Agatha Christie ha scritto oltre 80 romanzi e opere teatrali.</li>
+        <li>È una degli autori più venduti di tutti i tempi, con più di 2 miliardi di copie vendute.</li>
+        <li>Il suo romanzo "Dieci Piccoli Indiani" (anche conosciuto come "E Non Rimase Nessuno") è uno dei libri più venduti al mondo.</li>
+        <li>È stata insignita del titolo di "Dame" dalla regina Elisabetta II nel 1971.</li>
+    </ul>
+
+
+    <section class="libri mt-5">
+        <h2 id="libriautrice">I Libri più famosi</h2>
+
+        <!-- Carousel dei libri -->
+        <div id="libriCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Raggruppa i libri in gruppi di 4 -->
+                <div th:each="group, loop : ${#numbers.sequence(0, libri.size() - 1, 4)}"
+                     class="carousel-item"
+                     th:classappend="${loop.first} ? ' active'">
+                    <div class="row">
+                        <div th:each="i : ${#numbers.sequence(group, group + 3)}" th:if="${i < libri.size()}" class="col-xl-3 col-md-6">
+                            <img th:src="@{${libri[i].copertina}}" alt="Libri immagine" class="img-fluid">
+                            <p class="titoli" th:text="${libri[i].titolo}"></p>
+                            <p th:text="${libri[i].anno}"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controlli per scorrere il carosello -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#libriCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Precedente</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#libriCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Successivo</span>
+            </button>
+        </div>
+
+    </section>
+</div>
 
 <div class="container-fluid">
     <footer class="footer">
@@ -149,10 +158,8 @@
     <p class="np-scheda1 text-center mt-4">© 2025 Associazione Agatha Christie. Tutti i diritti riservati.</p>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- Collegamento alla libreria jQuery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> <!-- Collegamento alla libreria Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script> <!-- Collegamento al JavaScript di Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
