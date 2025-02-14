@@ -381,7 +381,7 @@ h2, h1 {
 
 /* form non visibile*/
 #aggiungieventi,
- #aggiungilibri,{
+ #aggiungilibri {
     /*  display: none; */
     border: 1px solid #cdc6c6;
     border-radius: 8px;
@@ -824,4 +824,119 @@ textarea {
 #lavora2 {
       margin-bottom: 20px;
       padding: 20px;
+}
+
+
+/* FOOTER - NEWSPAPER*/
+.footer {
+    background-color: #3b4d47;
+    color: #c09303;
+    padding: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 200px;
+    margin-bottom: 10px;
+    height: auto;
+}
+
+.nav-link-np {
+    color: #f4c25b !important;
+    font-size: 20px;
+    padding: 0;
+    text-decoration: none;
+}
+
+.spazio {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.np-scheda {
+    font-weight: normal;
+    color: #f4c25b;
+    font-size: 20px;
+}
+
+.np-info {
+    font-size: 25px;
+    margin-top: 23px;
+}
+
+.np-info1 {
+    font-size: 25px;
+    margin-top: 30px;
+}
+
+.np-parti {
+    list-style: none;
+    padding-bottom: 5px;
+    padding-left: 0;
+}
+
+.vertical-line {
+    border-right: 2px solid #f4c25b;
+    height: 100%;
+    display: inline-block;
+    width: 50px;
+    margin: 0;
+    padding: 0;
+}
+
+.np-email {
+    width: 100%;
+    max-width: 500px;
+    height: 50px;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.np-iscri {
+    background-color: #d9a543df;
+    border: none;
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+}
+
+.np-iscri:hover {
+    background-color: #ffad14df;
+}
+
+.lista-np {
+    font-weight: bold;
+    font-size: 20px;
+    color: #ffc400;
+}
+
+.social-face {
+    width: 40px;
+    height: 40px;
+    margin-top: -4px;
+    margin-left: -6px;
+}
+
+.social a {
+   text-decoration: none;
+}
+
+.social ul {
+    padding-left: 0;
+}
+
+.social li {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.np-scheda1 {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+@media (max-width: 767px) {
+    .footer .row > div {
+        margin-bottom: 20px;
+    }
+    .vertical-line {
+        display: none;
+    }
 }
