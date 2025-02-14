@@ -58,6 +58,14 @@ body {
     padding-bottom: 25px;
 }
 
+#descrasso {
+    color: #f4c25b;
+}
+
+#descrlett {
+    color: #f4c25b;
+}
+
 #foto2 {
     border-radius: 10%;
     max-width: 100%;
