@@ -485,15 +485,12 @@ textarea {
     border-radius: 10px;
 }
 
-.container h2 {
+#galleria{
     color: #ffda62f3;
     margin-top: 20px;
     font-style: italic;
 }
 
-.jumbotron{
-    background-color: #ffda62f3;
-}
 
 
 #elimina:hover {
@@ -945,4 +942,21 @@ color:#f4c25b;
     .vertical-line {
         display: none;
     }
+}
+
+.agathaautrice{
+   background-image: url('../img/agathaautrice.jpg'); /* ../ indica che devi risalire di una cartella (per passare dalla cartella css alla root del progetto). */
+   background-size: cover;
+    /* Assicura che l'immagine copra tutto lo sfondo */
+   background-position: center;
+    /* Centra l'immagine nello sfondo */
+   padding: 60px;
+    /* Aggiunge spazio attorno al contenuto */
+   color: rgba(221, 183, 15, 0.952);
+       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        font-size: 130px;
+}
+
+#libriautrice{
+color: #1d3b32;
 }
