@@ -441,7 +441,7 @@ textarea {
 
 .bibl-info {
     text-shadow: 2px 2px #a86001;
-    font-size: 20px
+    font-size: 20px;
     margin-top: 5px;
     margin-bottom: 5px;
     color: #f4c25b;
@@ -471,11 +471,7 @@ textarea {
     border-top: 1px solid #195323;
 }
 
-.card {
-    border: 1px solid #020101;
-    border-radius: 10px;
-    background-color: #f4c25b;
-}
+
 
 .card-img-top {
     height: 200px;
@@ -485,6 +481,9 @@ textarea {
 
 .card-text {
     color: #112c0a;
+    border: 1px solid #020101;
+    border-radius: 10px;
+    background-color: #f4c25b;
 }
 
 .container h2 {
@@ -515,6 +514,8 @@ textarea {
     color: rgba(221, 183, 15, 0.952);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
      font-size: 130px;
+}
+
 
 /* EVENTI */
 
@@ -580,8 +581,10 @@ textarea {
 }
 
 .card-title {
-    text-shadow: 2px 2px 4px #243f1e;
-    color: #5a944d;
+     color: #112c0a;
+     border: 1px solid #020101;
+     border-radius: 10px;
+     background-color: #f4c25b;
 }
 
 .navbar-brand1:hover {
@@ -689,6 +692,7 @@ textarea {
 
 .card-body {
     margin-top: 10px;
+    background-color: #ffda62f3;
 }
 
 .podio-card1 {
@@ -791,4 +795,3 @@ textarea {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     font-size: 130px;
 }
-
