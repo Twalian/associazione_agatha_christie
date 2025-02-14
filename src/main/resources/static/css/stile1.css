@@ -3,6 +3,7 @@ body {
     background-color: #1d3b32;
     /* Verde scuro */
     /* Giallo oro */
+    color: #f4c25b;
     padding-top: 70px;
     /* Aggiungi margine superiore per evitare che la navbar copra il contenuto */
     overflow-x: hidden;
@@ -656,6 +657,7 @@ textarea {
     height: 400px;
     padding: 8px;
     height: fit-content;
+    color: #f4c25b;
 }
 
 #frase1,
