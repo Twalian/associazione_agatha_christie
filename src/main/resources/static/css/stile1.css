@@ -222,6 +222,7 @@ h2, h1 {
 #aggiungi:hover,
 #profilo:hover,
 #aggiungievento:hover,
+#aggiungilibro:hover,
 #logout:hover {
     background-color: #486345;
     color: #f4c25b;
@@ -379,7 +380,8 @@ h2, h1 {
 }
 
 /* form non visibile*/
-#aggiungieventi {
+#aggiungieventi,
+ #aggiungilibri,{
     /*  display: none; */
     border: 1px solid #cdc6c6;
     border-radius: 8px;
@@ -586,7 +588,9 @@ textarea {
      border-radius: 10px;
      background-color: #f4c25b;
 }
-
+.card-lavora{
+background-color: #112c0a
+}
 .navbar-brand1:hover {
     color: black;
     /* Mantiene il colore originale */
