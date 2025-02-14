@@ -29,8 +29,10 @@ public class LoginController {
                           HttpSession session) {
         if(session.getAttribute("utenteAdmin") != null)
             return "redirect:/gestione-admin";
-        if(session.getAttribute("utenteBiblioteca") != null)
-            return "redirect:/gestione-biblioteca";
+        if(session.getAttribute("utenteBiblioteca") != null) {
+            int idBiblioteca = (int) session.getAttribute("idBiblioteca");
+            return "redirect:/gestione-biblioteca?id=" + idBiblioteca;
+        }
         model.addAttribute("errore", errore);
         return "login";
     }

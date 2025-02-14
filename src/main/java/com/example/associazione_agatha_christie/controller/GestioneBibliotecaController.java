@@ -103,7 +103,7 @@ public class GestioneBibliotecaController {
         return "redirect:/";
     }
 
-    @PostMapping("/nuovoevento")
+    @PostMapping
     public String formManager(@RequestParam(required = false) Integer idEvento,
                               @RequestParam String nome,
                               @RequestParam LocalDateTime dataOra,

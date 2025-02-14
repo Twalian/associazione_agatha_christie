@@ -99,7 +99,7 @@
           <td th:text="${evento.descrizione}"></td>
           <td th:text="${evento.linkDiretta}"></td>
           <td><a class="btn btn-primary" id="modificaevento" th:href="@{/gestione-biblioteca(id=${biblioteca.id}, idEvento=${evento.id})}" th:data-idEvento="${evento.id}">Modifica</a></td>
-          <td><a class="btn btn-primary" id="eliminaevento" th:href="@{/gestione-biblioteca/elimina(id=${evento.id})}">Elimina</a></td>
+          <td><button class="btn btn-primary elimina" id="eliminaevento" th:value="|${evento.nome}@${evento.id}|">Elimina</button></td>
       </tr>
       </tbody>
     </table>
@@ -113,7 +113,7 @@
   <div id="aggiungieventi" th:style="${mostraForm} ? 'display:block;' : 'display:none;'">
     <h3>Aggiungi un nuovo Evento in Programma</h3>
     <hr>
-    <form th:object="${evento}" method="post" th:action="@{/gestione-biblioteca/nuovoevento}">
+    <form th:object="${evento}" method="post">
       <input type="hidden" th:field="*{id}">
       <div class="mb-3">
         <label for="evento" class="form-label">Nome dell'Evento</label>
@@ -212,6 +212,16 @@
           }, 3000); // Nasconde il messaggio dopo 3 secondi
       }
   });
+
+  document.querySelectorAll(".elimina").forEach(function(button) {
+            button.addEventListener("click", function() {
+                const valoriRicevuti = this.getAttribute("value");
+                const datiRicevuti = valoriRicevuti.split("@");
+                const conferma = confirm("Sei sicuro di voler cancellare l'evento " + datiRicevuti[0] + "?");
+            if(conferma)
+                window.location.href = "/gestione-biblioteca/elimina?id=" + datiRicevuti[1];
+            });
+        })
   
 </script>
 
