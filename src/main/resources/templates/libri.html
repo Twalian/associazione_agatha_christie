@@ -61,7 +61,11 @@
 </nav>
 
 <div class="container-fluid">
-    <h1>I Libri Più Amati di Agatha Christie</h1>
+    <header class="header">
+        <div class="header-text header2">
+    <h1 class="libriamati">I Libri Più Amati di Agatha Christie</h1>
+        </div>
+    </header>
     <p  id="libri-title1">Scopri i libri più celebri dell'autrice di gialli più amata al mondo.</p>
     <hr>
     <div class="row" id="testa">
@@ -131,7 +135,7 @@
 
             <div class="card-body libreria">
                 <h5 class="card-title card-titolo" th:text="${libro.titolo}"><strong></strong></h5>
-                <img  class="card-img-top foto-top imglibreria" th:src="${libro.copertina}" alt="Libro 4" id="imgroger">
+                <img  class="card-img imglibreria" th:src="${libro.copertina}" alt="Copertina Libro">
                 <p class="card-text card-testo" th:text="${libro.anno}"></p>
                 <p class="card-text card-testo" th:text="${libro.editore}"></p>
                 <p class="card-text card-testo" th:text="${libro.trama}"></p>
