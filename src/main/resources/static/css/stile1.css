@@ -474,6 +474,7 @@ textarea {
 .card {
     border: 1px solid #020101;
     border-radius: 10px;
+    background-color: #f4c25b;
 }
 
 .card-img-top {
