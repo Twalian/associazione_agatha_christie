@@ -67,6 +67,9 @@
     <a id="profilo" class="btn btn-primary" th:href="@{/profilo}">
       👤 Profilo Personale
     </a>
+    <button id="aggiungilibro" class="btn btn-primary">
+      🗓️ Aggiungi nuovo Libro
+    </button>
     <button id="aggiungievento" class="btn btn-primary">
     🗓️ Aggiungi Evento
     </button>
@@ -101,6 +104,8 @@
       </tbody>
     </table>
 
+    <p id="messaggioLibroAggiunto" th:if="${add != null}" th:text="${add.equals('yes') ? 'Libro Aggiunto' : 'Impossibile aggiungere'}" th:style="${add.equals('yes') ? 'color: #f4c25b' : 'color:red'}"></p>
+
   </div>
   <hr>
 
@@ -108,7 +113,7 @@
   <div id="aggiungieventi" th:style="${mostraForm} ? 'display:block;' : 'display:none;'">
     <h3>Aggiungi un nuovo Evento in Programma</h3>
     <hr>
-    <form th:object="${evento}" method="post">
+    <form th:object="${evento}" method="post" th:action="@{/gestione-biblioteca/nuovoevento}">
       <input type="hidden" th:field="*{id}">
       <div class="mb-3">
         <label for="evento" class="form-label">Nome dell'Evento</label>
@@ -142,25 +147,74 @@
     </form>
   </div>
 
+  <!--form per aggiungere un nuovo libro-->
+  <div id="aggiungilibri" th:style="'display:none;'">
+    <h3>Aggiungi un nuovo Libro al Catalogo</h3>
+    <hr>
+    <form th:object="${libro}" method="post" enctype="multipart/form-data" th:action="@{/gestione-biblioteca/nuovolibro}">
+      <div class="mb-3">
+        <label for="titolo" class="form-label">Nome del Libro</label>
+        <input type="text" class="form-control" id="titolo" th:field="*{titolo}" required>
+      </div>
+      <div class="mb-3">
+        <label for="anno" class="form-label">Anno</label>
+        <input type="number" class="form-control" id="anno" th:field="*{anno}" required>
+      </div>
+      <div class="mb-3">
+        <label for="editore" class="form-label">Editore</label>
+        <input type="text" class="form-control" id="editore" th:field="*{editore}" required>
+      </div>
+      <div class="mb-3">
+        <label for="trama" class="form-label">Trama</label>
+        <textarea class="form-control" id="trama" th:field="*{trama}" rows="4"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="copertina" class="form-label">Copertina</label>
+        <input type="file" class="form-control" id="copertina" th:field="*{copertina}">
+      </div>
+      <div class="mb-3">
+        <label for="copertina_dettaglio" class="form-label">Dettaglio copertina</label>
+        <input type="file" class="form-control" id="copertina_dettaglio" th:field="*{copertinaDettaglio}">
+      </div>
+      <div class="mb-3">
+        <label for="ciclo" class="form-label">Ciclo narrativo</label>
+        <select class="form-control" id="ciclo" name="idCiclo" required>
+          <option value="" selected disabled>Seleziona il ciclo</option>
+          <option th:each="ciclo : ${cicli}"  th:text="${ciclo.nome}" th:value="${ciclo.id}"></option>
+        </select>
+      </div>
+      <hr>
+      <button type="submit" class="btn btn-primary" id="memorizzalibro">Conferma</button>
+    </form>
+  </div>
+
 </div>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-      const form = document.getElementById("aggiungieventi");
+      const formEvento = document.getElementById("aggiungieventi");
+      const formLibro = document.getElementById("aggiungilibri");
 
       // Mostra/Nasconde il form quando si clicca su "Aggiungi Evento"
       document.getElementById("aggiungievento").addEventListener("click", function () {
-          form.style.display = "block";
+          formEvento.style.display = (formEvento.style.display === "none" || formEvento.style.display === "") ? "block" : "none";
       });
 
-      // Event delegation per gestire i click sui pulsanti "Modifica"
-      document.getElementById("eventibibl").addEventListener("click", function (event) {
-          if (event.target.classList.contains("modificaevento")) {
-              form.style.display = "block"; // Mostra il form
-          }
+      // Mostra/Nasconde il form quando si clicca su "Aggiungi Libro"
+      document.getElementById("aggiungilibro").addEventListener("click", function () {
+          formLibro.style.display = (formLibro.style.display === "none" || formLibro.style.display === "") ? "block" : "none";
       });
+
+      let message = document.getElementById("messaggioLibroAggiunto");
+      if (message) {
+          setTimeout(function () {
+              message.style.display = "none";
+          }, 3000); // Nasconde il messaggio dopo 3 secondi
+      }
   });
+  
 </script>
+
 
 </body>
 
