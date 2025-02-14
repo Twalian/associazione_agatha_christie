@@ -92,7 +92,7 @@
             <td th:text="${biblioteca.credenziale.username}"></td>
             <td th:text="${#strings.length(biblioteca.credenziale.password) != 0 ? #strings.repeat('*', #strings.length(biblioteca.credenziale.password)) : ''}"></td>
             <td>
-                <a id="elimina" class="btn btn-primary" th:href="@{/gestione-admin/elimina(id=${biblioteca.id})}">Elimina</a>
+                <button id="elimina" class="btn btn-primary elimina" th:value="|${biblioteca.nome}@${biblioteca.id}|">Elimina</button>
             </td>
         </tr>
         </tbody>
@@ -203,6 +203,16 @@
         pwd.type = "password";
     }
 });
+
+     document.querySelectorAll(".elimina").forEach(function(button) {
+            button.addEventListener("click", function() {
+                const valoriRicevuti = this.getAttribute("value");
+                const datiRicevuti = valoriRicevuti.split("@");
+                const conferma = confirm("Sei sicuro di voler cancellare la biblioteca " + datiRicevuti[0] + "?");
+            if(conferma)
+                window.location.href = "/gestione-admin/elimina?id=" + datiRicevuti[1];
+            });
+        })
 </script>
 
 
