@@ -518,18 +518,22 @@ textarea {
 }
 
 #ev-page {
+    background-image: url('../img/banner-eventi.jpg'); /* ../ indica che devi risalire di una cartella (per passare dalla cartella css alla root del progetto). */
+    background-size: cover;
+    /* Assicura che l'immagine copra tutto lo sfondo */
+    background-position: center;
+    /* Centra l'immagine nello sfondo */
+    padding: 30px;
+    /* Aggiunge spazio attorno al contenuto */
     text-shadow: 2px 2px #a86001;
-    text-align: center;
-    margin-top: 100px;
-    font-weight: bolder;
-    font-size: 40px;
-    color: #f4c25b;
+    color: rgba(221, 183, 15, 0.952);
+    font-size: 130px;
 }
 
 .toast-container {
     padding: 30px;
     margin: auto;
-    width: 95%;
+    width: 80%;
     height: auto;
     background-color: #3b4d47;
 }
@@ -541,6 +545,7 @@ textarea {
 }
 
 .ev-titolo {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     font-size: 20px;
     color: #fcd33c;
 }
@@ -555,7 +560,8 @@ textarea {
 
 .mini-evento {
     width: 50px;
-    height: auto;}
+    height: auto;
+}
 
 /* COLLABORA CON NOI */
 
