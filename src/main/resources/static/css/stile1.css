@@ -138,6 +138,7 @@ h2, h1 {
     font-size: 30px;
     padding-bottom: 20px;
     text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .titoli {
@@ -479,11 +480,6 @@ textarea {
     height: 200px;
     object-fit: cover;
     border-bottom: 2px solid #275209fd;
-    box-shadow: 0 0 10px  rgba(107, 141, 22, 0.822);
-}
-
-.card-body {
-    background-color: #ffda62f3;
 }
 
 .card-text {
@@ -663,19 +659,35 @@ textarea {
     text-align: center;
 }
 
+.card-titolo {
+    font-size: 25px;
+}
+
+#libri-title1 {
+    color: #f4c25b;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-size: 20px;
+}
+
 .card-container {
     justify-content: space-around;
     gap: 5px;
 }
 
-.libreria {
+.card-libreria {
     width: 330px;
-    height: 760px;
+    height: 700px;
     margin-top: 30px;
-    background-color: #316452;
+    background-color: #ffda62f3;
     margin-right: auto;
     margin-left: auto;
     gap: 10px;
+}
+
+.card-body {
+    margin-top: 10px;
 }
 
 .podio-card1 {
@@ -714,7 +726,7 @@ textarea {
     justify-content: space-between;
 }
 
-.imglibri{
+.imgpodio {
     width: 200px;
     height: auto;
     margin-left: auto;
@@ -722,42 +734,31 @@ textarea {
     margin-top: -30px;
 }
 
-
-#imgroger{
-    margin-top: 14px;
-    width: auto;
-    height: 180px;
-    margin-left: 55px;
-}
-
-
-#imgmiss{
-    margin-top: 14px;
-    width: auto;
-    height: 180px;
-    margin-left: 90px;
-}
-
-.foto-top {
-    width: 200px;
-    height: auto;
-    margin-left: 60px;
+.libreria {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #img1 {
     padding-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #img2 {
     width: 130px;
     height: auto;
     margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #img3 {
     width: 130px;
     height: auto;
     margin-top: -0px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #unisciti {
@@ -765,4 +766,28 @@ textarea {
     text-shadow: #000000  2px 2px 4px;
 }
 
+.frasepodio {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.card-title1 {
+    text-shadow: 2px 2px 4px #243f1e;
+    color:  #1d3b32;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.libriamati {
+    background-image: url('../img/bannerlibri.jpg'); /* ../ indica che devi risalire di una cartella (per passare dalla cartella css alla root del progetto). */
+    background-size: cover;
+    /* Assicura che l'immagine copra tutto lo sfondo */
+    background-position: center;
+    /* Centra l'immagine nello sfondo */
+    padding: 60px;
+    /* Aggiunge spazio attorno al contenuto */
+    color: rgba(221, 183, 15, 0.952);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 130px;
+}
 
