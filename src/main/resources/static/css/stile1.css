@@ -180,26 +180,35 @@ h2, h1 {
     background-color: #f4c25b;
     border: #1d3b32;
     font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .input-group {
-    position: relative;
+    position: relative; /* Assicura che #pwdButton sia posizionato rispetto a questo */
+    width: 100%;
 }
 
 #pwdButton {
     position: absolute;
-    right: 10px;  /* Sposta l'icona a destra */
+    right: 10px; /* Sposta l'icona a destra */
     top: 50%;
-    transform: translateY(-50%);  /* Centra l'icona verticalmente */
-    border: none;  /* Rimuove il bordo del bottone */
-    background: transparent;  /* Rende il bottone trasparente */
+    transform: translateY(-50%); /* Centra l'icona verticalmente */
+    border: none;
+    background: transparent;
     cursor: pointer;
     z-index: 10;
+    width: 30px;  /* Area cliccabile più ampia */
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
 }
 
 #occhio {
-    width: 20px;  /* Imposta la larghezza dell'icona */
-    height: auto;
+    width: 20px; /* Imposta la larghezza dell'icona */
+    height: 20px; /* Imposta l'altezza dell'icona */
 }
 
 #home,
