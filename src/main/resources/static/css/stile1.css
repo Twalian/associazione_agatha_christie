@@ -583,7 +583,9 @@ textarea {
     text-shadow: 2px 2px 4px #243f1e;
     color: #5a944d;
 }
-
+.card-lavora{
+background-color: #112c0a
+}
 .navbar-brand1:hover {
     color: black;
     /* Mantiene il colore originale */
