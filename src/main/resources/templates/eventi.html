@@ -47,8 +47,8 @@
             </ul>
         </div>
     </nav>
-    <div class="container-eventi">
 
+    <div class="container-eventi">
         <h2 id="ev-page">Prossimi Eventi:</h2>
         <div class="toast-container position-static" th:each="evento : ${eventi}">
             <div class="toast t-evento" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
@@ -62,6 +62,7 @@
                     <p class="messaggio" th:text="${evento.linkDiretta}"> </p>
                 </div>
             </div>
+        </div>
     </div>
 
 
