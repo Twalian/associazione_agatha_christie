@@ -2,13 +2,12 @@ body {
     font-family: Arial, sans-serif;
     background-color: #1d3b32;
     /* Verde scuro */
-    color: #f4c25b;
     /* Giallo oro */
     padding-top: 70px;
     /* Aggiungi margine superiore per evitare che la navbar copra il contenuto */
     overflow-x: hidden;
 }
-
+#e5cd13
 
 /* Navbar fissa */
 .navbar-nav {
@@ -41,7 +40,7 @@ body {
     height: auto;
     width: 100%;
     padding-left: 20px;
-    padding-right: 10px;
+    padding-right: 20px;
     padding-top: 40px;
     padding-bottom: 20px;
     margin-bottom: 30px;
@@ -465,7 +464,12 @@ textarea {
      font-size: 30px;
     text-shadow: #000000  2px 2px 4px;
     padding-top: 10px;
+    color: #f4c25b;
     }
+
+     .lead{
+   color: #f4c25b;
+   }
 
 
 
@@ -562,8 +566,6 @@ textarea {
 .header2 {
     height: auto;
     width: 100%;
-    padding-left: 20px;
-    padding-right: 10px;
     padding-top: 20px;
 }
 
@@ -588,9 +590,8 @@ textarea {
     /* Rimuove la sottolineatura se presente */
 }
 
-.btn {
-    color: #e5cd13;
-    margin: 15px;
+#candidatura:hover {
+    color: #1d3b32;
 }
 
 .btn:hover {
@@ -764,6 +765,12 @@ textarea {
 #unisciti {
     font-size: 40px;
     text-shadow: #000000  2px 2px 4px;
+    color: #f4c25b;
+}
+#nome,
+#cv,
+#email {
+color:#f4c25b;
 }
 
 .frasepodio {
