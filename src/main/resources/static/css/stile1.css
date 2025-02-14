@@ -192,7 +192,7 @@ h2, h1 {
 #pwdButton {
     position: absolute;
     right: 10px; /* Sposta l'icona a destra */
-    top: 50%;
+    top: 15%;
     transform: translateY(-50%); /* Centra l'icona verticalmente */
     border: none;
     background: transparent;
