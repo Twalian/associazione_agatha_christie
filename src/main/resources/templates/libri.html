@@ -63,7 +63,7 @@
 <div class="container-fluid">
     <header class="header">
         <div class="header-text header2">
-    <h1 class="libriamati">I Libri Più Amati di Agatha Christie</h1>
+    <h1 id="libriamati">I Libri Più Amati di Agatha Christie</h1>
         </div>
     </header>
     <p  id="libri-title1">Scopri i libri più celebri dell'autrice di gialli più amata al mondo.</p>
@@ -134,12 +134,12 @@
         <div class="card-libreria" >
 
             <div class="card-body libreria">
-                <h5 class="card-title card-titolo" th:text="${libro.titolo}"><strong></strong></h5>
-                <img class="card-img-top libreria" th:src="${libro.copertinaDettaglio}" alt="Copertine Libri">
-                <p class="card-text card-testo" th:text="${libro.anno}"></p>
-                <p class="card-text card-testo" th:text="${libro.editore}"></p>
-                <p class="card-text card-testo" th:text="${libro.trama}"></p>
-                <p class="card-text card-testo" th:text="|Ciclo narrativo: ${libro.ciclo.nome}|"></p>
+                <h5 class="card card-titolo" th:text="${libro.titolo}"><strong></strong></h5>
+                <img class="libreria" th:src="${libro.copertinaDettaglio}" alt="Copertine Libri">
+                <p class="card card-testo" th:text="${libro.anno}"></p>
+                <p class="card card-testo" th:text="${libro.editore}"></p>
+                <p class="card card-testo" th:text="${libro.trama}"></p>
+                <p class="card card-testo" th:text="|Ciclo narrativo: ${libro.ciclo.nome}|"></p>
             </div>
         </div>
     </div>
