@@ -3,6 +3,7 @@ body {
     background-color: #1d3b32;
     /* Verde scuro */
     /* Giallo oro */
+    color: #f4c25b;
     padding-top: 70px;
     /* Aggiungi margine superiore per evitare che la navbar copra il contenuto */
     overflow-x: hidden;
@@ -58,7 +59,7 @@ body {
     padding-bottom: 25px;
 }
 
-#descrasso {
+#descrassoc {
     color: #f4c25b;
 }
 
@@ -233,7 +234,8 @@ h2, h1 {
 #aggiungi,
 #profilo,
 #aggiungievento,
-#memorizzaevento {
+#memorizzaevento,
+#memorizzalibro {
     color: #1d3b32;
     background-color: #d8cfb9;
     border: #1d3b32;
@@ -253,8 +255,9 @@ h2, h1 {
     color: #f4c25b;
 }
 
-#areaamm {
+.areaamm {
     text-align: center;
+    color: #f4c25b;
 }
 
 #tabellaelenco,
@@ -648,7 +651,7 @@ color:#f4c25b;
 }
 
 #podio {
-    background-color: #394e48;;
+    background-color: #394e48;
     border-radius: 3%;
     display: flex;
     align-items: flex-end;
@@ -658,6 +661,7 @@ color:#f4c25b;
     height: 400px;
     padding: 8px;
     height: fit-content;
+    color: #f4c25b;
 }
 
 #frase1,
@@ -963,6 +967,10 @@ color:#f4c25b;
     .vertical-line {
         display: none;
     }
+}
+
+.intro-text {
+    color: #f4c25b;
 }
 
 .agathaautrice{
