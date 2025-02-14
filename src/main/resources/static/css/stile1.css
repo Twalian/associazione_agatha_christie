@@ -87,7 +87,7 @@ body {
     font-size: 20px;
 }
 
-#autrice {
+#autrice, #colllibri, #colleventi {
     color: #3b4d47;
     font-size: 20px;
 }
@@ -837,6 +837,7 @@ textarea {
     font-weight: normal;
     color: #f4c25b;
     font-size: 20px;
+    word-wrap: break-word;
 }
 
 .np-info {
