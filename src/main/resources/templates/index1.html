@@ -139,6 +139,7 @@
                 <span class="visually-hidden">Successivo</span>
             </button>
         </div>
+        <a href="/libri" id="colllibri">Scopri di più!</a>
 
     </section>
 
@@ -150,6 +151,7 @@
             <h4 th:text="|Lettura di ${evento.libro.titolo}|"></h4>
             <p th:text="'📅 ' + ${#temporals.format(evento.dataOra, 'dd/MM/yyyy HH:mm')} + ' | 📍 ' + ${evento.biblioteca.nome}"></p>
         </div>
+        <a href="/eventi" id="colleventi">Scopri di più!</a>
     </section>
 </div>
 
