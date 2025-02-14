@@ -25,6 +25,10 @@ public class ProfiloController {
 
     @GetMapping
     private String getPage(HttpSession session, Model model) {
+
+        if (session.getAttribute("utenteBiblioteca") == null)
+            return "redirect:/login";
+        
         biblioteca = bibliotecaService.datiBiblioteca((Integer) session.getAttribute("idBiblioteca"));
         model.addAttribute("utente", biblioteca);
         session.setAttribute("utente", biblioteca);

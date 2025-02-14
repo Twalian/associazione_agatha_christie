@@ -150,7 +150,7 @@
                 <div class="col-12 col-md-3 np-scatola">
                     <h5 class="np-info1">Associazione Agatha Christie</h5>
                     <ul class="np-parti">
-                        <li class="spazio"><a href="#" class="nav-link-np">Chi Siamo</a></li>
+                        <li class="spazio"><a th:href="@{/chisiamo}" class="nav-link-np">Chi Siamo</a></li>
                         <li class="spazio"><a href="#" class="nav-link-np">Privacy Policy</a></li>
                         <li class="spazio"><a href="#" class="nav-link-np">Cookie Policy</a></li>
                         <li class="spazio"><a href="#" class="nav-link-np">FAQs</a></li>
@@ -164,8 +164,12 @@
 
                 <div class="col-12 col-md-4 np-scatola">
                     <h5 class="np-info">Iscriviti alla nostra newsletter</h5>
-                    <p class="np-scheda">Monthly digest of what's new and exciting from us.</p>
+                    <p class="np-scheda">Ti terremo aggiornato sulle nostre entusiasmanti novità!</p>
                     <input type="text" class="form-control np-email" placeholder="Indirizzo Email">
+                    <label>
+                        <input type="checkbox" id="privacyCheckbox" required>
+                        <a class="nav-link-np" href="privacy-policy.html" target="_blank">Accetto l'informativa sulla privacy</a>.
+                    </label> <br>
                     <button class="btn btn-primary np-iscri mt-2">Iscriviti</button>
                 </div>
 
