@@ -504,6 +504,17 @@ textarea {
 #elimina:hover {
     background-color: #f1d924;
 }
+.titolochisiamo{
+   background-image: url('../img/sfondochisiamo.jpg'); /* ../ indica che devi risalire di una cartella (per passare dalla cartella css alla root del progetto). */
+    background-size: cover;
+    /* Assicura che l'immagine copra tutto lo sfondo */
+    background-position: center;
+    /* Centra l'immagine nello sfondo */
+    padding: 60px;
+    /* Aggiunge spazio attorno al contenuto */
+    color: rgba(221, 183, 15, 0.952);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+     font-size: 130px;
 
 /* EVENTI */
 
