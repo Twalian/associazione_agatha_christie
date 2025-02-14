@@ -545,9 +545,9 @@ textarea {
 }
 
 .ev-titolo {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 4px 3px 4px #fcd33c;
     font-size: 20px;
-    color: #fcd33c;
+    color: #a86001;
 }
 
 .messaggio {
