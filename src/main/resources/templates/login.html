@@ -64,25 +64,25 @@
     <!-- Form Login -->
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <h2 class="text-center mb-4">Login</h2>
+            <h2 class="text-center mb-4 login">Login</h2>
             <hr>
             <form action="/login" method="post">
                 <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
+                    <label for="username" class="form-label username">Username</label>
                     <input type="text" class="form-control" id="username" name="username" placeholder="Inserisci username" required>
                 </div>
 
-                <label for="pwd" class="form-label">Password</label>
+                <label for="pwd" class="form-label password">Password</label>
                 <div class="mb-3 input-group">
 
                     <input type="password" class="form-control" id="pwd" name="password" placeholder="Inserisci password" required>
-                    <button type="button" id="pwdButton" class="btn">
+                    <button type="button" id="pwdButton">
                         <img id="occhio" src="img/occhio.png" alt="Mostra/Nascondi" width="20px">
                     </button>
                 </div>
 
                 <div class="mb-3">
-                    <label for="ruolo" class="form-label">Ruolo</label>
+                    <label for="ruolo" class="form-label ruolo">Ruolo</label>
                     <select class="form-control" id="ruolo" name="ruolo" required>
                         <option value="">Seleziona il ruolo</option>
                         <option name="admin" value="admin">Admin</option>
