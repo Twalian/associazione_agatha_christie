@@ -452,26 +452,12 @@ textarea {
 
 /*CHI SIAMO*/
 
-.jumbotron {
-    background-color: #053809;
-    border: 2px solid #1e3a11;
-    padding: 2rem 1rem;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(107, 141, 22, 0.822);
-}
+.lead1{
+     font-size: 30px;
+    text-shadow: #000000  2px 2px 4px;
+    padding-top: 10px;
+    }
 
-.jumbotron h1 {
-    color: #112c0a;
-    font-weight: bold;
-}
-
-.jumbotron p.lead {
-    color:#195323;
-}
-
-.jumbotron hr {
-    border-top: 1px solid #195323;
-}
 
 
 
@@ -496,9 +482,6 @@ textarea {
     background-color: #ffda62f3;
 }
 
-.text{
-    color: #112c0a ;
-}
 
 #elimina:hover {
     background-color: #f1d924;
@@ -512,9 +495,9 @@ textarea {
     /* Centra l'immagine nello sfondo */
    padding: 60px;
     /* Aggiunge spazio attorno al contenuto */
-   color: #ffda62f3;
-   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-   font-size: 130px;
+   color: rgba(221, 183, 15, 0.952);
+       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        font-size: 130px;
 }
 
 
