@@ -1,4 +1,4 @@
-ody {
+body {
     font-family: Arial, sans-serif;
     background-color: #1d3b32;
     /* Verde scuro */
@@ -505,7 +505,7 @@ textarea {
 }
 
 .titolochisiamo{
-   background-image: url('../img/sfondochisiamo.jpg'); /* ../ indica che devi risalire di una cartella (per passare dalla cartella css alla root del progetto). */
+   background-image: url('../img/chisiamo2.jpg'); /* ../ indica che devi risalire di una cartella (per passare dalla cartella css alla root del progetto). */
    background-size: cover;
     /* Assicura che l'immagine copra tutto lo sfondo */
    background-position: center;
