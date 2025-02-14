@@ -483,9 +483,7 @@ textarea {
 
 .card-text {
     color: #112c0a;
-    border: 1px solid #020101;
     border-radius: 10px;
-    background-color: #f4c25b;
 }
 
 .container h2 {
@@ -505,17 +503,18 @@ textarea {
 #elimina:hover {
     background-color: #f1d924;
 }
+
 .titolochisiamo{
    background-image: url('../img/sfondochisiamo.jpg'); /* ../ indica che devi risalire di una cartella (per passare dalla cartella css alla root del progetto). */
-    background-size: cover;
+   background-size: cover;
     /* Assicura che l'immagine copra tutto lo sfondo */
-    background-position: center;
+   background-position: center;
     /* Centra l'immagine nello sfondo */
-    padding: 60px;
+   padding: 60px;
     /* Aggiunge spazio attorno al contenuto */
-    color: rgba(221, 183, 15, 0.952);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-     font-size: 130px;
+   color: #ffda62f3;
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+   font-size: 130px;
 }
 
 
@@ -582,15 +581,14 @@ textarea {
     margin-left: 10px;
 }
 
-.card-title {
+.card-title,
+.card-text {
      color: #112c0a;
-     border: 1px solid #020101;
      border-radius: 10px;
-     background-color: #f4c25b;
+     padding: 15px;
+     border: 1px solid #020101;
 }
-.card-lavora{
-background-color: #112c0a
-}
+
 .navbar-brand1:hover {
     color: black;
     /* Mantiene il colore originale */
@@ -600,6 +598,7 @@ background-color: #112c0a
 
 .btn {
     color: #e5cd13;
+    margin: 15px;
 }
 
 .btn:hover {
@@ -696,7 +695,6 @@ background-color: #112c0a
 }
 
 .card-body {
-    margin-top: 10px;
     background-color: #ffda62f3;
 }
 
@@ -789,12 +787,41 @@ background-color: #112c0a
 }
 
 #libriamati {
- background-image: url('../img/bannerlibri.jpg'); /* ../ indica che devi risalire di una cartella (per passare dalla cartella css alla root del progetto). */
-    background-size: cover;
-    filter: brightness(50%);
-    background-position: center;
-    padding: 60px;
+    position: relative;  /* Necessario per il posizionamento relativo */
+    z-index: 1;  /* Imposta un livello sopra l'immagine */
     color: #ffda62f3;
     font-size: 90px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center; /* Aggiungi questo se vuoi centrare il titolo */
+}
+
+.header3::before {
+    content: ''; /* Crea un pseudo-elemento */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../img/bannerlibri.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(50%); /* Applica la luminosità solo all'immagine */
+    z-index: 0; /* Mette l'immagine sotto il testo */
+    padding: 60px;
+}
+
+.header3 {
+    height: auto;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-top: 20px;
+     position: relative;  /* Necessario per evitare che il testo venga coperto */
+     z-index: 1; /* Mette il testo sopra l'immagine */
+}
+
+#lavora1,
+#lavora2 {
+      margin-bottom: 20px;
+      padding: 20px;
 }
