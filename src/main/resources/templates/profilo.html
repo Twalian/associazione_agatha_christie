@@ -2,137 +2,180 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profilo Personale Area Curatore</title>
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link type="text/css" th:href="@{/css/stile1.css}" href="../static/css/stile1.css"
-        rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-          crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profilo Personale Area Curatore</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link type="text/css" th:href="@{/css/stile1.css}" href="../static/css/stile1.css"
+          rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
 </head>
 
 <body>
 
-<!-- Menu Fisso in alto -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <!-- Menu Fisso in alto -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 
-  <a class="navbar-brand" th:href="@{/}">Agatha Christie Club</a>
-  <!-- quando lo schermo è piccolo, appaiono le 3 linee -->
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <a class="navbar-brand" th:href="@{/}">Agatha Christie Club</a>
+    <!-- quando lo schermo è piccolo, appaiono le 3 linee -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <!-- il menu intero -->
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ms-auto">
-      <li class="nav-item">
-        <a class="nav-link" th:href="@{/}">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" th:href="@{/login}">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" th:href="@{/chisiamo}">Chi siamo</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" th:href="@{/autrice}">Autrice</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" th:href="@{/eventi}">Prossimi Eventi</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" th:href="@{/biblioteche}">Biblioteche aderenti</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" th:href="@{/libri}">Libri più amati</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" th:href="@{/lavoraconnoi}">Collabora con noi</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-
-<br>
-<h1 th:text="|Benvenuto nel tuo profilo ${utente.nome}|"></h1>
-<div class="container-fluid">
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <a id="profilo" class="btn btn-primary" th:href="@{/gestione-biblioteca(id=${utente.id})}">
-      🏛️ Torna all'Area Curatore
-    </a>
+    <!-- il menu intero -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/login}">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/chisiamo}">Chi siamo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/autrice}">Autrice</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/eventi}">Prossimi Eventi</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/biblioteche}">Biblioteche aderenti</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/libri}">Libri più amati</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/lavoraconnoi}">Collabora con noi</a>
+        </li>
+      </ul>
+    </div>
   </nav>
 
-  <hr>
-  <!--form per modifiche info-->
-  <div id="modificaprofilo">
-    <h3>Modifica Dati</h3>
-    <hr>
-    <form th:object="${utente}" method="post" enctype="multipart/form-data">
-      <div class="mb-3">
-        <label for="nome" class="form-label">Nome della Biblioteca</label>
-        <input type="text" class="form-control" id="nome" th:field="*{nome}" required>
-      </div>
-      <div class="mb-3">
-        <label for="comune" class="form-label">Comune</label>
-        <input type="text" class="form-control" id="comune" th:field="*{comune}" required readonly>
-      </div>
-      <div class="mb-3">
-        <label for="indirizzo" class="form-label">Indirizzo</label>
-        <input type="text" class="form-control" id="indirizzo" th:field="*{indirizzo}">
-      </div>
-      <div class="mb-3">
-        <label for="orario_apertura" class="form-label">Orario Apertura</label>
-        <input type="text" class="form-control" id="orario_apertura" th:field="*{orarioApertura}">
-      </div>
-      <div class="mb-3">
-        <label for="sito" class="form-label">Sito Web</label>
-        <input type="url" class="form-control" id="sito" th:field="*{sito}">
-      </div>
-      <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" th:field="*{email}">
-      </div>
-      <div class="mb-3">
-        <label for="telefono" class="form-label">Telefono</label>
-        <input type="text" class="form-control" id="telefono" th:field="*{telefono}">
-      </div>
-      <div class="mb-3">
-        <label for="maps" class="form-label">Link Google Maps</label>
-        <input type="text" class="form-control" id="maps" th:field="*{maps}">
-      </div>
-      <div class="mb-3">
-        <label for="logo" class="form-label">Logo</label>
-        <input type="file" class="form-control" id="logo" th:field="*{logo}">
-      </div>
-      <div class="mb-3">
-        <label for="foto" class="form-label">Foto</label>
-        <input type="file" class="form-control" id="foto" th:field="*{foto}">
-      </div>
-      <div class="mb-3">
-        <label for="descrizione" class="form-label">Descrizione</label>
-        <textarea class="form-control" id="descrizione" th:field="*{descrizione}" rows="4"></textarea>
-      </div>
-      <div class="mb-3">
-        <label for="username" class="form-label">Username</label>
-        <input type="text" class="form-control" id="username" th:field="*{credenziale.username}">
-      </div>
-      <label for="pwd" class="form-label">Password</label>
-      <div class="mb-3 input-group">
-        <input type="password" class="form-control" id="pwd" th:field="*{credenziale.password}">
-        <button type="button" id="pwdButton" class="btn btn-outline-secondary">
-          <img id="occhio" src="img/occhio.png" alt="Mostra/Nascondi" width="20px">
-        </button>
-      </div>
-      <hr>
-      <button type="submit" class="btn btn-primary" id="modifica">Modifica</button>
-    </form>
+  <br>
+  <h1 th:text="|Benvenuto nel tuo profilo ${utente.nome}|"></h1>
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a id="profilo" class="btn btn-primary" th:href="@{/gestione-biblioteca(id=${utente.id})}">
+        🏛️ Torna all'Area Curatore
+      </a>
+    </nav>
 
+    <hr>
+    <!--form per modifiche info-->
+    <div id="modificaprofilo">
+      <h3>Modifica Dati</h3>
+      <hr>
+      <form th:object="${utente}" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="nome" class="form-label">Nome della Biblioteca</label>
+          <input type="text" class="form-control" id="nome" th:field="*{nome}" required>
+        </div>
+        <div class="mb-3">
+          <label for="comune" class="form-label">Comune</label>
+          <input type="text" class="form-control" id="comune" th:field="*{comune}" required readonly>
+        </div>
+        <div class="mb-3">
+          <label for="indirizzo" class="form-label">Indirizzo</label>
+          <input type="text" class="form-control" id="indirizzo" th:field="*{indirizzo}">
+        </div>
+        <div class="mb-3">
+          <label for="orario_apertura" class="form-label">Orario Apertura</label>
+          <input type="text" class="form-control" id="orario_apertura" th:field="*{orarioApertura}">
+        </div>
+        <div class="mb-3">
+          <label for="sito" class="form-label">Sito Web</label>
+          <input type="url" class="form-control" id="sito" th:field="*{sito}">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" th:field="*{email}">
+        </div>
+        <div class="mb-3">
+          <label for="telefono" class="form-label">Telefono</label>
+          <input type="text" class="form-control" id="telefono" th:field="*{telefono}">
+        </div>
+        <div class="mb-3">
+          <label for="maps" class="form-label">Link Google Maps</label>
+          <input type="text" class="form-control" id="maps" th:field="*{maps}">
+        </div>
+        <div class="mb-3">
+          <label for="logo" class="form-label">Logo</label>
+          <input type="file" class="form-control" id="logo" th:field="*{logo}">
+        </div>
+        <div class="mb-3">
+          <label for="foto" class="form-label">Foto</label>
+          <input type="file" class="form-control" id="foto" th:field="*{foto}">
+        </div>
+        <div class="mb-3">
+          <label for="descrizione" class="form-label">Descrizione</label>
+          <textarea class="form-control" id="descrizione" th:field="*{descrizione}" rows="4"></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" id="username" th:field="*{credenziale.username}">
+        </div>
+        <label for="pwd" class="form-label">Password</label>
+        <div class="mb-3 input-group">
+          <input type="password" class="form-control" id="pwd" th:field="*{credenziale.password}">
+          <button type="button" id="pwdButton" class="btn btn-outline-secondary">
+            <img id="occhio" src="img/occhio.png" alt="Mostra/Nascondi" width="20px">
+          </button>
+        </div>
+        <hr>
+        <button type="submit" class="btn btn-primary" id="modifica">Modifica</button>
+      </form>
+
+    </div>
   </div>
-</div>
+
+  <div class="container-fluid">
+    <footer class="footer">
+      <div class="row">
+        <div class="col-12 col-md-3 np-scatola">
+          <h5 class="np-info1">Associazione Agatha Christie</h5>
+          <ul class="np-parti">
+            <li class="spazio"><a href="#" class="nav-link-np">Chi Siamo</a></li>
+            <li class="spazio"><a href="#" class="nav-link-np">Privacy Policy</a></li>
+            <li class="spazio"><a href="#" class="nav-link-np">Cookie Policy</a></li>
+            <li class="spazio"><a href="#" class="nav-link-np">FAQs</a></li>
+            <li class="spazio"><a href="#" class="nav-link-np">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-1 d-none d-md-block">
+          <div class="vertical-line"></div>
+        </div>
+
+        <div class="col-12 col-md-4 np-scatola">
+          <h5 class="np-info">Iscriviti alla nostra newsletter</h5>
+          <p class="np-scheda">Monthly digest of what's new and exciting from us.</p>
+          <input type="text" class="form-control np-email" placeholder="Indirizzo Email">
+          <button class="btn btn-primary np-iscri mt-2">Iscriviti</button>
+        </div>
+
+        <div class="col-12 col-md-1 d-none d-md-block">
+          <div class="vertical-line"></div>
+        </div>
+
+        <div class="col-12 col-md-3 social">
+          <h5 class="np-info">I nostri contatti</h5>
+          <ul class="np-togli row">
+            <li class="lista-np">Email:<div class="np-scheda">Sociazione.AgathaC@gmail.it</div></li>
+            <li class="lista-np">Telefono:<div class="np-scheda">+39 08 741 0043</div></li>
+            <li class="lista-np">Indirizzo:<div class="np-scheda">Via S. Giovanni 19</div></li>
+            <li class="lista-np">Social:<div class="np-scheda">@Agatha_Society</div></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <p class="np-scheda1 text-center mt-4">© 2025 Associazione Agatha Christie. Tutti i diritti riservati.</p>
+  </div>
 
 <script>
 
