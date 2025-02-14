@@ -665,7 +665,7 @@ textarea {
     gap: 5px;
 }
 
-.libreria {
+.card-libreria {
     width: 330px;
     height: 700px;
     margin-top: 30px;
@@ -675,9 +675,8 @@ textarea {
     gap: 10px;
 }
 
-.card-body libreria {
+.card-body {
     margin-top: 10px;
-
 }
 
 .podio-card1 {
@@ -716,7 +715,7 @@ textarea {
     justify-content: space-between;
 }
 
-.imglibri{
+.imgpodio {
     width: 200px;
     height: auto;
     margin-left: auto;
@@ -724,27 +723,31 @@ textarea {
     margin-top: -30px;
 }
 
-.imglibreria {
-    width: 50px;
-    height: auto;
+.libreria {
     margin-left: auto;
     margin-right: auto;
 }
 
 #img1 {
     padding-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #img2 {
     width: 130px;
     height: auto;
     margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #img3 {
     width: 130px;
     height: auto;
     margin-top: -0px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #unisciti {
@@ -765,7 +768,7 @@ textarea {
 }
 
 .libriamati {
-    background-image: url('../../img/lavoraconnoi2.jpg'); /* ../ indica che devi risalire di una cartella (per passare dalla cartella css alla root del progetto). */
+    background-image: url('../img/bannerlibri.jpg'); /* ../ indica che devi risalire di una cartella (per passare dalla cartella css alla root del progetto). */
     background-size: cover;
     /* Assicura che l'immagine copra tutto lo sfondo */
     background-position: center;
@@ -776,3 +779,4 @@ textarea {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     font-size: 130px;
 }
+
