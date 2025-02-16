@@ -654,11 +654,49 @@ textarea {
 }
 
 .frasi {
-    height: 400px;
+    color: #f4c25b;
     padding: 8px;
     height: fit-content;
-    color: #f4c25b;
 }
+
+
+.fotolibri {
+    padding: 20px;
+}
+
+
+@media (min-width: 992px) {
+    .fotolibri, .frasi {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #testa {
+        display: flex;
+    }
+
+    .fotolibri {
+        order: 1;
+    }
+
+    .frasi {
+        order: 2;
+        margin-left: 20px;
+    }
+}
+
+
+@media (max-width: 991px) {
+    #testa {
+        flex-direction: column;
+    }
+
+    .frasi {
+        margin-top: 20px; 
+    }
+}
+
 
 #frase1,
 #frase3 {
@@ -675,15 +713,15 @@ textarea {
     margin: 5px;
 }
 
-.card-titolo,
-.card-testo {
+.libreria-titolo,
+.libreria-testo {
     color: #f4c25b;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
 }
 
-.card-titolo {
+.libreria-titolo {
     font-size: 25px;
 }
 
@@ -700,19 +738,24 @@ textarea {
     gap: 5px;
 }
 
-.card-libreria,
-.libreria {
-    width: 330px;
-    height: 700px;
+.segnalibri {
+    border-radius: 25px;
+    width: 100%;
+    max-width: 330px;  /* Limita la larghezza massima */
+    height: auto;
     margin-top: 30px;
-    background-color: #ffda62f3;
+    background-color: #1d3b32;
     margin-right: auto;
     margin-left: auto;
+    padding: 20px;
     gap: 10px;
 }
 
-.card-body {
-    background-color: #ffda62f3;
+#imglibreria {
+    width: 100%;  /* Usa il 100% della larghezza del contenitore */
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .podio-card1 {
@@ -757,11 +800,6 @@ textarea {
     margin-left: auto;
     margin-right: auto;
     margin-top: -30px;
-}
-
-.libreria {
-    margin-left: auto;
-    margin-right: auto;
 }
 
 #img1 {
@@ -984,4 +1022,6 @@ color:#f4c25b;
 
 #libriautrice{
 color: #1d3b32;
+color: #f4c25b;
+color: #ffda62f3;;
 }
