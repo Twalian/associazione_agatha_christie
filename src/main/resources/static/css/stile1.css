@@ -491,7 +491,9 @@ textarea {
    color: #f4c25b;
    }
 
-
+.auto{
+color:#f4c25b;
+}
 
 
 .card-img-top {
@@ -638,7 +640,9 @@ textarea {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
      font-size: 130px;
 }
-
+.pp{
+color:#f4c25b;
+}
 /* libri.html */
 #testa {
     background-color: #394e48;
