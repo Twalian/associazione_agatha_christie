@@ -670,7 +670,7 @@ color:#f4c25b;
 }
 
 
-@media (min-width: 992px) {
+@media (max-width: 992px) {
     .fotolibri, .frasi {
         display: flex;
         flex-direction: column;
@@ -743,12 +743,12 @@ color:#f4c25b;
     gap: 5px;
 }
 
-.segnalibri,
-.card-libreria {
+.segnalibri {
+display: flex;
     border-radius: 25px;
     width: 100%;
     max-width: 330px;  /* Limita la larghezza massima */
-    height: 700px;
+    height: 750px;
     margin-top: 30px;
     background-color: #3b4d47;
     margin-right: auto;
@@ -758,10 +758,11 @@ color:#f4c25b;
 }
 
 #imglibreria {
-    width: 100%;  /* Usa il 100% della larghezza del contenitore */
+display: block;
+
+    width: 130px;  /* Usa il 100% della larghezza del contenitore */
     height: auto;
-    margin-right: auto;
-    margin-left: auto;
+    margin: auto;
 }
 
 .podio-card1 {
