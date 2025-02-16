@@ -710,6 +710,7 @@ color:#f4c25b;
 
 #frase2,
 #frase4 {
+    margin-right: 40px;
     text-align: right;
 }
 
@@ -890,8 +891,10 @@ color:#f4c25b;
 
 #lavora1,
 #lavora2 {
+      border-radius: 30px;
       margin-bottom: 20px;
       padding: 20px;
+      background-color: #f4c25b;
 }
 
 
