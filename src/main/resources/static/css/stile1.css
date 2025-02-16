@@ -233,6 +233,7 @@ h2, h1 {
 #logout,
 #aggiungi,
 #profilo,
+#aggiungilibro,
 #aggiungievento,
 #memorizzaevento,
 #memorizzalibro {
@@ -742,13 +743,14 @@ color:#f4c25b;
     gap: 5px;
 }
 
-.segnalibri {
+.segnalibri,
+.card-libreria {
     border-radius: 25px;
     width: 100%;
     max-width: 330px;  /* Limita la larghezza massima */
-    height: auto;
+    height: 700px;
     margin-top: 30px;
-    background-color: #1d3b32;
+    background-color: #3b4d47;
     margin-right: auto;
     margin-left: auto;
     padding: 20px;
@@ -1026,6 +1028,4 @@ color:#f4c25b;
 
 #libriautrice{
 color: #1d3b32;
-color: #f4c25b;
-color: #ffda62f3;;
 }

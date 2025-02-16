@@ -132,9 +132,9 @@
     <div class="row container-libreria">
         <!-- Libro 1 -->
         <div class="col-lg-3 col-md-4 col-sm-6" th:each="libro : ${libri}">
-            <div class="segnalibri">
+            <div class="card segnalibri">
 
-                <div class="libreria">
+                <div class="card-libreria">
 
                     <h5 class="libreria-titolo" th:text="${libro.titolo}"><strong></strong></h5>
                     <img id="imglibreria" th:src="${libro.copertinaDettaglio}" alt="Copertine Libri">
