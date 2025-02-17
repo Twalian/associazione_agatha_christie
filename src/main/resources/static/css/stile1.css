@@ -450,7 +450,7 @@ textarea {
 
 .bibl-sito {
     margin-top: 30px;
-    background-color: white;
+    background-color: #3b4d47;
 }
 
 .bibl {
@@ -465,6 +465,7 @@ textarea {
 .bibl-informazioni {
     background-color: #3b4d47;
     width: 60%;
+    height: 100%;
 }
 
 .bibl-dati {
