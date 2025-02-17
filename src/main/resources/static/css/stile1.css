@@ -761,7 +761,6 @@ display: flex;
     width: 100%;
     max-width: 330px;  /* Limita la larghezza massima */
     height: 750px;
-    max-height: 1000px;
     margin-top: 30px;
     background-color: #3b4d47;
     margin-right: auto;
@@ -1015,6 +1014,13 @@ color:#f4c25b;
 
 .np-scheda1 {
     font-family: 'Times New Roman', Times, serif;
+}
+
+@media (max-width: 1200px) {
+
+    .segnalibri {
+        height: 1000px;
+    }
 }
 
 @media (max-width: 767px) {
