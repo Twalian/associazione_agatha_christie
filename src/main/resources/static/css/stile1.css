@@ -760,6 +760,7 @@ display: flex;
     width: 100%;
     max-width: 330px;  /* Limita la larghezza massima */
     height: 750px;
+    max-height: 1000px;
     margin-top: 30px;
     background-color: #3b4d47;
     margin-right: auto;
