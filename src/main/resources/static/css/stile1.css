@@ -235,6 +235,7 @@ h2, h1 {
 #profilo,
 #aggiungilibro,
 #aggiungievento,
+#modifica,
 #memorizzaevento,
 #memorizzalibro {
     color: #1d3b32;
@@ -251,7 +252,8 @@ h2, h1 {
 #profilo:hover,
 #aggiungievento:hover,
 #aggiungilibro:hover,
-#logout:hover {
+#logout:hover,
+#modifica:hover {
     background-color: #486345;
     color: #f4c25b;
 }
@@ -803,7 +805,7 @@ display: block;
 }
 
 .imgpodio {
-    width: 200px;
+    width: 150px;
     height: auto;
     margin-left: auto;
     margin-right: auto;
@@ -811,6 +813,7 @@ display: block;
 }
 
 #img1 {
+    width: 130px;
     padding-top: 10px;
     margin-left: auto;
     margin-right: auto;
