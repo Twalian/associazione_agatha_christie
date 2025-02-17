@@ -691,6 +691,10 @@ color:#f4c25b;
         order: 2;
         margin-left: 20px;
     }
+
+    .segnalibri {
+        height: auto;
+    }
 }
 
 
@@ -701,6 +705,10 @@ color:#f4c25b;
 
     .frasi {
         margin-top: 20px; 
+    }
+
+    .segnalibri {
+        height: 900px;
     }
 }
 
@@ -1013,6 +1021,11 @@ color:#f4c25b;
     }
     .vertical-line {
         display: none;
+    }
+
+    .segnalibri {
+        height: auto;
+
     }
 }
 
